@@ -252,14 +252,17 @@ a {
     animation: fadeUp 0.8s ease-out 0.4s backwards;
 }
 
-.hero .btn-secondary {
-    color: var(--bg-white);
-    border: 2px solid var(--bg-white);
+.hero .btn-secondary,
+.hero a.btn-secondary {
+    color: #FFFFFF !important;
+    border: 2px solid #FFFFFF !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;
 }
 
-.hero .btn-secondary:hover {
-    background-color: var(--bg-white);
-    color: var(--primary-blue);
+.hero .btn-secondary:hover,
+.hero a.btn-secondary:hover {
+    background-color: #FFFFFF !important;
+    color: var(--primary-blue) !important;
 }
 
 /* ==========================================================================
