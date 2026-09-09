@@ -252,6 +252,16 @@ a {
     animation: fadeUp 0.8s ease-out 0.4s backwards;
 }
 
+.hero .btn-secondary {
+    color: var(--bg-white);
+    border: 2px solid var(--bg-white);
+}
+
+.hero .btn-secondary:hover {
+    background-color: var(--bg-white);
+    color: var(--primary-blue);
+}
+
 /* ==========================================================================
    Success Banner
    ========================================================================== */
