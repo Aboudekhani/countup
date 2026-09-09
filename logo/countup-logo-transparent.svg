@@ -106,21 +106,14 @@
     <line x1="675" y1="12" x2="662" y2="45" stroke="#93C5FD" stroke-width="1.2" />
   </g>
 
-  <!-- Crisp High-Trust Slogan & Divider Accent -->
+  <!-- Crisp High-Trust Prominent Slogan -->
   <g>
-    <!-- Crisp High-Legibility Slogan in Slate -->
-    <text x="44" y="215" 
+    <!-- Large Crisp High-Legibility Slogan in Slate -->
+    <text x="44" y="222" 
           font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
-          font-size="34" 
-          font-weight="700" 
+          font-size="42" 
+          font-weight="800" 
           letter-spacing="0.5px" 
           fill="#1E293B">Your Numbers. Our Precision.</text>
-
-    <!-- Tapered Divider Line -->
-    <path d="M 525 208 L 665 206 L 665 210 Z" fill="url(#blue-body)" />
-
-    <!-- Center Faceted Blue Arrow Accent -->
-    <polygon points="508,200 498,214 508,212" fill="url(#arrow-facet-light)" />
-    <polygon points="508,200 508,212 518,214" fill="url(#arrow-facet-dark)" />
   </g>
 </svg>

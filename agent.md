@@ -6,11 +6,11 @@ This log tracks all completed milestones, active tasks, and upcoming improvement
 
 ## 🟢 Completed Milestones
 
-### 1. Logo Slogan Typography Cleanup & Crystal-Clear Readability
-- [x] Fixed blurry/muddy slogan typography in `logo/countup-logo-transparent.svg` and `logo/countup-logo-platinum.svg`.
-- [x] Switched slogan font from cursive script to crisp, high-trust Neo-Grotesque **`Inter`** font (`fill="#1E293B"`, `font-weight="700"`).
-- [x] Removed drop-shadow filter and stroke outline from slogan text for 100% crisp legibility at small header navbar scales.
-- [x] Updated cache-busting version parameter to `?v=4.0` across [index.html](file:///d:/countup/index.html) and [index-fr.html](file:///d:/countup/index-fr.html).
+### 1. Header Logo Sizing & Prominent Slogan Typography
+- [x] Increased header logo navbar height from `48px` to **`58px`** in [styles.css](file:///d:/countup/styles.css) for a bold, prominent, and executive look.
+- [x] Increased slogan font size in [logo/countup-logo-transparent.svg](file:///d:/countup/logo/countup-logo-transparent.svg) from `34` to **`42`** (`font-weight: 800`).
+- [x] Removed line collision accents to allow full, clean room for *"Your Numbers. Our Precision."*.
+- [x] Bumped cache-busting version parameter to `?v=5.0` across [index.html](file:///d:/countup/index.html) and [index-fr.html](file:///d:/countup/index-fr.html).
 
 ### 2. Logo Folder Restructuring & Unused Asset Cleanup
 - [x] Switched site logos and favicons to reference the official [logo](file:///d:/countup/logo) directory (`logo/countup-logo-transparent.svg` and `logo/favicon.svg`).
