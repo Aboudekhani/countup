@@ -153,21 +153,20 @@ a {
 }
 
 .logo-img {
-    height: 42px;
-    max-height: 42px;
+    height: 48px;
+    max-height: 48px;
     width: auto;
     object-fit: contain;
     display: block;
-    mix-blend-mode: multiply;
 }
 
 .footer-logo .logo-img {
-    height: 46px;
-    max-height: 46px;
+    height: 52px;
+    max-height: 52px;
     background: #FFFFFF;
-    padding: 4px 10px;
-    border-radius: 6px;
-    mix-blend-mode: normal;
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
 }
 
 .logo-icon {
