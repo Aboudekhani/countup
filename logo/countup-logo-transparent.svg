@@ -106,25 +106,21 @@
     <line x1="675" y1="12" x2="662" y2="45" stroke="#93C5FD" stroke-width="1.2" />
   </g>
 
-  <!-- Script Slogan & Tapered Metallic Divider Blades -->
-  <g filter="url(#metal-shadow)">
-    <!-- Script Slogan in Polished Chrome -->
-    <text x="125" y="210" 
-          font-family="'Dancing Script', 'Brush Script MT', 'Great Vibes', cursive" 
-          font-size="44" 
+  <!-- Crisp High-Trust Slogan & Divider Accent -->
+  <g>
+    <!-- Crisp High-Legibility Slogan in Slate -->
+    <text x="44" y="215" 
+          font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+          font-size="34" 
           font-weight="700" 
-          font-style="italic" 
-          letter-spacing="1px" 
-          fill="url(#chrome-body)" 
-          stroke="url(#chrome-stroke)" 
-          stroke-width="0.8">Your Numbers. Our Precision.</text>
+          letter-spacing="0.5px" 
+          fill="#1E293B">Your Numbers. Our Precision.</text>
 
-    <!-- Metallic Tapered Blades -->
-    <path d="M 115 224 L 285 222 L 285 226 Z" fill="url(#chrome-body)" />
-    <path d="M 315 222 L 485 224 L 315 226 Z" fill="url(#chrome-body)" />
+    <!-- Tapered Divider Line -->
+    <path d="M 525 208 L 665 206 L 665 210 Z" fill="url(#blue-body)" />
 
     <!-- Center Faceted Blue Arrow Accent -->
-    <polygon points="300,210 290,226 300,224" fill="url(#arrow-facet-light)" />
-    <polygon points="300,210 300,224 310,226" fill="url(#arrow-facet-dark)" />
+    <polygon points="508,200 498,214 508,212" fill="url(#arrow-facet-light)" />
+    <polygon points="508,200 508,212 518,214" fill="url(#arrow-facet-dark)" />
   </g>
 </svg>
