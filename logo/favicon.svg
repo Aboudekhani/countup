@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <radialGradient id="fav-bg-dark" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="60%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#090D16" />
+    </radialGradient>
+    <radialGradient id="fav-bg-silver" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </radialGradient>
+
+    <linearGradient id="fav-chrome" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="18%" stop-color="#E2E8F0" />
+      <stop offset="40%" stop-color="#94A3B8" />
+      <stop offset="48%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#64748B" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+
+    <linearGradient id="fav-swoop" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0C1B3E" stop-opacity="0.8" />
+      <stop offset="30%" stop-color="#1D4ED8" />
+      <stop offset="75%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+
+    <linearGradient id="fav-facet-l" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+    <linearGradient id="fav-facet-d" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="100%" stop-color="#09142E" />
+    </linearGradient>
+
+    <filter id="fav-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000000" flood-opacity="0.75" />
+    </filter>
+  </defs>
+
+  <!-- Squircle App Base -->
+  <rect width="128" height="128" rx="28" fill="url(#fav-bg-dark)" stroke="#334155" stroke-width="1.5" />
+
+  <g filter="url(#fav-shadow)">
+    <!-- UP Monogram in 3D Chrome with Integrated Vertical Arrow -->
+    <g fill="url(#fav-chrome)" stroke="#334155" stroke-width="1.2" stroke-linejoin="round">
+      <!-- Letter U with internal vertical arrow -->
+      <path d="M 22 42 L 34 42 L 34 76 C 34 82 38 86 44 86 C 50 86 54 82 54 76 L 54 60 L 46 60 L 59 38 L 72 60 L 64 60 L 64 76 C 64 88 55 96 44 96 C 33 96 22 88 22 76 Z" />
+      
+      <!-- Letter P -->
+      <path d="M 69 42 L 95 42 C 105 42 111 48 111 58 C 111 68 105 74 95 74 L 81 74 L 81 96 L 69 96 Z M 81 52 L 81 64 L 93 64 C 97 64 100 61 100 58 C 100 55 97 52 93 52 Z" />
+    </g>
+
+    <!-- Dynamic 3D Blue Swoop wrapping under UP and soaring up to the right -->
+    <path d="M 20 106 C 44 110 75 106 96 90 C 108 80 114 62 118 42 L 123 45 C 118 68 110 88 94 99 C 71 115 40 116 20 106 Z" 
+          fill="url(#fav-swoop)" stroke="#1E3A8A" stroke-width="0.6" />
+
+    <!-- 3D Chiseled Arrowhead pointing northeast -->
+    <polygon points="120,20 102,36 114,37" fill="url(#fav-facet-l)" />
+    <polygon points="120,20 114,37 127,43" fill="url(#fav-facet-d)" />
+    <line x1="120" y1="20" x2="114" y2="37" stroke="#93C5FD" stroke-width="0.8" />
+  </g>
+</svg>

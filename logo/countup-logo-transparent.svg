@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" width="100%" height="100%">
+  <defs>
+    <!-- 3D Royal Blue Gradient for COUNT Wordmark -->
+    <linearGradient id="blue-body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A66FF" />
+      <stop offset="15%" stop-color="#0044CC" />
+      <stop offset="45%" stop-color="#0033AA" />
+      <stop offset="49%" stop-color="#2575FC" />
+      <stop offset="52%" stop-color="#0033AA" />
+      <stop offset="75%" stop-color="#002288" />
+      <stop offset="100%" stop-color="#001452" />
+    </linearGradient>
+
+    <!-- Deep Cobalt Bevel Stroke for COUNT -->
+    <linearGradient id="blue-stroke" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="40%" stop-color="#001F66" />
+      <stop offset="100%" stop-color="#000D33" />
+    </linearGradient>
+
+    <!-- 3D Chrome / Polished Silver Gradient for UP Monogram -->
+    <linearGradient id="chrome-body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="14%" stop-color="#F1F5F9" />
+      <stop offset="35%" stop-color="#CBD5E1" />
+      <stop offset="48%" stop-color="#E2E8F0" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="53%" stop-color="#CBD5E1" />
+      <stop offset="70%" stop-color="#64748B" />
+      <stop offset="88%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+
+    <!-- Chrome Stroke / Bevel Rim Gradient -->
+    <linearGradient id="chrome-stroke" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#64748B" />
+      <stop offset="70%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
+
+    <!-- Dynamic 3D Blue Swoop Ribbon Body Gradient -->
+    <linearGradient id="swoop-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#09142E" stop-opacity="0.8" />
+      <stop offset="25%" stop-color="#1D4ED8" />
+      <stop offset="65%" stop-color="#2563EB" />
+      <stop offset="90%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+
+    <!-- 3D Arrowhead Light Facet (Upper/Left) -->
+    <linearGradient id="arrow-facet-light" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="45%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+
+    <!-- 3D Arrowhead Dark Facet (Lower/Right) -->
+    <linearGradient id="arrow-facet-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="50%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#09142E" />
+    </linearGradient>
+
+    <!-- Realistic Depth Drop Shadow -->
+    <filter id="metal-shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+  </defs>
+
+  
+
+  <g filter="url(#metal-shadow)">
+    <!-- COUNT in 3D Polished Royal Blue -->
+    <text x="44" y="148" 
+          font-family="'Montserrat', 'Arial Black', -apple-system, sans-serif" 
+          font-weight="900" 
+          font-size="94" 
+          letter-spacing="2px" 
+          fill="url(#blue-body)" 
+          stroke="url(#blue-stroke)" 
+          stroke-width="2.2" 
+          stroke-linejoin="round">COUNT</text>
+
+    <!-- UP Monogram in 3D Chrome with Vertical Arrow inside U -->
+    <g fill="url(#chrome-body)" stroke="url(#chrome-stroke)" stroke-width="2.2" stroke-linejoin="round">
+      <!-- Letter U with integrated vertical arrow -->
+      <path d="M 456 58 L 480 58 L 480 115 C 480 126 488 133 500 133 C 512 133 520 126 520 115 L 520 86 L 506 86 L 530 52 L 554 86 L 540 86 L 540 115 C 540 137 523 150 500 150 C 477 150 456 137 456 115 Z" />
+      
+      <!-- Letter P -->
+      <path d="M 548 58 L 598 58 C 618 58 630 69 630 87 C 630 105 618 116 598 116 L 572 116 L 572 150 L 548 150 Z M 572 75 L 572 99 L 594 99 C 602 99 607 94 607 87 C 607 80 602 75 594 75 Z" />
+    </g>
+
+    <!-- Dynamic 3D Blue Swooping Arrow Ribbon -->
+    <path d="M 458 168 C 504 174 564 168 608 140 C 636 120 652 84 664 42 L 676 48 C 663 94 644 133 612 157 C 563 190 497 190 458 168 Z" 
+          fill="url(#swoop-gradient)" 
+          stroke="#1E3A8A" 
+          stroke-width="1" />
+
+    <!-- 3D Chiseled Arrowhead pointing northeast -->
+    <!-- Left Facet (Light Azure) -->
+    <polygon points="675,12 638,44 662,45" fill="url(#arrow-facet-light)" />
+    <!-- Right Facet (Dark Sapphire) -->
+    <polygon points="675,12 662,45 694,58" fill="url(#arrow-facet-dark)" />
+    <!-- Center Spine -->
+    <line x1="675" y1="12" x2="662" y2="45" stroke="#93C5FD" stroke-width="1.2" />
+  </g>
+
+  <!-- Script Slogan & Tapered Metallic Divider Blades -->
+  <g filter="url(#metal-shadow)">
+    <!-- Script Slogan in Polished Chrome -->
+    <text x="125" y="210" 
+          font-family="'Dancing Script', 'Brush Script MT', 'Great Vibes', cursive" 
+          font-size="44" 
+          font-weight="700" 
+          font-style="italic" 
+          letter-spacing="1px" 
+          fill="url(#chrome-body)" 
+          stroke="url(#chrome-stroke)" 
+          stroke-width="0.8">Your Numbers. Our Precision.</text>
+
+    <!-- Metallic Tapered Blades -->
+    <path d="M 115 224 L 285 222 L 285 226 Z" fill="url(#chrome-body)" />
+    <path d="M 315 222 L 485 224 L 315 226 Z" fill="url(#chrome-body)" />
+
+    <!-- Center Faceted Blue Arrow Accent -->
+    <polygon points="300,210 290,226 300,224" fill="url(#arrow-facet-light)" />
+    <polygon points="300,210 300,224 310,226" fill="url(#arrow-facet-dark)" />
+  </g>
+</svg>
