@@ -58,6 +58,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
+    // FAQ Accordion Logic
+    // ==========================================
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            
+            // Close other items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Toggle current item
+            faqItem.classList.toggle('active');
+        });
+    });
+
+    // ==========================================
     // Modal Logic for Client Portal
     // ==========================================
     const modal = document.getElementById('portal-modal');
@@ -78,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modal && portalBtns) {
         portalBtns.forEach(btn => btn.addEventListener('click', openModalFunc));
-        closeModal.addEventListener('click', closeModalFunc);
-        overlay.addEventListener('click', closeModalFunc);
+        if (closeModal) closeModal.addEventListener('click', closeModalFunc);
+        if (overlay) overlay.addEventListener('click', closeModalFunc);
     }
 
     // ==========================================
@@ -90,17 +110,21 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Get form values (for demo purposes)
             const name = document.getElementById('name').value;
             const btn = contactForm.querySelector('button');
             
-            // Visual feedback
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending / Envoi...';
             btn.disabled = true;
 
+            const isFrench = document.documentElement.lang === 'fr';
+
             setTimeout(() => {
-                alert(`Thank you, ${name}! Your message has been sent successfully. A CountUp representative will reach out shortly.`);
+                if (isFrench) {
+                    alert(`Merci, ${name} ! Votre message a été envoyé avec succès. Un représentant de CountUp vous contactera sous peu.`);
+                } else {
+                    alert(`Thank you, ${name}! Your message has been sent successfully. A CountUp representative will reach out shortly.`);
+                }
                 contactForm.reset();
                 btn.innerHTML = originalText;
                 btn.disabled = false;
@@ -108,22 +132,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const loginForm = document.getElementById('login-form');
-    if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
+    // ==========================================
+    // Tax Checklist Download CTA
+    // ==========================================
+    const checklistBtn = document.getElementById('download-checklist');
+    if (checklistBtn) {
+        checklistBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            
-            const btn = loginForm.querySelector('button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Authenticating...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                alert('Secure connection established. However, the Client Portal is currently undergoing scheduled maintenance. Please try again later.');
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-                closeModalFunc();
-            }, 1500);
+            const isFrench = document.documentElement.lang === 'fr';
+            const email = prompt(isFrench ? "Veuillez entrer votre adresse courriel pour recevoir la liste de vérification PDF :" : "Please enter your email to receive the Tax Checklist PDF:");
+            if (email && email.trim() !== '') {
+                alert(isFrench ? `Merci ! La liste de vérification des documents fiscaux a été envoyée à ${email}.` : `Thank you! The tax document checklist has been sent to ${email}.`);
+            }
         });
     }
 });
+

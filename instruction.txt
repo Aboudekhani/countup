@@ -1,0 +1,183 @@
+Contenu du site web — CountUp
+Document à transmettre à l&#39;IT pour finaliser le site
+Contenu final FR/EN, organisé par section du site (aboudekhani.github.io/countup). Les éléments
+marqués [À COMPLÉTER] doivent être précisés avant la mise en ligne.
+1. Slogan — choix final
+FR : Vos chiffres. Notre rigueur.
+EN : Your Numbers. Our Precision.
+La version anglaise a été ajustée de « Our Accountability » à « Our Precision » : « rigueur » se traduit
+mieux par precision/diligence — « accountability » correspond plutôt à « responsabilité ».
+(Options écartées, gardées en note : « Vos chiffres, notre responsabilité » / Your Numbers, Our
+Responsibility — et « Vos chiffres, notre priorité » / Your Numbers, Our Commitment.)
+2. Section Accueil (Hero)
+FR
+• Titre : Vos chiffres. Notre rigueur.
+• Sous-titre : Des services comptables complets et sans tracas pour les particuliers et les
+entreprises. Optimisez vos finances avec les experts de CountUp.
+• Boutons : Planifier une consultation / Explorer les services
+• Bandeau succès : Nous avons maximisé les remboursements d&#39;impôt de plus de 500 clients
+l&#39;année dernière !
+EN
+• Headline: Your Numbers. Our Precision.
+• Subtitle: Comprehensive and stress-free accounting services for individuals and businesses.
+Optimize your finances with the experts at CountUp.
+• Buttons: Schedule a Consultation / Explore Services
+• Success banner: We delivered maximum tax returns for over 500+ clients last year!
+3. Nos services
+Impôt des particuliers / Personal Tax
+• FR : Préparation de déclarations de revenus pour particuliers et travailleurs autonomes, avec
+une attention particulière aux déductions et crédits applicables à votre situation.
+• EN : Personal and self-employed tax return preparation, with careful attention to the deductions
+and credits that apply to your situation.
+
+Impôt corporatif / Corporate Tax
+• FR : Déclarations de revenus des sociétés, planification fiscale et conformité pour les entreprises
+de toutes tailles.
+• EN : Corporate tax returns, tax planning, and compliance for businesses of all sizes.
+Tenue de livres / Bookkeeping
+• FR : Tenue de livres complète — transactions, conciliations bancaires et états financiers
+mensuels — pour que vos chiffres soient toujours à jour.
+• EN : Full-cycle bookkeeping — transactions, bank reconciliations, and monthly financial
+statements — so your numbers are always up to date.
+Certification / Assurance Services
+• FR : Missions de compilation, d&#39;examen et d&#39;audit réalisées selon les normes professionnelles,
+adaptées aux besoins de votre entreprise et de ses parties prenantes.
+• EN : Compilation, review, and audit engagements performed to professional standards, tailored
+to your business and its stakeholders.
+Note pour l&#39;IT : le gabarit actuel a 3 cartes de services. Il y en a maintenant 4 — prévoir soit une grille à 4
+colonnes, soit regrouper impôt particulier/corporatif sous une seule carte « Fiscalité » pour garder 3 colonnes.
+4. Pourquoi choisir CountUp
+FR
+• Précision garantie : Une attention méticuleuse portée aux détails dans chaque calcul.
+• Livraison dans les délais : Ne manquez plus jamais une date limite de déclaration.
+• Portail sécurisé : Vos documents financiers sont protégés grâce à notre plateforme ShareFile,
+avec chiffrement de niveau bancaire.
+EN
+• Accuracy Guaranteed: Meticulous attention to detail in every calculation.
+• Timely Delivery: Never miss a filing deadline again.
+• Secure Portal: Your financial documents are protected through our ShareFile platform, with
+bank-level encryption.
+5. À propos
+FR : Notre fondateur est CPA et cumule plus de 10 ans d&#39;expérience en fiscalité et en comptabilité, dont
+2 ans au sein d&#39;un cabinet Big Four. Chez CountUp, cette expertise se traduit par un service
+personnalisé, rigoureux et fiable, autant pour les particuliers que pour les entreprises.
+EN : Our founder is a CPA with over 10 years of experience in tax and accounting, including 2 years at a
+Big Four firm. At CountUp, that expertise translates into a personalized, rigorous, and reliable service for
+both individuals and businesses.
+
+[Optionnel] On peut ajouter un nom, une photo ou quelques lignes de parcours si tu veux personnaliser
+davantage.
+6. Saison des impôts — version évergreen (aucune mise à jour annuelle requise)
+FR
+• Titre : Saison des impôts : Ce que vous devez savoir
+Dates limites importantes :
+◦ 30 avril : Date limite pour la majorité des particuliers.
+◦ 15 juin : Date limite pour les travailleurs autonomes et les revenus d&#39;entreprise (le solde
+dû reste exigible le 30 avril).
+
+EN
+• Title: Tax Season: What You Need to Know
+Key Deadlines:
+◦ April 30: Filing deadline for most individuals.
+◦ June 15: Filing deadline for self-employed individuals and business income (any balance
+owing is still due April 30).
+
+En retirant l&#39;année du titre et des dates, cette section reste exacte en tout temps — plus besoin d&#39;y
+retoucher chaque année. Le reste de la section (« Sans rendez-vous », « Documents à préparer ») ne
+change pas.
+7. Coordonnées
+Adresse 2 Place Laval, bureau 485, Laval, QC H7N 5N6 (vérifiée)
+Téléphone (438) 994-9140
+Courriel client@countup.ca
+Heures d&#39;ouverture Lun - Ven : 9h00 - 17h00 / Mon - Fri: 9:00 AM - 5:00 PM
+
+8. Portail client (ShareFile)
+FR
+• Titre : Portail sécurisé
+• Texte : Accédez à vos documents financiers en toute sécurité via notre portail ShareFile.
+• Bouton : Accéder à ShareFile
+EN
+• Title: Secure Portal
+
+• Text: Securely access your financial documents through our ShareFile portal.
+• Button: Go to ShareFile
+Note technique pour l&#39;IT : remplacer le formulaire de connexion actuel (ID client / mot de passe) par un bouton
+ou lien redirigeant vers le portail ShareFile réel de l&#39;entreprise (ex. countup.sharefile.com). [À COMPLÉTER — URL
+ShareFile exacte]
+9. Pied de page
+FR : Votre partenaire de confiance pour des retours d&#39;impôts maximaux et une comptabilité
+professionnelle.
+EN : Your trusted partner for maximum tax returns and professional accounting.
+(Coordonnées, liens rapides et services : reprendre les versions ci-dessus.)
+10. Suggestions pour un site plus attractif
+Ajouts proposés selon les meilleures pratiques observées sur les sites de petites firmes comptables.
+FAQ
+FR
+Quels documents dois-je fournir pour ma déclaration de revenus ?
+La liste complète est disponible dans la section « Saison des impôts » de notre site. En général :
+feuillets fiscaux (T4, Relevé 1), reçus de dons, frais médicaux et autres pièces pertinentes à votre
+situation.
+Comment fonctionne le portail client ?
+Notre portail sécurisé ShareFile vous permet de nous transmettre vos documents en toute
+confidentialité, où que vous soyez.
+Offrez-vous des services aux entreprises et aux travailleurs autonomes ?
+Oui. En plus des déclarations pour particuliers, nous accompagnons les entreprises en fiscalité
+corporative, tenue de livres et missions de certification.
+Quelle est la différence entre une mission de compilation, d&#39;examen et d&#39;audit ?
+Ce sont trois niveaux d&#39;assurance sur vos états financiers, du plus simple (compilation) au plus
+approfondi (audit). Le bon choix dépend des exigences de vos parties prenantes — on peut en
+discuter ensemble.
+Dois-je prendre rendez-vous pour vous rencontrer ?
+Non, aucun rendez-vous n&#39;est nécessaire pour déposer vos documents — mais nous sommes
+disponibles pour une consultation si vous avez des questions particulières.
+EN
+What documents do I need for my tax return?
+The full list is in the “Tax Season” section of our site. Generally: tax slips (T4, Relevé 1), donation
+receipts, medical expenses, and other documents relevant to your situation.
+
+How does the client portal work?
+Our secure ShareFile portal lets you send us your documents confidentially, from anywhere.
+Do you work with businesses and self-employed individuals?
+Yes. Beyond personal tax returns, we support businesses with corporate tax, bookkeeping, and
+assurance engagements.
+What&#39;s the difference between a compilation, review, and audit engagement?
+These are three levels of assurance on your financial statements, from the simplest (compilation) to
+the most in-depth (audit). The right choice depends on your stakeholders&#39; requirements — we can
+help you figure it out.
+Do I need an appointment to meet with you?
+No appointment is needed to drop off documents — but we&#39;re happy to schedule a consultation for
+specific questions.
+Notre processus / How It Works
+FR
+1. Prise de contact — Vous nous joignez par téléphone, courriel ou via le formulaire du site.
+2. Envoi sécurisé des documents — Vous téléversez vos documents via notre portail ShareFile, en
+toute confidentialité.
+3. Préparation — Notre équipe prépare votre déclaration ou vos états financiers avec rigueur.
+4. Révision et livraison — On révise le tout avec vous avant la transmission finale.
+EN
+1. Get in touch — Contact us by phone, email, or through the website form.
+2. Send your documents securely — Upload your documents through our ShareFile portal, fully
+confidential.
+3. Preparation — Our team prepares your return or financial statements with care.
+4. Review &amp; delivery — We walk through everything with you before final submission.
+Liste de vérification téléchargeable (aimant à courriels)
+Convertir la liste « Documents à préparer » déjà présente sur le site en PDF téléchargeable, offert en
+échange d&#39;un courriel (ex. bouton « Télécharger la liste de vérification »). Un moyen simple de récolter
+des contacts qualifiés sans créer de nouveau contenu.
+Carte Google Maps
+Note pour l&#39;IT : intégrer une carte Google Maps dans la section Contact (adresse : 2 Place Laval, bureau 485,
+Laval, QC H7N 5N6). Aide au référencement local et facilite l&#39;accès au bureau pour les visiteurs.
+Éléments qui demandent ton matériel
+• Photo + présentation du fondateur [À COMPLÉTER] — une vraie photo sur la page d&#39;accueil,
+avec quelques lignes personnelles en plus du texte déjà rédigé en section 5.
+
+• Témoignages / avis clients [À COMPLÉTER] — le signal de confiance le plus efficace selon les
+études. À intégrer dès que tu as des avis Google ou des citations de clients.
+• Badge « Membre de l&#39;Ordre des CPA du Québec » [À COMPLÉTER] — si tu veux l&#39;afficher,
+envoie ton numéro de membre ou le badge officiel fourni par l&#39;Ordre.
+Résumé — à confirmer avant l&#39;envoi à l&#39;IT
+☐ URL du portail ShareFile
+☐ Mise en page des services : 3 ou 4 cartes
+☐ Photo + présentation du fondateur
+☐ Témoignages / avis clients
+☐ Numéro de membre de l&#39;Ordre des CPA du Québec (si tu veux le badge)
