@@ -6,7 +6,12 @@ This log tracks all completed milestones, active tasks, and upcoming improvement
 
 ## 🟢 Completed Milestones
 
-### 1. Core Theme Pillars Implementation — "Trust Cobalt & Slate"
+### 1. Seamless Dark Footer Logo (`countup-logo-light.svg`)
+- [x] Created `countup-logo-light.svg` with pure white (`#FFFFFF`) COUNT text, bright blue (`#3B82F6`) arrow, and light slate (`#94A3B8`) tagline specifically optimized for dark backgrounds.
+- [x] Removed awkward white rectangular box container from footer logo.
+- [x] Embedded `countup-logo-light.svg` seamlessly in [index.html](file:///d:/countup/index.html) and [index-fr.html](file:///d:/countup/index-fr.html) global footers.
+
+### 2. Core Theme Pillars Implementation — "Trust Cobalt & Slate"
 - [x] **Palette ("Trust Cobalt & Slate")**:
   - Primary Cobalt / Royal Blue (`#0025D2`) for institutional security and clarity.
   - Cool Crisp Slate (`#F8FAFC`, `#334155`) with hairline dividers (`#E2E8F0`) instead of heavy shadows or dated gradients.
@@ -19,11 +24,11 @@ This log tracks all completed milestones, active tasks, and upcoming improvement
   - Proportional border radii (`14px` cards, `8px` buttons, `20px` badges).
   - Generous negative space conveying organization, accuracy, and confidence.
 
-### 2. Vector SVG Logo Switch (`countup-logo.svg`)
-- [x] Switched site logo across [index.html](file:///d:/countup/index.html) and [index-fr.html](file:///d:/countup/index-fr.html) to vector [countup-logo.svg](file:///d:/countup/countup-logo.svg).
-- [x] Configured `countup-logo.svg` as vector favicon in `<head>`.
+### 3. Vector SVG Logo Switch (`countup-logo.svg`)
+- [x] Switched header site logo to vector [countup-logo.svg](file:///d:/countup/countup-logo.svg).
+- [x] Configured vector favicon in `<head>`.
 
-### 3. Bilingual Content Update (`instruction.txt`)
+### 4. Bilingual Content Update (`instruction.txt`)
 - [x] Updated hero slogan: *"Your Numbers. Our Precision."* / *"Vos chiffres. Notre rigueur."*
 - [x] Expanded service offerings to 4 distinct cards (*Personal Tax*, *Corporate Tax*, *Bookkeeping*, *Assurance Services*).
 - [x] Integrated direct ShareFile client portal modal link (`https://countup.sharefile.com`).
