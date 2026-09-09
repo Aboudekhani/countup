@@ -167,9 +167,10 @@ a {
 }
 
 .footer-logo .logo-img {
-    height: 54px;
-    max-height: 54px;
+    height: 72px;
+    max-height: 76px;
     width: auto;
+    max-width: 260px;
     object-fit: contain;
     display: block;
     background: transparent;
@@ -659,10 +660,14 @@ a {
 @media (max-width: 992px) { 
     .footer-container { grid-template-columns: 1fr 1fr; } 
     .footer-col.brand-col { grid-column: span 2; } 
+    .footer-logo .logo-img { height: 64px; max-height: 68px; }
 }
+
 @media (max-width: 768px) { 
     .footer-container { grid-template-columns: 1fr; } 
     .footer-col.brand-col { grid-column: span 1; } 
+    .logo-img { height: 38px; max-height: 40px; }
+    .footer-logo .logo-img { height: 58px; max-height: 62px; }
 }
 
 /* ==========================================================================
