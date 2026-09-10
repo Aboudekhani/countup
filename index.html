@@ -18,7 +18,7 @@
     <link rel="icon" type="image/svg+xml" href="logo/favicon.svg?v=6.0">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css?v=6.0">
+    <link rel="stylesheet" href="styles.css?v=8.0">
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -191,15 +191,30 @@
                     <div class="tax-card animate-on-scroll">
                         <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
                         <h3 data-i18n="taxSeason.docsTitle">Documents to Prepare</h3>
-                        <div class="doc-tags">
-                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagSelfEmployed">Self-Employed Income</span></span>
-                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagRental">Rental Income</span></span>
-                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagMedical">Medical Expenses</span></span>
-                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagWorkFromHome">Work from Home Expenses</span></span>
-                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagSeparation">Separation / Divorce</span></span>
+                        <div class="doc-checklist">
+                            <div class="checklist-item">
+                                <span class="checklist-check"><i class="fa-solid fa-check"></i></span>
+                                <span class="checklist-text" data-i18n="taxSeason.tagSelfEmployed">Self-Employed Income</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="checklist-check"><i class="fa-solid fa-check"></i></span>
+                                <span class="checklist-text" data-i18n="taxSeason.tagRental">Rental Income</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="checklist-check"><i class="fa-solid fa-check"></i></span>
+                                <span class="checklist-text" data-i18n="taxSeason.tagMedical">Medical Expenses</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="checklist-check"><i class="fa-solid fa-check"></i></span>
+                                <span class="checklist-text" data-i18n="taxSeason.tagWorkFromHome">Work from Home Expenses</span>
+                            </div>
+                            <div class="checklist-item">
+                                <span class="checklist-check"><i class="fa-solid fa-check"></i></span>
+                                <span class="checklist-text" data-i18n="taxSeason.tagSeparation">Separation / Divorce</span>
+                            </div>
                         </div>
                         <div class="checklist-cta">
-                            <a href="#checklist" id="download-checklist" class="btn btn-secondary btn-sm" style="width: 100%;">
+                            <a href="#checklist" id="download-checklist" class="btn btn-secondary checklist-download-btn">
                                 <i class="fa-solid fa-file-pdf"></i> <span data-i18n="taxSeason.downloadBtn">Download Tax Checklist (PDF)</span>
                             </a>
                         </div>
