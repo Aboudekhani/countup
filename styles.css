@@ -210,6 +210,10 @@ a {
     color: var(--cobalt-primary);
 }
 
+.nav-mobile-actions {
+    display: none;
+}
+
 .hamburger {
     display: none;
     font-size: 1.5rem;
@@ -663,9 +667,25 @@ a {
     .footer-logo .logo-img { height: 64px; max-height: 68px; }
 }
 
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 1rem;
+    }
+    .nav-links .btn {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.875rem;
+    }
+}
+
 @media (max-width: 768px) { 
     .nav-container {
         position: relative;
+    }
+
+    .nav-mobile-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
     }
     
     .hamburger {

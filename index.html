@@ -34,13 +34,18 @@
                 <a href="#about" class="nav-link" data-i18n="nav.about">About Us</a>
                 <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
                 <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-                <button type="button" class="btn btn-secondary btn-sm lang-switcher-btn" id="lang-switcher-btn" aria-label="Passer en français" style="margin-left: 0.5rem;">
-                    <i class="fa-solid fa-globe"></i> FR
+                <button type="button" class="btn btn-secondary btn-sm lang-switcher-btn" id="lang-switcher-btn" onclick="window.toggleCountUpLanguage &amp;&amp; window.toggleCountUpLanguage()" aria-label="Passer en français" style="margin-left: 0.5rem;">
+                    <i class="fa-solid fa-globe"></i> <span>FR</span>
                 </button>
                 <a href="#portal" class="btn btn-primary portal-btn" id="header-portal-btn"><i class="fa-solid fa-lock"></i> <span data-i18n="nav.portal">Client Portal</span></a>
             </nav>
-            <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars"></i>
+            <div class="nav-mobile-actions">
+                <button type="button" class="btn btn-secondary btn-sm lang-switcher-btn mobile-lang-btn" id="mobile-lang-switcher-btn" onclick="window.toggleCountUpLanguage &amp;&amp; window.toggleCountUpLanguage()" aria-label="Passer en français">
+                    <i class="fa-solid fa-globe"></i> <span>FR</span>
+                </button>
+                <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -469,8 +474,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="translations.js?v=7.0"></script>
-    <script src="i18n.js?v=7.0"></script>
-    <script src="script.js?v=7.0"></script>
+    <script src="translations.js?v=8.0"></script>
+    <script src="i18n.js?v=8.0"></script>
+    <script src="script.js?v=8.0"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
  * CountUp Accounting — Bilingual Dictionary (EN / FR)
  * Centralized source of truth for all website content.
  */
-const translations = {
+var CountUpTranslations = {
     en: {
         meta: {
             title: "CountUp | Your Numbers. Our Precision.",
@@ -345,8 +345,10 @@ const translations = {
 
 // Helper function to resolve nested keys like "hero.title"
 function getTranslation(lang, path) {
+    var source = typeof CountUpTranslations !== 'undefined' ? CountUpTranslations : (typeof window !== 'undefined' ? window.CountUpTranslations : null);
+    if (!source) return undefined;
     const keys = path.split('.');
-    let current = translations[lang] || translations.en;
+    let current = source[lang] || source.en;
     for (const key of keys) {
         if (current && current[key] !== undefined) {
             current = current[key];
@@ -359,8 +361,12 @@ function getTranslation(lang, path) {
 
 // Attach to window if in browser environment for vanilla script access
 if (typeof window !== 'undefined') {
-    window.CountUpTranslations = translations;
+    window.CountUpTranslations = CountUpTranslations;
+    window.translations = CountUpTranslations;
     window.getCountUpTranslation = getTranslation;
+}
+if (typeof globalThis !== 'undefined') {
+    globalThis.CountUpTranslations = CountUpTranslations;
 }
 
 

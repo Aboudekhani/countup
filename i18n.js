@@ -1,12 +1,14 @@
 /**
  * CountUp Accounting — Client-Side Localization Engine (i18n)
+ * Ultra-resilient, iframe-safe, and zero-dependency bilingual manager.
  */
 
 (function () {
     const STORAGE_KEY = 'countup_lang';
 
     function getTranslations() {
-        return window.CountUpTranslations || null;
+        return (typeof window !== 'undefined' && window.CountUpTranslations) 
+            || (typeof CountUpTranslations !== 'undefined' ? CountUpTranslations : null);
     }
 
     function resolveKey(lang, path) {
@@ -25,29 +27,43 @@
     }
 
     function detectInitialLanguage() {
-        // 1. Check URL parameters (?lang=fr or ?lang=en)
-        const params = new URLSearchParams(window.location.search);
-        const urlLang = params.get('lang');
-        if (urlLang === 'fr' || urlLang === 'en') {
-            return urlLang;
+        // 1. Safe check URL parameters (?lang=fr or ?lang=en)
+        try {
+            const params = new URLSearchParams(window.location.search);
+            const urlLang = params.get('lang');
+            if (urlLang === 'fr' || urlLang === 'en') {
+                return urlLang;
+            }
+        } catch (e) {
+            console.warn('[CountUp i18n] Could not read search params:', e);
         }
 
-        // 2. Check path (/fr or /index-fr.html)
-        const pathname = window.location.pathname.toLowerCase();
-        if (pathname.includes('index-fr.html') || pathname.endsWith('/fr') || pathname.endsWith('/fr/')) {
-            return 'fr';
+        // 2. Safe check pathname (/fr or /index-fr.html)
+        try {
+            const pathname = window.location.pathname.toLowerCase();
+            if (pathname.includes('index-fr.html') || pathname.endsWith('/fr') || pathname.endsWith('/fr/')) {
+                return 'fr';
+            }
+        } catch (e) {}
+
+        // 3. Safe check localStorage (handles iframe/private-browsing exceptions)
+        try {
+            if (typeof localStorage !== 'undefined') {
+                const savedLang = localStorage.getItem(STORAGE_KEY);
+                if (savedLang === 'fr' || savedLang === 'en') {
+                    return savedLang;
+                }
+            }
+        } catch (e) {
+            console.warn('[CountUp i18n] localStorage inaccessible:', e);
         }
 
-        // 3. Check localStorage
-        const savedLang = localStorage.getItem(STORAGE_KEY);
-        if (savedLang === 'fr' || savedLang === 'en') {
-            return savedLang;
-        }
-
-        // 4. Check browser language
-        if (navigator.language && navigator.language.toLowerCase().startsWith('fr')) {
-            return 'fr';
-        }
+        // 4. Safe check browser language
+        try {
+            if (navigator.language && navigator.language.toLowerCase().startsWith('fr')) {
+                return 'fr';
+            }
+        } catch (e) {}
 
         // Default to English
         return 'en';
@@ -56,22 +72,25 @@
     function applyLanguage(lang) {
         const trans = getTranslations();
         if (!trans) {
-            console.warn('CountUp translations not yet loaded');
+            console.warn('[CountUp i18n] Translations not yet loaded, retrying...');
+            setTimeout(() => applyLanguage(lang), 60);
             return;
         }
 
-        const currentLang = lang === 'fr' ? 'fr' : 'en';
+        const currentLang = (lang === 'fr') ? 'fr' : 'en';
         document.documentElement.lang = currentLang;
 
         // 1. Document Title & Meta Description
-        const metaTitle = resolveKey(currentLang, 'meta.title');
-        if (metaTitle) document.title = metaTitle;
+        try {
+            const metaTitle = resolveKey(currentLang, 'meta.title');
+            if (metaTitle) document.title = metaTitle;
 
-        const metaDescEl = document.querySelector('meta[name="description"]');
-        const metaDescVal = resolveKey(currentLang, 'meta.description');
-        if (metaDescEl && metaDescVal) {
-            metaDescEl.setAttribute('content', metaDescVal);
-        }
+            const metaDescEl = document.querySelector('meta[name="description"]');
+            const metaDescVal = resolveKey(currentLang, 'meta.description');
+            if (metaDescEl && metaDescVal) {
+                metaDescEl.setAttribute('content', metaDescVal);
+            }
+        } catch (e) {}
 
         // 2. Translate Text Content (data-i18n)
         const textElements = document.querySelectorAll('[data-i18n]');
@@ -97,6 +116,7 @@
         const attrElements = document.querySelectorAll('[data-i18n-attr]');
         attrElements.forEach(el => {
             const attrConfig = el.getAttribute('data-i18n-attr');
+            if (!attrConfig) return;
             const pairs = attrConfig.split(',');
             pairs.forEach(pair => {
                 const [attr, key] = pair.split(':').map(s => s.trim());
@@ -109,62 +129,99 @@
             });
         });
 
-        // 5. Update Language Switcher Buttons
+        // 5. Update Language Switcher Buttons (Desktop & Mobile)
+        const targetLang = currentLang === 'en' ? 'fr' : 'en';
+        const targetLabel = targetLang.toUpperCase();
+        const ariaLabel = targetLang === 'fr' ? 'Passer en français' : 'Switch to English';
+
         const langSwitchers = document.querySelectorAll('.lang-switcher-btn');
         langSwitchers.forEach(btn => {
-            const targetLang = currentLang === 'en' ? 'fr' : 'en';
-            const targetLabel = targetLang.toUpperCase();
-            btn.innerHTML = `<i class="fa-solid fa-globe"></i> ${targetLabel}`;
-            btn.setAttribute('aria-label', targetLang === 'fr' ? 'Passer en français' : 'Switch to English');
+            btn.innerHTML = `<i class="fa-solid fa-globe"></i> <span>${targetLabel}</span>`;
+            btn.setAttribute('aria-label', ariaLabel);
+            btn.setAttribute('title', ariaLabel);
             btn.setAttribute('data-target-lang', targetLang);
         });
 
-        // 6. Persist preference
-        localStorage.setItem(STORAGE_KEY, currentLang);
+        // 6. Persist preference safely
+        try {
+            if (typeof localStorage !== 'undefined') {
+                localStorage.setItem(STORAGE_KEY, currentLang);
+            }
+        } catch (e) {}
 
         // 7. Dispatch event for other scripts
-        window.dispatchEvent(new CustomEvent('countup:languageChanged', {
-            detail: { lang: currentLang }
-        }));
+        try {
+            window.dispatchEvent(new CustomEvent('countup:languageChanged', {
+                detail: { lang: currentLang }
+            }));
+        } catch (e) {}
     }
 
     function setLanguage(lang, updateUrl = true) {
         applyLanguage(lang);
 
-        if (updateUrl && window.history && window.history.replaceState) {
-            const url = new URL(window.location.href);
-            // If on /fr or index-fr.html, update appropriately
-            if (lang === 'fr') {
-                url.searchParams.set('lang', 'fr');
-            } else {
-                url.searchParams.delete('lang');
+        if (updateUrl) {
+            try {
+                if (window.history && window.history.replaceState && window.location.protocol.startsWith('http')) {
+                    const url = new URL(window.location.href);
+                    if (lang === 'fr') {
+                        url.searchParams.set('lang', 'fr');
+                    } else {
+                        url.searchParams.delete('lang');
+                    }
+                    window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+                }
+            } catch (e) {
+                // Iframe or sandboxed origin restriction - silently fallback
             }
-            window.history.replaceState(null, '', url.pathname + url.search + url.hash);
         }
     }
 
     function toggleLanguage() {
-        const current = document.documentElement.lang === 'fr' ? 'fr' : 'en';
-        const next = current === 'en' ? 'fr' : 'en';
+        const current = (document.documentElement.lang === 'fr') ? 'fr' : 'en';
+        const next = (current === 'en') ? 'fr' : 'en';
         setLanguage(next, true);
     }
 
-    // Expose API on window
+    // Attach to global window
     window.CountUpI18n = {
         setLanguage,
         toggleLanguage,
         getCurrentLanguage: () => document.documentElement.lang || 'en',
-        resolveKey
+        resolveKey,
+        applyLanguage
     };
+    window.toggleCountUpLanguage = toggleLanguage;
+    window.setCountUpLanguage = setLanguage;
 
-    // Initialize when DOM is ready
+    // Attach listeners directly to buttons and via delegation
+    function bindButtons() {
+        const buttons = document.querySelectorAll('.lang-switcher-btn');
+        buttons.forEach(btn => {
+            btn.onclick = function (e) {
+                if (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                toggleLanguage();
+            };
+        });
+    }
+
     function init() {
+        // Retry if translations dictionary is still loading
+        if (!getTranslations()) {
+            setTimeout(init, 50);
+            return;
+        }
+
         const initialLang = detectInitialLanguage();
         applyLanguage(initialLang);
+        bindButtons();
 
-        // Attach listener to any language switch buttons
-        document.addEventListener('click', (e) => {
-            const btn = e.target.closest('.lang-switcher-btn');
+        // Delegated listener as extra safety guarantee
+        document.addEventListener('click', function (e) {
+            const btn = e.target && e.target.closest ? e.target.closest('.lang-switcher-btn') : null;
             if (btn) {
                 e.preventDefault();
                 toggleLanguage();
