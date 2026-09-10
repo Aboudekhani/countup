@@ -30,6 +30,12 @@ This log tracks all completed milestones, active tasks, and upcoming improvement
 ### 5. Bilingual Content Update (`instruction.txt`)
 - [x] Updated slogans, 4-service grid, ShareFile portal, evergreen tax season, FAQ accordion, 4-step process, Laval address, and Google Maps embed.
 
+### 6. Mobile Navigation Bar & Responsive Layout Fix
+- [x] Restored `@media (max-width: 768px)` mobile navbar drawer styling in [styles.css](file:///d:/countup/styles.css).
+- [x] Visible hamburger toggle (`.hamburger`) with animated smooth opening dropdown drawer (`.nav-links.active`).
+- [x] Full-width touch-friendly CTA buttons inside mobile menu.
+- [x] Bumped cache-busting version parameter to `?v=6.0` across [index.html](file:///d:/countup/index.html) and [index-fr.html](file:///d:/countup/index-fr.html).
+
 ---
 
 ## 🔵 Upcoming & Backlog Items
