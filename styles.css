@@ -758,3 +758,54 @@ a {
    ========================================================================== */
 .animate-on-scroll { opacity: 0; transform: translateY(25px); transition: opacity 0.7s cubic-bezier(0.5, 0, 0, 1), transform 0.7s cubic-bezier(0.5, 0, 0, 1); }
 .fade-in { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   Language Switcher & Form Feedback Styles
+   ========================================================================== */
+.lang-switcher-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cobalt-primary);
+    background-color: transparent;
+    border: 1.5px solid var(--cobalt-primary);
+    border-radius: var(--radius-btn);
+    padding: 0.45rem 0.85rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.lang-switcher-btn:hover {
+    background-color: var(--cobalt-light);
+    color: var(--cobalt-hover);
+    transform: translateY(-1px);
+}
+
+.form-feedback {
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-btn);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    animation: fadeInFeedback 0.3s ease;
+}
+
+.form-feedback.success {
+    background-color: rgba(16, 185, 129, 0.1);
+    border: 1px solid #10B981;
+    color: #065F46;
+}
+
+.form-feedback.error {
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid #EF4444;
+    color: #991B1B;
+}
+
+@keyframes fadeInFeedback {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+

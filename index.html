@@ -28,16 +28,18 @@
                 <img src="logo/countup-logo-transparent.svg?v=6.0" alt="CountUp" class="logo-img">
             </a>
             <nav class="nav-links" id="nav-links">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#process" class="nav-link">How It Works</a>
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="index-fr.html" class="btn btn-secondary btn-sm" style="margin-left: 0.5rem;"><i class="fa-solid fa-globe"></i> FR</a>
-                <a href="#portal" class="btn btn-primary portal-btn"><i class="fa-solid fa-lock"></i> Client Portal</a>
+                <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+                <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+                <a href="#process" class="nav-link" data-i18n="nav.process">How It Works</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">About Us</a>
+                <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <button type="button" class="btn btn-secondary btn-sm lang-switcher-btn" id="lang-switcher-btn" aria-label="Passer en français" style="margin-left: 0.5rem;">
+                    <i class="fa-solid fa-globe"></i> FR
+                </button>
+                <a href="#portal" class="btn btn-primary portal-btn" id="header-portal-btn"><i class="fa-solid fa-lock"></i> <span data-i18n="nav.portal">Client Portal</span></a>
             </nav>
-            <div class="hamburger" id="hamburger">
+            <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
                 <i class="fa-solid fa-bars"></i>
             </div>
         </div>
@@ -48,16 +50,16 @@
         <section id="home" class="hero section">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Your Numbers. Our Precision.</h1>
-                    <p class="hero-subtitle">Comprehensive and stress-free accounting services for individuals and businesses. Optimize your finances with the experts at CountUp.</p>
+                    <h1 class="hero-title" data-i18n="hero.title">Your Numbers. Our Precision.</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Comprehensive and stress-free accounting services for individuals and businesses. Optimize your finances with the experts at CountUp.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary btn-large">Schedule a Consultation</a>
-                        <a href="#services" class="btn btn-secondary btn-large">Explore Services</a>
+                        <a href="#contact" class="btn btn-primary btn-large" data-i18n="hero.btnConsultation">Schedule a Consultation</a>
+                        <a href="#services" class="btn btn-secondary btn-large" data-i18n="hero.btnServices">Explore Services</a>
                     </div>
                     <div class="hero-badges">
-                        <span class="hero-badge-item"><i class="fa-solid fa-shield-halved"></i> ShareFile Encrypted</span>
-                        <span class="hero-badge-item"><i class="fa-solid fa-award"></i> CPA Certified</span>
-                        <span class="hero-badge-item"><i class="fa-solid fa-user-check"></i> 500+ Clients Satisfied</span>
+                        <span class="hero-badge-item"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="hero.badgeSharefile">ShareFile Encrypted</span></span>
+                        <span class="hero-badge-item"><i class="fa-solid fa-award"></i> <span data-i18n="hero.badgeCpa">CPA Certified</span></span>
+                        <span class="hero-badge-item"><i class="fa-solid fa-user-check"></i> <span data-i18n="hero.badgeClients">500+ Clients Satisfied</span></span>
                     </div>
                 </div>
             </div>
@@ -66,7 +68,7 @@
         <!-- Dynamic Success Banner -->
         <div class="success-banner animate-on-scroll">
             <div class="container banner-container">
-                <p><i class="fa-solid fa-circle-check"></i> <strong>Success:</strong> We delivered maximum tax returns for over 500+ clients last year!</p>
+                <p><i class="fa-solid fa-circle-check"></i> <strong data-i18n="banner.prefix">Success:</strong> <span data-i18n="banner.text">We delivered maximum tax returns for over 500+ clients last year!</span></p>
             </div>
         </div>
 
@@ -74,37 +76,37 @@
         <section id="services" class="section bg-light">
             <div class="container">
                 <div class="section-header text-center animate-on-scroll">
-                    <h2 class="section-title">Our Services</h2>
-                    <p class="section-subtitle">Comprehensive accounting and tax solutions tailored to your unique financial needs.</p>
+                    <h2 class="section-title" data-i18n="services.title">Our Services</h2>
+                    <p class="section-subtitle" data-i18n="services.subtitle">Comprehensive accounting and tax solutions tailored to your unique financial needs.</p>
                 </div>
                 <div class="services-grid">
-                    <!-- Service Card 1 -->
+                    <!-- Service Card 1: Personal Tax -->
                     <div class="service-card highlight animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
-                        <h3>Personal Tax</h3>
-                        <p>Personal and self-employed tax return preparation, with careful attention to the deductions and credits that apply to your situation.</p>
-                        <a href="#contact" class="btn-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3 data-i18n="services.personalTax.title">Personal Tax</h3>
+                        <p data-i18n="services.personalTax.desc">Personal and self-employed tax return preparation, with careful attention to the deductions and credits that apply to your situation.</p>
+                        <a href="#contact" class="btn-link"><span data-i18n="services.learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <!-- Service Card 2 -->
+                    <!-- Service Card 2: Corporate Tax -->
                     <div class="service-card animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-building"></i></div>
-                        <h3>Corporate Tax</h3>
-                        <p>Corporate tax returns, tax planning, and compliance for businesses of all sizes.</p>
-                        <a href="#contact" class="btn-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3 data-i18n="services.corporateTax.title">Corporate Tax</h3>
+                        <p data-i18n="services.corporateTax.desc">Corporate tax returns, tax planning, and compliance for businesses of all sizes.</p>
+                        <a href="#contact" class="btn-link"><span data-i18n="services.learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <!-- Service Card 3 -->
+                    <!-- Service Card 3: Bookkeeping -->
                     <div class="service-card animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-book-bookmark"></i></div>
-                        <h3>Bookkeeping</h3>
-                        <p>Full-cycle bookkeeping — transactions, bank reconciliations, and monthly financial statements — so your numbers are always up to date.</p>
-                        <a href="#contact" class="btn-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3 data-i18n="services.bookkeeping.title">Bookkeeping</h3>
+                        <p data-i18n="services.bookkeeping.desc">Full-cycle bookkeeping — transactions, bank reconciliations, and monthly financial statements — so your numbers are always up to date.</p>
+                        <a href="#contact" class="btn-link"><span data-i18n="services.learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <!-- Service Card 4 -->
+                    <!-- Service Card 4: Assurance Services -->
                     <div class="service-card animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3>Assurance Services</h3>
-                        <p>Compilation, review, and audit engagements performed to professional standards, tailored to your business and its stakeholders.</p>
-                        <a href="#contact" class="btn-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3 data-i18n="services.assurance.title">Assurance Services</h3>
+                        <p data-i18n="services.assurance.desc">Compilation, review, and audit engagements performed to professional standards, tailored to your business and its stakeholders.</p>
+                        <a href="#contact" class="btn-link"><span data-i18n="services.learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -114,29 +116,29 @@
         <section id="process" class="section">
             <div class="container">
                 <div class="section-header text-center animate-on-scroll">
-                    <h2 class="section-title">How It Works</h2>
-                    <p class="section-subtitle">A straightforward 4-step process for effortless accounting and tax preparation.</p>
+                    <h2 class="section-title" data-i18n="process.title">How It Works</h2>
+                    <p class="section-subtitle" data-i18n="process.subtitle">A straightforward 4-step process for effortless accounting and tax preparation.</p>
                 </div>
                 <div class="steps-grid">
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">1</div>
-                        <h3>Get in Touch</h3>
-                        <p>Contact us by phone, email, or through our website form to get started.</p>
+                        <h3 data-i18n="process.step1.title">Get in Touch</h3>
+                        <p data-i18n="process.step1.desc">Contact us by phone, email, or through our website form to get started.</p>
                     </div>
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">2</div>
-                        <h3>Send Documents Securely</h3>
-                        <p>Upload your financial documents through our secure ShareFile portal, fully confidential.</p>
+                        <h3 data-i18n="process.step2.title">Send Documents Securely</h3>
+                        <p data-i18n="process.step2.desc">Upload your financial documents through our secure ShareFile portal, fully confidential.</p>
                     </div>
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">3</div>
-                        <h3>Preparation</h3>
-                        <p>Our expert team prepares your tax return or financial statements with meticulous care.</p>
+                        <h3 data-i18n="process.step3.title">Preparation</h3>
+                        <p data-i18n="process.step3.desc">Our expert team prepares your tax return or financial statements with meticulous care.</p>
                     </div>
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">4</div>
-                        <h3>Review & Delivery</h3>
-                        <p>We walk through everything with you before final submission and filing.</p>
+                        <h3 data-i18n="process.step4.title">Review & Delivery</h3>
+                        <p data-i18n="process.step4.desc">We walk through everything with you before final submission and filing.</p>
                     </div>
                 </div>
             </div>
@@ -146,24 +148,24 @@
         <section id="tax-season" class="section bg-light">
             <div class="container tax-season-container">
                 <div class="tax-season-header text-center animate-on-scroll">
-                    <span class="badge">Important Information</span>
-                    <h2 class="section-title">Tax Season: What You Need to Know</h2>
-                    <p class="section-subtitle">Ensure a smooth filing process by staying informed on key deadlines and required documents.</p>
+                    <span class="badge" data-i18n="taxSeason.badge">Important Information</span>
+                    <h2 class="section-title" data-i18n="taxSeason.title">Tax Season: What You Need to Know</h2>
+                    <p class="section-subtitle" data-i18n="taxSeason.subtitle">Ensure a smooth filing process by staying informed on key deadlines and required documents.</p>
                 </div>
                 
                 <div class="tax-info-grid">
                     <!-- Deadlines -->
                     <div class="tax-card highlight-border animate-on-scroll">
                         <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                        <h3>Key Deadlines</h3>
+                        <h3 data-i18n="taxSeason.deadlinesTitle">Key Deadlines</h3>
                         <ul class="tax-list">
                             <li>
-                                <strong>April 30:</strong>
-                                Filing deadline for most individuals.
+                                <strong data-i18n="taxSeason.deadline1Date">April 30:</strong>
+                                <span data-i18n="taxSeason.deadline1Text">Filing deadline for most individuals.</span>
                             </li>
                             <li>
-                                <strong>June 15:</strong>
-                                Filing deadline for self-employed individuals and business income (any balance owing is still due April 30).
+                                <strong data-i18n="taxSeason.deadline2Date">June 15:</strong>
+                                <span data-i18n="taxSeason.deadline2Text">Filing deadline for self-employed individuals and business income (any balance owing is still due April 30).</span>
                             </li>
                         </ul>
                     </div>
@@ -171,24 +173,30 @@
                     <!-- Drop-off Info -->
                     <div class="tax-card animate-on-scroll">
                         <div class="card-icon"><i class="fa-solid fa-folder-open"></i></div>
-                        <h3>No Appointment Needed</h3>
-                        <p>Current clients can drop off physical documents during business hours without an appointment.</p>
-                        <p>Alternatively, securely upload your documents 24/7 via our <a href="#portal" class="portal-btn" style="text-decoration: underline; font-weight: 600;">Secure Portal</a>.</p>
+                        <h3 data-i18n="taxSeason.dropoffTitle">No Appointment Needed</h3>
+                        <p data-i18n="taxSeason.dropoffP1">Current clients can drop off physical documents during business hours without an appointment.</p>
+                        <p>
+                            <span data-i18n="taxSeason.dropoffP2Prefix">Alternatively, securely upload your documents 24/7 via our </span>
+                            <a href="#portal" class="portal-btn" style="text-decoration: underline; font-weight: 600;" data-i18n="taxSeason.dropoffPortalLink">Secure Portal</a>
+                            <span data-i18n="taxSeason.dropoffP2Suffix">.</span>
+                        </p>
                     </div>
 
                     <!-- Required Forms & Download CTA -->
                     <div class="tax-card animate-on-scroll">
                         <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
-                        <h3>Documents to Prepare</h3>
+                        <h3 data-i18n="taxSeason.docsTitle">Documents to Prepare</h3>
                         <div class="doc-tags">
-                            <span><i class="fa-solid fa-check"></i> Self-Employed Income</span>
-                            <span><i class="fa-solid fa-check"></i> Rental Income</span>
-                            <span><i class="fa-solid fa-check"></i> Medical Expenses</span>
-                            <span><i class="fa-solid fa-check"></i> Work from Home Expenses</span>
-                            <span><i class="fa-solid fa-check"></i> Separation / Divorce</span>
+                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagSelfEmployed">Self-Employed Income</span></span>
+                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagRental">Rental Income</span></span>
+                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagMedical">Medical Expenses</span></span>
+                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagWorkFromHome">Work from Home Expenses</span></span>
+                            <span><i class="fa-solid fa-check"></i> <span data-i18n="taxSeason.tagSeparation">Separation / Divorce</span></span>
                         </div>
                         <div class="checklist-cta">
-                            <a href="#" id="download-checklist" class="btn btn-secondary btn-sm" style="width: 100%;"><i class="fa-solid fa-file-pdf"></i> Download Tax Checklist (PDF)</a>
+                            <a href="#checklist" id="download-checklist" class="btn btn-secondary btn-sm" style="width: 100%;">
+                                <i class="fa-solid fa-file-pdf"></i> <span data-i18n="taxSeason.downloadBtn">Download Tax Checklist (PDF)</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -199,25 +207,25 @@
         <section id="about" class="section">
             <div class="container about-container">
                 <div class="about-content animate-on-scroll">
-                    <h2 class="section-title">Why Choose CountUp?</h2>
-                    <p class="section-subtitle" style="margin-left:0; text-align:left;">We bring clarity to your finances with a personalized touch and CPA-backed expertise.</p>
+                    <h2 class="section-title" data-i18n="about.title">Why Choose CountUp?</h2>
+                    <p class="section-subtitle" style="margin-left:0; text-align:left;" data-i18n="about.subtitle">We bring clarity to your finances with a personalized touch and CPA-backed expertise.</p>
                     <ul class="feature-list">
-                        <li><i class="fa-regular fa-circle-check"></i> <strong>Accuracy Guaranteed:</strong> Meticulous attention to detail in every calculation.</li>
-                        <li><i class="fa-regular fa-clock"></i> <strong>Timely Delivery:</strong> Never miss a filing deadline again.</li>
-                        <li><i class="fa-solid fa-user-shield"></i> <strong>Secure Portal:</strong> Your financial documents are protected through our ShareFile platform, with bank-level encryption.</li>
+                        <li><i class="fa-regular fa-circle-check"></i> <strong data-i18n="about.feat1Title">Accuracy Guaranteed:</strong> <span data-i18n="about.feat1Desc">Meticulous attention to detail in every calculation.</span></li>
+                        <li><i class="fa-regular fa-clock"></i> <strong data-i18n="about.feat2Title">Timely Delivery:</strong> <span data-i18n="about.feat2Desc">Never miss a filing deadline again.</span></li>
+                        <li><i class="fa-solid fa-user-shield"></i> <strong data-i18n="about.feat3Title">Secure Portal:</strong> <span data-i18n="about.feat3Desc">Your financial documents are protected through our ShareFile platform, with bank-level encryption.</span></li>
                     </ul>
-                    <p style="color: var(--text-light); line-height: 1.7;">
+                    <p style="color: var(--text-light); line-height: 1.7;" data-i18n="about.bio">
                         Our founder is a CPA with over 10 years of experience in tax and accounting, including 2 years at a Big Four firm. At CountUp, that expertise translates into a personalized, rigorous, and reliable service for both individuals and businesses.
                     </p>
                     <div class="cpa-badge">
-                        <i class="fa-solid fa-award"></i> CPA Member & Big Four Expertise
+                        <i class="fa-solid fa-award"></i> <span data-i18n="about.cpaBadge">CPA Member & Big Four Expertise</span>
                     </div>
                 </div>
                 <div class="about-image animate-on-scroll">
                     <div class="image-placeholder">
                         <i class="fa-solid fa-chart-line"></i>
-                        <p>Expert Financial Guidance</p>
-                        <span>Personalized & Rigorous Service</span>
+                        <p data-i18n="about.cardTitle">Expert Financial Guidance</p>
+                        <span data-i18n="about.cardSubtitle">Personalized & Rigorous Service</span>
                     </div>
                 </div>
             </div>
@@ -227,53 +235,53 @@
         <section id="faq" class="section bg-light">
             <div class="container">
                 <div class="section-header text-center animate-on-scroll">
-                    <h2 class="section-title">Frequently Asked Questions</h2>
-                    <p class="section-subtitle">Got questions? We're here to help clarify your tax and accounting inquiries.</p>
+                    <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+                    <p class="section-subtitle" data-i18n="faq.subtitle">Got questions? We're here to help clarify your tax and accounting inquiries.</p>
                 </div>
                 <div class="faq-container animate-on-scroll">
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>What documents do I need for my tax return?</span>
+                            <span data-i18n="faq.q1">What documents do I need for my tax return?</span>
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>The full list is in the “Tax Season” section of our site. Generally: tax slips (T4, Relevé 1), donation receipts, medical expenses, and other documents relevant to your situation.</p>
+                            <p data-i18n="faq.a1">The full list is in the “Tax Season” section of our site. Generally: tax slips (T4, Relevé 1), donation receipts, medical expenses, and other documents relevant to your situation.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>How does the client portal work?</span>
+                            <span data-i18n="faq.q2">How does the client portal work?</span>
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Our secure ShareFile portal lets you send us your documents confidentially, from anywhere at your convenience.</p>
+                            <p data-i18n="faq.a2">Our secure ShareFile portal lets you send us your documents confidentially, from anywhere at your convenience.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>Do you work with businesses and self-employed individuals?</span>
+                            <span data-i18n="faq.q3">Do you work with businesses and self-employed individuals?</span>
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>Yes. Beyond personal tax returns, we support businesses with corporate tax, bookkeeping, and assurance engagements.</p>
+                            <p data-i18n="faq.a3">Yes. Beyond personal tax returns, we support businesses with corporate tax, bookkeeping, and assurance engagements.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>What's the difference between a compilation, review, and audit engagement?</span>
+                            <span data-i18n="faq.q4">What's the difference between a compilation, review, and audit engagement?</span>
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>These are three levels of assurance on your financial statements, from the simplest (compilation) to the most in-depth (audit). The right choice depends on your stakeholders' requirements — we can help you figure it out.</p>
+                            <p data-i18n="faq.a4">These are three levels of assurance on your financial statements, from the simplest (compilation) to the most in-depth (audit). The right choice depends on your stakeholders' requirements — we can help you figure it out.</p>
                         </div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-question">
-                            <span>Do I need an appointment to meet with you?</span>
+                            <span data-i18n="faq.q5">Do I need an appointment to meet with you?</span>
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p>No appointment is needed to drop off documents — but we're happy to schedule a consultation for specific questions.</p>
+                            <p data-i18n="faq.a5">No appointment is needed to drop off documents — but we're happy to schedule a consultation for specific questions.</p>
                         </div>
                     </div>
                 </div>
@@ -284,36 +292,36 @@
         <section id="contact" class="section">
             <div class="container contact-container">
                 <div class="contact-info animate-on-scroll">
-                    <h2 class="section-title">Get in Touch</h2>
-                    <p class="section-subtitle" style="margin-left:0; text-align:left;">Ready to maximize your tax returns or streamline your accounting? Reach out to us today.</p>
+                    <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
+                    <p class="section-subtitle" style="margin-left:0; text-align:left;" data-i18n="contact.subtitle">Ready to maximize your tax returns or streamline your accounting? Reach out to us today.</p>
                     
                     <div class="contact-details" style="margin-top: 2rem;">
                         <div class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
                             <div>
-                                <h4>Visit Us</h4>
+                                <h4 data-i18n="contact.visitUs">Visit Us</h4>
                                 <p>2 Place Laval, bureau 485<br>Laval, QC H7N 5N6</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-phone"></i>
                             <div>
-                                <h4>Call Us</h4>
-                                <p>(438) 994-9140</p>
+                                <h4 data-i18n="contact.callUs">Call Us</h4>
+                                <p><a href="tel:4389949140" style="color: inherit;">(438) 994-9140</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-envelope"></i>
                             <div>
-                                <h4>Email Us</h4>
-                                <p>client@countup.ca</p>
+                                <h4 data-i18n="contact.emailUs">Email Us</h4>
+                                <p><a href="mailto:client@countup.ca" style="color: inherit;">client@countup.ca</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fa-regular fa-clock"></i>
                             <div>
-                                <h4>Business Hours</h4>
-                                <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
+                                <h4 data-i18n="contact.hours">Business Hours</h4>
+                                <p data-i18n="contact.hoursVal">Mon - Fri: 9:00 AM - 5:00 PM</p>
                             </div>
                         </div>
                     </div>
@@ -335,30 +343,37 @@
                 
                 <div class="contact-form-wrapper animate-on-scroll">
                     <form class="contact-form" id="contact-form">
-                        <h3>Send us a Message</h3>
+                        <h3 data-i18n="contact.formTitle">Send us a Message</h3>
+                        
+                        <!-- Inline Form Feedback Alert -->
+                        <div id="contact-feedback" class="form-feedback" style="display: none;"></div>
+
                         <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" placeholder="John Doe" required>
+                            <label for="name" data-i18n="contact.nameLabel">Full Name</label>
+                            <input type="text" id="name" data-i18n-attr="placeholder:contact.namePlaceholder" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="john@example.com" required>
+                            <label for="email" data-i18n="contact.emailLabel">Email Address</label>
+                            <input type="email" id="email" data-i18n-attr="placeholder:contact.emailPlaceholder" placeholder="john@example.com" required>
                         </div>
                         <div class="form-group">
-                            <label for="service">Interested Service</label>
+                            <label for="service" data-i18n="contact.serviceLabel">Interested Service</label>
                             <select id="service" required>
-                                <option value="Personal Tax">Personal Tax</option>
-                                <option value="Corporate Tax">Corporate Tax</option>
-                                <option value="Bookkeeping">Bookkeeping</option>
-                                <option value="Assurance Services">Assurance / Certification</option>
-                                <option value="Other">Other Inquiry</option>
+                                <option value="Personal Tax" data-i18n="contact.optPersonalTax">Personal Tax</option>
+                                <option value="Corporate Tax" data-i18n="contact.optCorporateTax">Corporate Tax</option>
+                                <option value="Bookkeeping" data-i18n="contact.optBookkeeping">Bookkeeping</option>
+                                <option value="Assurance Services" data-i18n="contact.optAssurance">Assurance / Certification</option>
+                                <option value="Other" data-i18n="contact.optOther">Other Inquiry</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="4" placeholder="How can we help you?" required></textarea>
+                            <label for="message" data-i18n="contact.msgLabel">Message</label>
+                            <textarea id="message" rows="4" data-i18n-attr="placeholder:contact.msgPlaceholder" placeholder="How can we help you?" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                        <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-large" style="width: 100%;">
+                            <span class="btn-text" data-i18n="contact.submitBtn">Send Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -366,23 +381,49 @@
     </main>
 
     <!-- Client Portal Modal (ShareFile Integration) -->
-    <div class="modal" id="portal-modal">
+    <div class="modal" id="portal-modal" role="dialog" aria-modal="true" aria-labelledby="portal-modal-title">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="close-modal" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+            <button class="close-modal" id="close-portal-modal" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-header">
-                <i class="fa-solid fa-shield-halved" style="font-size: 2.5rem; color: var(--accent-blue); margin-bottom: 1rem;"></i>
-                <h2>Secure Portal</h2>
-                <p>Securely access your financial documents through our ShareFile portal with bank-level encryption.</p>
+                <i class="fa-solid fa-shield-halved" style="font-size: 2.5rem; color: var(--cobalt-primary); margin-bottom: 1rem;"></i>
+                <h2 id="portal-modal-title" data-i18n="portalModal.title">Secure Portal</h2>
+                <p data-i18n="portalModal.desc">Securely access your financial documents through our ShareFile portal with bank-level encryption.</p>
             </div>
             <div class="portal-actions">
                 <a href="https://countup.sharefile.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" style="width: 100%;">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Go to ShareFile
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portalModal.btnText">Go to ShareFile</span>
                 </a>
             </div>
             <div class="modal-footer">
-                <p style="font-size: 0.85rem; color: var(--text-light);">Need help accessing your portal? <a href="#contact" class="close-modal-link" onclick="document.querySelector('.close-modal').click();" style="color: var(--accent-blue); font-weight: 600;">Contact Us</a></p>
+                <p style="font-size: 0.85rem; color: var(--text-light);">
+                    <span data-i18n="portalModal.helpText">Need help accessing your portal?</span> 
+                    <a href="#contact" class="close-modal-link" style="color: var(--cobalt-primary); font-weight: 600;" data-i18n="portalModal.contactLink">Contact Us</a>
+                </p>
             </div>
+        </div>
+    </div>
+
+    <!-- Tax Checklist Download Modal -->
+    <div class="modal" id="checklist-modal" role="dialog" aria-modal="true" aria-labelledby="checklist-modal-title">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="close-modal" id="close-checklist-modal" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <i class="fa-solid fa-file-pdf" style="font-size: 2.5rem; color: var(--fiscal-emerald); margin-bottom: 1rem;"></i>
+                <h2 id="checklist-modal-title" data-i18n="checklistModal.title">Download Tax Checklist</h2>
+                <p data-i18n="checklistModal.desc">Get our comprehensive checklist of required tax slips, deductions, and documentation.</p>
+            </div>
+            <form id="checklist-download-form" style="margin-top: 1.5rem;">
+                <div id="checklist-feedback" class="form-feedback" style="display: none; margin-bottom: 1rem;"></div>
+                <div class="form-group" style="text-align: left;">
+                    <label for="checklist-email" data-i18n="checklistModal.emailLabel">Email Address</label>
+                    <input type="email" id="checklist-email" data-i18n-attr="placeholder:checklistModal.emailPlaceholder" placeholder="your.name@example.com" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                    <i class="fa-solid fa-download"></i> <span data-i18n="checklistModal.downloadBtn">Download PDF Checklist</span>
+                </button>
+            </form>
         </div>
     </div>
 
@@ -391,43 +432,45 @@
         <div class="container footer-container">
             <div class="footer-col brand-col">
                 <a href="#home" class="logo footer-logo">
-                    <img src="logo/countup-logo-transparent.svg?v=5.0" alt="CountUp" class="logo-img">
+                    <img src="logo/countup-logo-transparent.svg?v=6.0" alt="CountUp" class="logo-img">
                 </a>
-                <p>Your trusted partner for maximum tax returns and professional accounting.</p>
+                <p data-i18n="footer.tagline">Your trusted partner for maximum tax returns and professional accounting.</p>
             </div>
             <div class="footer-col">
-                <h4>Quick Links</h4>
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#process">How It Works</a>
-                <a href="#about">About Us</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
+                <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+                <a href="#home" data-i18n="nav.home">Home</a>
+                <a href="#services" data-i18n="nav.services">Services</a>
+                <a href="#process" data-i18n="nav.process">How It Works</a>
+                <a href="#about" data-i18n="nav.about">About Us</a>
+                <a href="#faq" data-i18n="nav.faq">FAQ</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
             </div>
             <div class="footer-col">
-                <h4>Services</h4>
-                <a href="#services">Personal Tax</a>
-                <a href="#services">Corporate Tax</a>
-                <a href="#services">Bookkeeping</a>
-                <a href="#services">Assurance Services</a>
+                <h4 data-i18n="footer.services">Services</h4>
+                <a href="#services" data-i18n="services.personalTax.title">Personal Tax</a>
+                <a href="#services" data-i18n="services.corporateTax.title">Corporate Tax</a>
+                <a href="#services" data-i18n="services.bookkeeping.title">Bookkeeping</a>
+                <a href="#services" data-i18n="services.assurance.title">Assurance Services</a>
             </div>
             <div class="footer-col">
-                <h4>Contact Info</h4>
+                <h4 data-i18n="footer.contactInfo">Contact Info</h4>
                 <p><i class="fa-solid fa-location-dot"></i> 2 Place Laval, bureau 485, Laval, QC H7N 5N6</p>
-                <p><i class="fa-solid fa-phone"></i> (438) 994-9140</p>
-                <p><i class="fa-solid fa-envelope"></i> client@countup.ca</p>
+                <p><i class="fa-solid fa-phone"></i> <a href="tel:4389949140" style="color: inherit;">(438) 994-9140</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:client@countup.ca" style="color: inherit;">client@countup.ca</a></p>
                 <div class="social-links">
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom container">
-            <p>&copy; 2026 CountUp Accounting. All rights reserved.</p>
+            <p data-i18n="footer.rights">&copy; 2026 CountUp Accounting. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="translations.js?v=7.0"></script>
+    <script src="i18n.js?v=7.0"></script>
+    <script src="script.js?v=7.0"></script>
 </body>
 </html>
