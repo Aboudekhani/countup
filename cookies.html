@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Politique relative aux témoins (cookies) de CountUp Comptabilité. Utilisation minimale et transparente de témoins strictement fonctionnels.">
-    <title>Politique relative aux témoins (Cookies) | CountUp Comptabilité Laval</title>
+    <title>Politique de cookies | CountUp Comptabilité Laval</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,21 +46,24 @@
             align-items: center;
             gap: 0.65rem;
         }
-        .legal-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.25rem 0;
-            font-size: 0.95rem;
-        }
-        .legal-table th, .legal-table td {
-            border: 1px solid var(--border-hairline);
-            padding: 0.85rem 1rem;
-            text-align: left;
-        }
-        .legal-table th {
-            background: rgba(0, 37, 210, 0.04);
+        .legal-card h3 {
             color: var(--text-heading);
-            font-weight: 600;
+            font-size: 1.15rem;
+            margin: 1.25rem 0 0.5rem;
+            font-weight: 700;
+        }
+        .legal-card ul {
+            margin: 0.5rem 0 1.25rem 1.5rem;
+        }
+        .legal-card li {
+            margin-bottom: 0.45rem;
+        }
+        .legal-officer-box {
+            background: rgba(0, 37, 210, 0.04);
+            border-left: 4px solid var(--cobalt-primary);
+            padding: 1.25rem 1.5rem;
+            border-radius: 4px;
+            margin: 1.25rem 0;
         }
         .back-nav-link {
             display: inline-flex;
@@ -74,25 +77,6 @@
         .back-nav-link:hover {
             text-decoration: underline;
         }
-        .lang-switch-pills {
-            display: inline-flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        .lang-pill {
-            padding: 0.35rem 0.85rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            color: #FFFFFF;
-            font-size: 0.85rem;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .lang-pill.active {
-            background: #FFFFFF;
-            color: var(--cobalt-primary);
-            border-color: #FFFFFF;
-        }
     </style>
 </head>
 <body>
@@ -103,10 +87,10 @@
                 <img src="logo/countup-logo-transparent.svg?v=6.0" alt="CountUp" class="logo-img">
             </a>
             <nav class="nav-links" id="nav-links">
-                <a href="./#home" class="nav-link">Accueil / Home</a>
+                <a href="./#home" class="nav-link">Accueil</a>
                 <a href="./#services" class="nav-link">Services</a>
                 <a href="./#contact" class="nav-link">Contact</a>
-                <a href="./#portal" class="btn btn-primary portal-btn"><i class="fa-solid fa-lock"></i> <span>Portail client</span></a>
+                <a href="https://countup.sharefile.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary portal-btn"><i class="fa-solid fa-lock"></i> <span>Portail client</span></a>
             </nav>
             <div class="nav-mobile-actions">
                 <a href="./" class="btn btn-secondary btn-sm"><i class="fa-solid fa-arrow-left"></i> Retour</a>
@@ -118,110 +102,58 @@
         <section class="legal-page-header">
             <div class="container text-center">
                 <div class="section-badge" style="background: rgba(255,255,255,0.15); color: #FFFFFF; border-color: rgba(255,255,255,0.25);">
-                    <i class="fa-solid fa-cookie-bite"></i> Transparence numérique
+                    <i class="fa-solid fa-cookie-bite"></i> Transparence & Protection
                 </div>
-                <h1 style="font-size: 2.5rem; font-weight: 800; margin-top: 0.75rem;">Politique relative aux témoins (Cookies)</h1>
+                <h1 style="font-size: 2.5rem; font-weight: 800; margin-top: 0.75rem;">Politique de cookies</h1>
                 <p style="max-width: 650px; margin: 0.75rem auto 0; font-size: 1.05rem; opacity: 0.92;">
-                    Comment CountUp utilise les fichiers témoins et respecte votre droit à la vie privée conformément aux normes du Québec.
+                    Dernière mise à jour : 23 septembre 2026
                 </p>
-                <div class="lang-switch-pills">
-                    <a href="#fr-cookies" class="lang-pill active">Français</a>
-                    <a href="#en-cookies" class="lang-pill">English</a>
-                </div>
             </div>
         </section>
 
         <div class="legal-content-container">
             <a href="./" class="back-nav-link"><i class="fa-solid fa-arrow-left"></i> Retour au site CountUp</a>
 
-            <!-- SECTION FRANÇAISE -->
-            <article id="fr-cookies">
-                <div class="legal-card">
-                    <h2><i class="fa-solid fa-circle-info"></i> 1. Qu'est-ce qu'un témoin de navigation ?</h2>
-                    <p>
-                        Un témoin de navigation (communément appelé « cookie ») est un petit fichier texte stocké sur votre appareil (ordinateur, tablette ou téléphone intelligent) lors de votre visite sur un site web. Il permet au site de mémoriser vos préférences et d'assurer une expérience fluide.
-                    </p>
-                </div>
+            <div class="legal-card">
+                <h2><i class="fa-solid fa-circle-question"></i> 1. Qu'est-ce qu'un cookie</h2>
+                <p>Un cookie (ou témoin de connexion) est un petit fichier texte déposé sur votre appareil lorsque vous visitez countup.ca. Il permet au site de reconnaître votre navigateur et de mémoriser certaines informations d'une visite à l'autre.</p>
+            </div>
 
-                <div class="legal-card">
-                    <h2><i class="fa-solid fa-filter"></i> 2. Notre engagement : zéro pistage publicitaire</h2>
-                    <p>
-                        Chez <strong>CountUp</strong>, nous appliquons le principe de minimisation des données. <strong>Nous n'utilisons aucun témoin publicitaire, aucun traceur de reciblage commercial et nous ne vendons aucune donnée à des courtiers d'information.</strong>
-                    </p>
-                    <p>
-                        Les seuls témoins et mécanismes de stockage local utilisés sur notre site sont strictement fonctionnels :
-                    </p>
+            <div class="legal-card">
+                <h2><i class="fa-solid fa-list-check"></i> 2. Types de cookies utilisés sur ce site</h2>
+                <ul>
+                    <li><strong>Cookies strictement nécessaires :</strong> essentiels au fonctionnement du site (ex. navigation, sécurité des formulaires). Ils ne peuvent pas être désactivés sans nuire au fonctionnement du site.</li>
+                    <li><strong>Cookies de mesure d'audience (si applicable) :</strong> ex. pour comprendre comment les visiteurs utilisent le site (pages consultées, durée de visite), de façon agrégée.</li>
+                    <li><strong>Cookies tiers :</strong> le portail ShareFile, utilisé pour l'échange sécurisé de documents, peut déposer ses propres cookies lorsque vous accédez au portail. Leur utilisation est régie par la politique de confidentialité de Citrix/ShareFile.</li>
+                </ul>
+                <p><strong>Ce site n'utilise aucun cookie publicitaire ou de suivi à des fins de marketing ciblé.</strong></p>
+            </div>
 
-                    <table class="legal-table">
-                        <thead>
-                            <tr>
-                                <th>Nom</th>
-                                <th>Type</th>
-                                <th>Finalité</th>
-                                <th>Durée</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>countup_lang</code></td>
-                                <td>Fonctionnel (Local Storage)</td>
-                                <td>Mémorise votre choix de langue (Français ou Anglais) pour les visites ultérieures.</td>
-                                <td>Persistant (modifiable à tout moment via le bouton de langue)</td>
-                            </tr>
-                            <tr>
-                                <td>Témoins techniques de session</td>
-                                <td>Technique</td>
-                                <td>Assure la sécurité des requêtes et le bon fonctionnement de la navigation.</td>
-                                <td>Session (supprimé à la fermeture du navigateur)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="legal-card">
+                <h2><i class="fa-solid fa-hourglass-half"></i> 3. Durée de conservation</h2>
+                <p>Les cookies strictement nécessaires expirent à la fin de la session de navigation ou après une courte période. Les cookies de mesure d'audience, le cas échéant, sont conservés pour une durée maximale de 13 mois.</p>
+            </div>
 
-                <div class="legal-card">
-                    <h2><i class="fa-solid fa-map-location-dot"></i> 3. Services tiers intégrés</h2>
-                    <p>Notre site intègre un composant cartographique tiers :</p>
-                    <ul>
-                        <li>
-                            <strong>Google Maps (Iframe d'emplacement) :</strong> utilisé pour vous afficher l'adresse physique de nos bureaux au <em>2 Place Laval #485, Laval</em>. Google peut déposer des témoins techniques nécessaires à l'affichage de la carte conformément aux règles de confidentialité de Google.
-                        </li>
-                    </ul>
-                </div>
+            <div class="legal-card">
+                <h2><i class="fa-solid fa-sliders"></i> 4. Comment gérer ou refuser les cookies</h2>
+                <p>Vous pouvez en tout temps configurer votre navigateur pour bloquer ou supprimer les cookies. Les paramètres varient selon le navigateur (Chrome, Firefox, Safari, Edge) et sont généralement accessibles dans les options de confidentialité ou de sécurité. Notez que le blocage de certains cookies peut limiter des fonctionnalités du site, notamment l'accès au portail sécurisé.</p>
+            </div>
 
-                <div class="legal-card">
-                    <h2><i class="fa-solid fa-gear"></i> 4. Gestion et désactivation des témoins</h2>
-                    <p>
-                        Vous pouvez à tout moment configurer votre navigateur pour accepter, refuser ou supprimer les témoins. La désactivation des témoins strictement fonctionnels peut toutefois réinitialiser votre préférence linguistique lors de chaque visite.
-                    </p>
-                    <p>Consultez l'aide de votre navigateur pour connaître la marche à suivre :</p>
-                    <ul>
-                        <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
-                        <li><a href="https://support.apple.com/fr-ca/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
-                        <li><a href="https://support.mozilla.org/fr/kb/activer-desactiver-cookies-preferences" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
-                        <li><a href="https://support.microsoft.com/fr-fr/microsoft-edge" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
-                    </ul>
-                </div>
+            <div class="legal-card">
+                <h2><i class="fa-solid fa-arrows-rotate"></i> 5. Modifications à la présente politique</h2>
+                <p>Cette politique peut être mise à jour pour refléter des changements dans les outils utilisés sur le site ou dans la réglementation applicable. La date en haut de page indique la version la plus récente.</p>
+            </div>
 
-                <div class="legal-card">
-                    <h2><i class="fa-solid fa-envelope"></i> 5. Des questions ?</h2>
-                    <p>
-                        Pour toute question relative à cette politique de témoins, veuillez contacter notre Responsable de la protection des renseignements personnels à <a href="mailto:confidentialite@countup.ca">confidentialite@countup.ca</a> ou par téléphone au <strong>(438) 994-9140</strong>.
-                    </p>
+            <div class="legal-card">
+                <h2><i class="fa-solid fa-envelope-open-text"></i> 6. Nous joindre</h2>
+                <p>Pour toute question concernant cette politique ou l'utilisation des cookies sur countup.ca :</p>
+                <div class="legal-officer-box">
+                    <strong>CountUp Comptabilité inc.</strong><br>
+                    2 Place Laval, bureau 485, Laval, QC H7N 5N6<br>
+                    <strong>Courriel :</strong> <a href="mailto:client@countup.ca" style="color: var(--cobalt-primary); font-weight: 600;">client@countup.ca</a><br>
+                    <strong>Téléphone :</strong> <a href="tel:4389949140" style="color: var(--cobalt-primary); font-weight: 600;">(438) 994-9140</a>
                 </div>
-            </article>
-
-            <!-- ENGLISH SUMMARY -->
-            <article id="en-cookies" style="margin-top: 3rem; padding-top: 2rem; border-top: 2px dashed var(--border-hairline);">
-                <div class="legal-card">
-                    <h2><i class="fa-solid fa-language"></i> English Summary — Cookie Policy</h2>
-                    <p>
-                        CountUp is committed to data privacy. We only use strictly necessary functional storage (such as saving your preferred language: French or English). <strong>We do not use advertising, marketing tracking, or cross-site profiling cookies.</strong>
-                    </p>
-                    <p>
-                        Third-party map integration (Google Maps) provides physical location guidance to our Laval office and operates in accordance with Google's privacy standards.
-                    </p>
-                </div>
-            </article>
+            </div>
         </div>
     </main>
 

@@ -163,10 +163,10 @@ var CountUpTranslations = {
             optOther: "Other Inquiry",
             msgLabel: "Message",
             msgPlaceholder: "How can we help you?",
-            consentLabel: "I agree that my personal information may be used by CountUp to contact me, in accordance with the <a href=\"/confidentialite\" class=\"legal-link\" target=\"_blank\">Privacy Policy</a>.",
+            consentLabel: "I agree that my personal information may be used by CountUp to contact me, in accordance with the <a href=\"#privacy-modal\" class=\"legal-link open-privacy-trigger\">Privacy Policy</a>.",
             submitBtn: "Send Message",
             submitting: "Sending...",
-            successMsg: "Thank you! Your message has been sent successfully. A CountUp representative will reach out shortly.",
+            successMsg: "Thank you! Your message has been received successfully. A CountUp representative will reach out shortly.",
             errorMsg: "There was a problem sending your message. Please call us at (438) 994-9140.",
             googleProfileLink: "View Google Business Profile"
         },
@@ -182,7 +182,7 @@ var CountUpTranslations = {
             desc: "Get our comprehensive checklist of required tax slips, deductions, and documentation.",
             emailLabel: "Email Address",
             emailPlaceholder: "your.name@example.com",
-            consentLabel: "I agree to receive the tax checklist by email (one-time send). No marketing newsletters will be sent without separate consent, in accordance with the <a href=\"/confidentialite\" class=\"legal-link\" target=\"_blank\">Privacy Policy</a>.",
+            consentLabel: "I agree to receive the tax checklist by email (one-time send). No marketing newsletters will be sent without separate consent, in accordance with the <a href=\"#privacy-modal\" class=\"legal-link open-privacy-trigger\">Privacy Policy</a>.",
             downloadBtn: "Download PDF Checklist",
             successMsg: "Your checklist download has started! A copy has also been recorded."
         },
@@ -358,10 +358,10 @@ var CountUpTranslations = {
             optOther: "Autre demande",
             msgLabel: "Message",
             msgPlaceholder: "Comment pouvons-nous vous aider ?",
-            consentLabel: "J'accepte que mes renseignements soient utilisés par CountUp pour me recontacter, conformément à la <a href=\"/confidentialite\" class=\"legal-link\" target=\"_blank\">Politique de confidentialité</a>.",
+            consentLabel: "J'accepte que mes renseignements soient utilisés par CountUp pour me recontacter, conformément à la <a href=\"#privacy-modal\" class=\"legal-link open-privacy-trigger\">Politique de confidentialité</a>.",
             submitBtn: "Envoyer le message",
             submitting: "Envoi en cours...",
-            successMsg: "Merci ! Votre message a été envoyé avec succès. Un représentant de CountUp vous contactera sous peu.",
+            successMsg: "Merci ! Votre message a été reçu avec succès. Un représentant de CountUp vous contactera sous peu.",
             errorMsg: "Une erreur est survenue lors de l'envoi de votre message. Veuillez nous appeler au (438) 994-9140.",
             googleProfileLink: "Voir notre fiche Google Entreprise"
         },
@@ -377,7 +377,7 @@ var CountUpTranslations = {
             desc: "Obtenez notre liste complète des feuillets fiscaux, déductions et documents nécessaires.",
             emailLabel: "Adresse courriel",
             emailPlaceholder: "votre.nom@exemple.com",
-            consentLabel: "J'accepte de recevoir la liste de vérification fiscale par courriel (envoi unique). Aucun courriel publicitaire sans votre accord explicite, conformément à notre <a href=\"/confidentialite\" class=\"legal-link\" target=\"_blank\">Politique de confidentialité</a>.",
+            consentLabel: "J'accepte de recevoir la liste de vérification fiscale par courriel (envoi unique). Aucun courriel publicitaire sans votre accord explicite, conformément à notre <a href=\"#privacy-modal\" class=\"legal-link open-privacy-trigger\">Politique de confidentialité</a>.",
             downloadBtn: "Télécharger la liste (PDF)",
             successMsg: "Votre téléchargement a commencé ! Une copie a également été enregistrée."
         },

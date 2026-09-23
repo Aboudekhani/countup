@@ -557,7 +557,7 @@
                         <div class="form-checkbox-group">
                             <input type="checkbox" id="contact-consent" name="consent" required aria-required="true">
                             <label for="contact-consent" class="checkbox-label" data-i18n-html="contact.consentLabel">
-                                I agree that my personal information may be used by CountUp to contact me, in accordance with the <a href="/confidentialite" class="legal-link" target="_blank">Privacy Policy</a>.
+                                I agree that my personal information may be used by CountUp to contact me, in accordance with the <a href="#privacy-modal" class="legal-link open-privacy-trigger">Privacy Policy</a>.
                             </label>
                         </div>
 
@@ -621,7 +621,7 @@
                 <div class="form-checkbox-group">
                     <input type="checkbox" id="checklist-consent" name="consent" required aria-required="true">
                     <label for="checklist-consent" class="checkbox-label" data-i18n-html="checklistModal.consentLabel">
-                        I agree to receive the tax checklist by email (one-time send). No marketing newsletters will be sent without separate consent, in accordance with the <a href="/confidentialite" class="legal-link" target="_blank">Privacy Policy</a>.
+                        I agree to receive the tax checklist by email (one-time send). No marketing newsletters will be sent without separate consent, in accordance with the <a href="#privacy-modal" class="legal-link open-privacy-trigger">Privacy Policy</a>.
                     </label>
                 </div>
 
@@ -629,6 +629,133 @@
                     <i class="fa-solid fa-download"></i> <span data-i18n="checklistModal.downloadBtn">Download PDF Checklist</span>
                 </button>
             </form>
+        </div>
+    </div>
+
+    <!-- JS Popup Modal: Politique de Confidentialité -->
+    <div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-modal-title">
+        <div class="modal-overlay"></div>
+        <div class="modal-content legal-modal-content">
+            <button class="close-modal" id="close-privacy-modal" aria-label="Fermer la fenêtre"><i class="fa-solid fa-xmark"></i></button>
+            <div class="legal-modal-header">
+                <h2 id="privacy-modal-title"><i class="fa-solid fa-shield-halved"></i> Politique de confidentialité</h2>
+                <span class="legal-date-badge">Dernière mise à jour : 23 septembre 2026</span>
+            </div>
+            <div class="legal-modal-body">
+                <h3>1. Introduction</h3>
+                <p>CountUp Comptabilité inc. (« CountUp », « nous ») s'engage à protéger la confidentialité des renseignements personnels de ses clients et des visiteurs de son site web countup.ca. La présente politique explique quels renseignements nous recueillons, pourquoi, comment ils sont utilisés, protégés et conservés, conformément à la Loi sur la protection des renseignements personnels dans le secteur privé du Québec (Loi 25) et, le cas échéant, à la Loi sur la protection des renseignements personnels et les documents électroniques (LPRPDE).</p>
+
+                <h3>2. Renseignements que nous recueillons</h3>
+                <ul>
+                    <li><strong>Renseignements d'identification et de contact :</strong> nom, adresse courriel, numéro de téléphone, fournis via le formulaire de contact ou le formulaire de téléchargement du guide fiscal.</li>
+                    <li>Contenu du message envoyé via le formulaire de contact, incluant le service pour lequel vous manifestez un intérêt.</li>
+                    <li>Documents financiers et fiscaux transmis par nos clients via le portail sécurisé ShareFile, dans le cadre de la prestation de nos services professionnels.</li>
+                    <li>Données de navigation à des fins statistiques (ex. pages visitées), si des outils d'analyse de trafic sont utilisés sur le site.</li>
+                </ul>
+
+                <h3>3. Finalités de la collecte</h3>
+                <ul>
+                    <li>Répondre à vos demandes d'information et de consultation.</li>
+                    <li>Vous transmettre le guide fiscal ou tout autre document demandé.</li>
+                    <li>Préparer vos déclarations de revenus, effectuer votre tenue de livres ou réaliser une mission de certification, dans le cadre d'un mandat professionnel.</li>
+                    <li>Vous contacter au sujet de nos services, avec votre consentement.</li>
+                    <li>Respecter nos obligations légales et professionnelles, notamment celles imposées par l'Ordre des CPA du Québec.</li>
+                </ul>
+
+                <h3>4. Consentement</h3>
+                <p>En cochant la case de consentement présente sur nos formulaires, vous acceptez que CountUp recueille et utilise vos renseignements personnels aux fins décrites ci-dessus. Vous pouvez retirer votre consentement en tout temps en communiquant avec nous aux coordonnées indiquées à la section 9, sous réserve des obligations légales ou contractuelles qui pourraient nous obliger à conserver certains renseignements.</p>
+
+                <h3>5. Partage des renseignements</h3>
+                <p>Nous ne vendons ni ne louons vos renseignements personnels à des tiers. Vos renseignements peuvent être partagés avec :</p>
+                <ul>
+                    <li><strong>ShareFile (Citrix Systems)</strong>, notre fournisseur de portail sécurisé, pour la transmission chiffrée de documents financiers.</li>
+                    <li>Nos fournisseurs de services technologiques (hébergement web, courriel), uniquement dans la mesure nécessaire à l'exploitation du site et à la prestation de nos services.</li>
+                    <li>Les autorités fiscales ou réglementaires, lorsque la loi l'exige.</li>
+                </ul>
+
+                <h3>6. Conservation des renseignements</h3>
+                <p>Nous conservons vos renseignements personnels uniquement pendant la durée nécessaire aux fins pour lesquelles ils ont été recueillis, ou selon les délais de conservation exigés par la réglementation applicable aux cabinets comptables et par l'Ordre des CPA du Québec, après quoi ils sont détruits ou anonymisés de façon sécuritaire.</p>
+
+                <h3>7. Sécurité</h3>
+                <p>Nous mettons en place des mesures de sécurité administratives, techniques et physiques raisonnables pour protéger vos renseignements personnels contre la perte, le vol et l'accès, l'utilisation ou la divulgation non autorisés, notamment le chiffrement des communications (HTTPS) et le recours à un portail sécurisé (ShareFile) pour l'échange de documents sensibles.</p>
+
+                <h3>8. Vos droits</h3>
+                <p>Conformément à la loi applicable, vous avez le droit de :</p>
+                <ul>
+                    <li>Accéder aux renseignements personnels que nous détenons à votre sujet.</li>
+                    <li>Faire rectifier des renseignements inexacts, incomplets ou périmés.</li>
+                    <li>Retirer votre consentement à certains usages, sous réserve des obligations légales.</li>
+                    <li>Demander la désindexation ou la cessation de la diffusion de renseignements, dans les cas prévus par la loi.</li>
+                </ul>
+                <p>Pour exercer ces droits, veuillez communiquer avec notre responsable de la protection des renseignements personnels aux coordonnées ci-dessous.</p>
+
+                <h3>9. Responsable de la protection des renseignements personnels</h3>
+                <p>
+                    <strong>CountUp Comptabilité inc.</strong><br>
+                    2 Place Laval, bureau 485, Laval, QC H7N 5N6<br>
+                    Courriel : <a href="mailto:client@countup.ca" class="legal-link">client@countup.ca</a><br>
+                    Téléphone : <a href="tel:4389949140" class="legal-link">(438) 994-9140</a>
+                </p>
+
+                <h3>10. Cookies et technologies similaires</h3>
+                <p>Notre site peut utiliser des témoins de connexion (cookies) pour améliorer votre expérience de navigation et, le cas échéant, mesurer la fréquentation du site. Vous pouvez configurer votre navigateur pour refuser les cookies ; certaines fonctionnalités du site pourraient alors être limitées. Voir notre <a href="#cookies-modal" class="legal-link open-cookies-trigger" style="text-decoration: underline;">Politique de cookies</a> pour plus de détails.</p>
+
+                <h3>11. Modifications à la présente politique</h3>
+                <p>Nous pouvons mettre à jour cette politique de temps à autre afin de refléter des changements législatifs ou opérationnels. La date de la dernière mise à jour figure au haut de la présente page.</p>
+
+                <h3>12. Plainte</h3>
+                <p>Si vous estimez que vos renseignements personnels n'ont pas été traités conformément à la loi, vous pouvez déposer une plainte auprès de la Commission d'accès à l'information du Québec (CAI), en plus de communiquer avec nous directement.</p>
+            </div>
+            <div class="legal-modal-footer">
+                <span style="font-size: 0.85rem; color: var(--text-light);"><i class="fa-solid fa-lock"></i> Conforme Loi 25 Québec</span>
+                <button type="button" class="btn btn-secondary btn-sm close-modal-btn">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Popup Modal: Politique de Cookies -->
+    <div class="modal" id="cookies-modal" role="dialog" aria-modal="true" aria-labelledby="cookies-modal-title">
+        <div class="modal-overlay"></div>
+        <div class="modal-content legal-modal-content">
+            <button class="close-modal" id="close-cookies-modal" aria-label="Fermer la fenêtre"><i class="fa-solid fa-xmark"></i></button>
+            <div class="legal-modal-header">
+                <h2 id="cookies-modal-title"><i class="fa-solid fa-cookie-bite"></i> Politique de cookies</h2>
+                <span class="legal-date-badge">Dernière mise à jour : 23 septembre 2026</span>
+            </div>
+            <div class="legal-modal-body">
+                <h3>1. Qu'est-ce qu'un cookie</h3>
+                <p>Un cookie (ou témoin de connexion) est un petit fichier texte déposé sur votre appareil lorsque vous visitez countup.ca. Il permet au site de reconnaître votre navigateur et de mémoriser certaines informations d'une visite à l'autre.</p>
+
+                <h3>2. Types de cookies utilisés sur ce site</h3>
+                <ul>
+                    <li><strong>Cookies strictement nécessaires :</strong> essentiels au fonctionnement du site (ex. navigation, sécurité des formulaires). Ils ne peuvent pas être désactivés sans nuire au fonctionnement du site.</li>
+                    <li><strong>Cookies de mesure d'audience (si applicable) :</strong> ex. pour comprendre comment les visiteurs utilisent le site (pages consultées, durée de visite), de façon agrégée.</li>
+                    <li><strong>Cookies tiers :</strong> le portail ShareFile, utilisé pour l'échange sécurisé de documents, peut déposer ses propres cookies lorsque vous accédez au portail. Leur utilisation est régie par la politique de confidentialité de Citrix/ShareFile.</li>
+                </ul>
+                <p><strong>Ce site n'utilise aucun cookie publicitaire ou de suivi à des fins de marketing ciblé.</strong></p>
+
+                <h3>3. Durée de conservation</h3>
+                <p>Les cookies strictement nécessaires expirent à la fin de la session de navigation ou après une courte période. Les cookies de mesure d'audience, le cas échéant, sont conservés pour une durée maximale de 13 mois.</p>
+
+                <h3>4. Comment gérer ou refuser les cookies</h3>
+                <p>Vous pouvez en tout temps configurer votre navigateur pour bloquer ou supprimer les cookies. Les paramètres varient selon le navigateur (Chrome, Firefox, Safari, Edge) et sont généralement accessibles dans les options de confidentialité ou de sécurité. Notez que le blocage de certains cookies peut limiter des fonctionnalités du site, notamment l'accès au portail sécurisé.</p>
+
+                <h3>5. Modifications à la présente politique</h3>
+                <p>Cette politique peut être mise à jour pour refléter des changements dans les outils utilisés sur le site ou dans la réglementation applicable. La date en haut de page indique la version la plus récente.</p>
+
+                <h3>6. Nous joindre</h3>
+                <p>
+                    Pour toute question concernant cette politique ou l'utilisation des cookies sur countup.ca :<br>
+                    <strong>CountUp Comptabilité inc.</strong><br>
+                    2 Place Laval, bureau 485, Laval, QC H7N 5N6<br>
+                    Courriel : <a href="mailto:client@countup.ca" class="legal-link">client@countup.ca</a><br>
+                    Téléphone : <a href="tel:4389949140" class="legal-link">(438) 994-9140</a>
+                </p>
+            </div>
+            <div class="legal-modal-footer">
+                <span style="font-size: 0.85rem; color: var(--text-light);"><i class="fa-solid fa-cookie"></i> Zéro pistage publicitaire</span>
+                <button type="button" class="btn btn-secondary btn-sm close-modal-btn">Fermer</button>
+            </div>
         </div>
     </div>
 
@@ -673,9 +800,9 @@
         <div class="footer-bottom container">
             <p data-i18n="footer.rights">&copy; 2026 CountUp Accounting. All rights reserved.</p>
             <div class="footer-legal-links">
-                <a href="/confidentialite" data-i18n="footer.privacy">Privacy Policy</a>
+                <a href="#privacy-modal" class="open-privacy-trigger" data-i18n="footer.privacy">Privacy Policy</a>
                 <span class="legal-sep">•</span>
-                <a href="/cookies" data-i18n="footer.cookies">Cookie Policy</a>
+                <a href="#cookies-modal" class="open-cookies-trigger" data-i18n="footer.cookies">Cookie Policy</a>
             </div>
         </div>
     </footer>

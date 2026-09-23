@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================
-    // 5. Generic Modal Helper (Portal & Checklist)
+    // 5. Generic Modal Helper (Portal, Checklist & Legal Popups)
     // ==========================================
     function setupModal(modalId, openTriggers, closeTriggers) {
         const modal = document.getElementById(modalId);
@@ -116,6 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const openModal = (e) => {
             if (e) e.preventDefault();
+            // Close other open modals
+            document.querySelectorAll('.modal.active').forEach(m => {
+                if (m !== modal) m.classList.remove('active');
+            });
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
             const firstInput = modal.querySelector('input, button:not(.close-modal)');
@@ -127,15 +131,21 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'auto';
         };
 
-        openTriggers.forEach(sel => {
-            document.querySelectorAll(sel).forEach(btn => {
-                btn.addEventListener('click', openModal);
-            });
-        });
-
-        closeTriggers.forEach(sel => {
-            const btn = modal.querySelector(sel);
-            if (btn) btn.addEventListener('click', closeModal);
+        // Delegated click listener to catch dynamically rendered i18n triggers
+        document.addEventListener('click', (e) => {
+            for (const sel of openTriggers) {
+                if (e.target.closest(sel)) {
+                    openModal(e);
+                    return;
+                }
+            }
+            for (const sel of closeTriggers) {
+                if (e.target.closest(sel) && e.target.closest('.modal') === modal) {
+                    if (e) e.preventDefault();
+                    closeModal();
+                    return;
+                }
+            }
         });
 
         if (overlay) overlay.addEventListener('click', closeModal);
@@ -151,10 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Portal Modal Setup
-    setupModal('portal-modal', ['.portal-btn', 'a[href="#portal"]'], ['.close-modal', '.close-modal-link']);
+    setupModal('portal-modal', ['.portal-btn', 'a[href="#portal"]'], ['.close-modal', '.close-modal-link', '.close-modal-btn']);
 
     // Checklist Modal Setup
-    const checklistModalObj = setupModal('checklist-modal', ['#download-checklist', 'a[href="#checklist-modal"]'], ['.close-modal']);
+    const checklistModalObj = setupModal('checklist-modal', ['#download-checklist', 'a[href="#checklist-modal"]'], ['.close-modal', '.close-modal-btn']);
+
+    // Legal Policy JS Popups
+    setupModal('privacy-modal', ['a[href="#privacy-modal"]', '.open-privacy-trigger'], ['.close-modal', '.close-modal-btn']);
+    setupModal('cookies-modal', ['a[href="#cookies-modal"]', '.open-cookies-trigger'], ['.close-modal', '.close-modal-btn']);
 
     // ==========================================
     // 6. Tax Checklist Download & Generator
