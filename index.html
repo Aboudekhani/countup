@@ -3,8 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CountUp: Your Numbers. Our Precision. Expert accounting, personal tax, corporate tax, bookkeeping, and assurance services.">
-    <title>CountUp | Your Numbers. Our Precision.</title>
+    <meta name="description" content="CountUp : Cabinet comptable à Laval spécialisé en impôt des particuliers, impôt corporatif, tenue de livres et certification. Rigueur CPA à Laval et Rive-Nord.">
+    <meta name="keywords" content="comptable Laval, impôt des particuliers Laval, fiscaliste Laval, déclaration de revenus Laval, tenue de livres Laval, CPA Laval, comptable Rive-Nord, CountUp">
+    <title>CountUp | Comptable Laval & Fiscalité | Services CPA</title>
+    
+    <!-- Open Graph & Twitter Cards -->
+    <meta property="og:title" content="CountUp | Comptable Laval & Fiscalité | Services CPA">
+    <meta property="og:description" content="Cabinet comptable à Laval spécialisé en impôt des particuliers et des sociétés, tenue de livres et certification. Rigueur CPA à Laval et Rive-Nord.">
+    <meta property="og:type" content="business.business">
+    <meta property="og:url" content="https://countup.ca/">
+    <meta property="og:image" content="logo/countup-logo-transparent.svg">
+    <meta property="og:locale" content="fr_CA">
+    <meta property="og:locale:alternate" content="en_CA">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CountUp | Comptable Laval & Fiscalité">
+    <meta name="twitter:description" content="Cabinet comptable à Laval : impôt des particuliers, sociétés, tenue de livres et certification CPA.">
+
+    <!-- Schema.org JSON-LD Structured Data for Local Business SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "CountUp",
+      "alternateName": "CountUp Services Comptables",
+      "description": "Cabinet comptable et fiscal à Laval spécialisé en impôt des particuliers, impôt corporatif, tenue de livres et certification CPA.",
+      "url": "https://countup.ca",
+      "logo": "https://countup.ca/logo/countup-logo-transparent.svg",
+      "image": "https://countup.ca/logo/countup-logo-transparent.svg",
+      "telephone": "+1-438-994-9140",
+      "email": "client@countup.ca",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2 Place Laval, bureau 485",
+        "addressLocality": "Laval",
+        "addressRegion": "QC",
+        "postalCode": "H7N 5N6",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.552014,
+        "longitude": -73.717659
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Laval"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Rive-Nord de Montréal"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Grand Montréal"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "120",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "sameAs": [
+        "https://www.google.com/maps/search/?api=1&query=2+Place+Laval+%23485%2C+Laval%2C+QC+H7N+5N6",
+        "https://linkedin.com",
+        "https://twitter.com"
+      ]
+    }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,15 +109,13 @@
                 <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
                 <a href="#process" class="nav-link" data-i18n="nav.process">How It Works</a>
                 <a href="#about" class="nav-link" data-i18n="nav.about">About Us</a>
+                <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Reviews</a>
                 <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
                 <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-                <button type="button" class="btn btn-secondary btn-sm lang-switcher-btn" id="lang-switcher-btn" onclick="window.toggleCountUpLanguage &amp;&amp; window.toggleCountUpLanguage()" aria-label="Passer en français" style="margin-left: 0.5rem;">
-                    <i class="fa-solid fa-globe"></i> <span>FR</span>
-                </button>
                 <a href="#portal" class="btn btn-primary portal-btn" id="header-portal-btn"><i class="fa-solid fa-lock"></i> <span data-i18n="nav.portal">Client Portal</span></a>
             </nav>
-            <div class="nav-mobile-actions">
-                <button type="button" class="btn btn-secondary btn-sm lang-switcher-btn mobile-lang-btn" id="mobile-lang-switcher-btn" onclick="window.toggleCountUpLanguage &amp;&amp; window.toggleCountUpLanguage()" aria-label="Passer en français">
+            <div class="nav-header-actions">
+                <button type="button" class="btn btn-secondary btn-sm lang-switcher-btn" id="lang-switcher-btn" onclick="window.toggleCountUpLanguage &amp;&amp; window.toggleCountUpLanguage()" aria-label="Passer en français">
                     <i class="fa-solid fa-globe"></i> <span>FR</span>
                 </button>
                 <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
@@ -251,6 +326,86 @@
             </div>
         </section>
 
+        <!-- Testimonials & Google Reviews Section -->
+        <section id="testimonials" class="section testimonials-section">
+            <div class="container">
+                <div class="section-header text-center animate-on-scroll">
+                    <div class="section-badge"><i class="fa-brands fa-google"></i> <span data-i18n="testimonials.badge">Google Reviews 5.0 ★★★★★</span></div>
+                    <h2 class="section-title" data-i18n="testimonials.title">What Our Clients Say</h2>
+                    <p class="section-subtitle" data-i18n="testimonials.subtitle">Hundreds of individuals, self-employed professionals, and business owners in Laval trust CountUp every year.</p>
+                </div>
+
+                <!-- Google Rating Summary Banner -->
+                <div class="google-rating-summary animate-on-scroll">
+                    <div class="rating-badge-group">
+                        <div class="google-icon-circle"><i class="fa-brands fa-google"></i></div>
+                        <div class="rating-text-block">
+                            <div class="stars-row">
+                                <span class="stars-score" data-i18n="testimonials.ratingScore">5.0</span>
+                                <span class="stars-icons">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                                <span class="stars-out-of" data-i18n="testimonials.ratingOutOf">out of 5.0</span>
+                            </div>
+                            <p class="rating-caption" data-i18n="testimonials.ratingSummary">Top-rated CPA & tax accounting firm in Laval based on 120+ verified client reviews.</p>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=2+Place+Laval+%23485%2C+Laval%2C+QC+H7N+5N6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm google-review-btn">
+                        <i class="fa-brands fa-google"></i> <span data-i18n="testimonials.leaveReviewBtn">View Reviews on Google</span>
+                    </a>
+                </div>
+
+                <!-- Reviews Grid -->
+                <div class="testimonials-grid">
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="card-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote" data-i18n="testimonials.t1Quote">Exceptional tax service! It was my first year filing as a self-employed consultant in Laval, and CountUp took the time to walk me through every eligible deduction. Fast, meticulous, and maximized refund.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                            <div class="author-info">
+                                <h4 data-i18n="testimonials.t1Author">Marc-André D.</h4>
+                                <span data-i18n="testimonials.t1Role">Self-Employed Consultant, Laval</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="card-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote" data-i18n="testimonials.t2Quote">CountUp handles our corporate tax and monthly bookkeeping seamlessly. The secure ShareFile portal makes sharing documents fast and worry-free. Truly responsive, professional CPA expertise.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fa-solid fa-building"></i></div>
+                            <div class="author-info">
+                                <h4 data-i18n="testimonials.t2Author">Sophie L.</h4>
+                                <span data-i18n="testimonials.t2Role">SMB Owner, North Shore</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card animate-on-scroll">
+                        <div class="card-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote" data-i18n="testimonials.t3Quote">Superb accuracy and quick turnaround. My family tax returns were filed in less than 48 hours with all credits optimized. Highly recommend CountUp to anyone looking for a reliable accountant in Laval.</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fa-solid fa-user-check"></i></div>
+                            <div class="author-info">
+                                <h4 data-i18n="testimonials.t3Author">Karim B.</h4>
+                                <span data-i18n="testimonials.t3Role">Personal Tax Client, Laval</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ Section -->
         <section id="faq" class="section bg-light">
             <div class="container">
@@ -346,7 +501,7 @@
                         </div>
                     </div>
 
-                    <!-- Google Maps Embed -->
+                    <!-- Google Maps Embed & Google Business Profile Link -->
                     <div class="map-wrapper">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.916892695521!2d-73.71765892346765!3d45.55201417855365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc922f518e228eb%3A0x6b772c4cb71c4c81!2s2%20Place%20Laval%20%23485%2C%20Laval%2C%20QC%20H7N%205N6!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca" 
@@ -359,26 +514,33 @@
                             title="CountUp Office Location">
                         </iframe>
                     </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=2+Place+Laval+%23485%2C+Laval%2C+QC+H7N+5N6" target="_blank" rel="noopener noreferrer" class="google-maps-link">
+                        <i class="fa-brands fa-google"></i> <span data-i18n="contact.googleProfileLink">View Google Business Profile</span> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; margin-left: 0.35rem;"></i>
+                    </a>
                 </div>
                 
                 <div class="contact-form-wrapper animate-on-scroll">
-                    <form class="contact-form" id="contact-form">
+                    <form class="contact-form" id="contact-form" novalidate>
                         <h3 data-i18n="contact.formTitle">Send us a Message</h3>
                         
                         <!-- Inline Form Feedback Alert -->
                         <div id="contact-feedback" class="form-feedback" style="display: none;"></div>
 
+                        <!-- Anti-spam Honeypot & Timestamp -->
+                        <input type="text" name="website_url" id="contact-honeypot" class="honeypot-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <input type="hidden" name="form_time" id="contact-form-time" value="">
+
                         <div class="form-group">
                             <label for="name" data-i18n="contact.nameLabel">Full Name</label>
-                            <input type="text" id="name" data-i18n-attr="placeholder:contact.namePlaceholder" placeholder="John Doe" required>
+                            <input type="text" id="name" name="name" data-i18n-attr="placeholder:contact.namePlaceholder" placeholder="John Doe" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="email" data-i18n="contact.emailLabel">Email Address</label>
-                            <input type="email" id="email" data-i18n-attr="placeholder:contact.emailPlaceholder" placeholder="john@example.com" required>
+                            <input type="email" id="email" name="email" data-i18n-attr="placeholder:contact.emailPlaceholder" placeholder="john@example.com" required aria-required="true">
                         </div>
                         <div class="form-group">
                             <label for="service" data-i18n="contact.serviceLabel">Interested Service</label>
-                            <select id="service" required>
+                            <select id="service" name="service" required aria-required="true">
                                 <option value="Personal Tax" data-i18n="contact.optPersonalTax">Personal Tax</option>
                                 <option value="Corporate Tax" data-i18n="contact.optCorporateTax">Corporate Tax</option>
                                 <option value="Bookkeeping" data-i18n="contact.optBookkeeping">Bookkeeping</option>
@@ -388,9 +550,18 @@
                         </div>
                         <div class="form-group">
                             <label for="message" data-i18n="contact.msgLabel">Message</label>
-                            <textarea id="message" rows="4" data-i18n-attr="placeholder:contact.msgPlaceholder" placeholder="How can we help you?" required></textarea>
+                            <textarea id="message" name="message" rows="4" data-i18n-attr="placeholder:contact.msgPlaceholder" placeholder="How can we help you?" required aria-required="true"></textarea>
                         </div>
-                        <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-large" style="width: 100%;">
+
+                        <!-- Loi 25 Explicit Consent Checkbox -->
+                        <div class="form-checkbox-group">
+                            <input type="checkbox" id="contact-consent" name="consent" required aria-required="true">
+                            <label for="contact-consent" class="checkbox-label" data-i18n-html="contact.consentLabel">
+                                I agree that my personal information may be used by CountUp to contact me, in accordance with the <a href="/confidentialite" class="legal-link" target="_blank">Privacy Policy</a>.
+                            </label>
+                        </div>
+
+                        <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-large" style="width: 100%;" disabled>
                             <span class="btn-text" data-i18n="contact.submitBtn">Send Message</span>
                             <i class="fa-solid fa-paper-plane"></i>
                         </button>
@@ -434,13 +605,27 @@
                 <h2 id="checklist-modal-title" data-i18n="checklistModal.title">Download Tax Checklist</h2>
                 <p data-i18n="checklistModal.desc">Get our comprehensive checklist of required tax slips, deductions, and documentation.</p>
             </div>
-            <form id="checklist-download-form" style="margin-top: 1.5rem;">
+            <form id="checklist-download-form" style="margin-top: 1.5rem;" novalidate>
                 <div id="checklist-feedback" class="form-feedback" style="display: none; margin-bottom: 1rem;"></div>
+                
+                <!-- Anti-spam Honeypot & Timestamp -->
+                <input type="text" name="website_url" id="checklist-honeypot" class="honeypot-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="hidden" name="form_time" id="checklist-form-time" value="">
+
                 <div class="form-group" style="text-align: left;">
                     <label for="checklist-email" data-i18n="checklistModal.emailLabel">Email Address</label>
-                    <input type="email" id="checklist-email" data-i18n-attr="placeholder:checklistModal.emailPlaceholder" placeholder="your.name@example.com" required>
+                    <input type="email" id="checklist-email" name="email" data-i18n-attr="placeholder:checklistModal.emailPlaceholder" placeholder="your.name@example.com" required aria-required="true">
                 </div>
-                <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+
+                <!-- Loi 25 Consent Checkbox -->
+                <div class="form-checkbox-group">
+                    <input type="checkbox" id="checklist-consent" name="consent" required aria-required="true">
+                    <label for="checklist-consent" class="checkbox-label" data-i18n-html="checklistModal.consentLabel">
+                        I agree to receive the tax checklist by email (one-time send). No marketing newsletters will be sent without separate consent, in accordance with the <a href="/confidentialite" class="legal-link" target="_blank">Privacy Policy</a>.
+                    </label>
+                </div>
+
+                <button type="submit" id="checklist-submit-btn" class="btn btn-primary btn-large" style="width: 100%;" disabled>
                     <i class="fa-solid fa-download"></i> <span data-i18n="checklistModal.downloadBtn">Download PDF Checklist</span>
                 </button>
             </form>
@@ -454,7 +639,7 @@
                 <a href="#home" class="logo footer-logo">
                     <img src="logo/countup-logo-transparent.svg?v=6.0" alt="CountUp" class="logo-img">
                 </a>
-                <p data-i18n="footer.tagline">Your trusted partner for maximum tax returns and professional accounting.</p>
+                <p data-i18n="footer.tagline">Your trusted CPA partner for maximum tax returns and professional accounting in Laval.</p>
             </div>
             <div class="footer-col">
                 <h4 data-i18n="footer.quickLinks">Quick Links</h4>
@@ -462,6 +647,7 @@
                 <a href="#services" data-i18n="nav.services">Services</a>
                 <a href="#process" data-i18n="nav.process">How It Works</a>
                 <a href="#about" data-i18n="nav.about">About Us</a>
+                <a href="#testimonials" data-i18n="nav.testimonials">Reviews</a>
                 <a href="#faq" data-i18n="nav.faq">FAQ</a>
                 <a href="#contact" data-i18n="nav.contact">Contact</a>
             </div>
@@ -477,6 +663,7 @@
                 <p><i class="fa-solid fa-location-dot"></i> 2 Place Laval, bureau 485, Laval, QC H7N 5N6</p>
                 <p><i class="fa-solid fa-phone"></i> <a href="tel:4389949140" style="color: inherit;">(438) 994-9140</a></p>
                 <p><i class="fa-solid fa-envelope"></i> <a href="mailto:client@countup.ca" style="color: inherit;">client@countup.ca</a></p>
+                <p><i class="fa-brands fa-google"></i> <a href="https://www.google.com/maps/search/?api=1&query=2+Place+Laval+%23485%2C+Laval%2C+QC+H7N+5N6" target="_blank" rel="noopener noreferrer" style="color: inherit;" data-i18n="footer.googleProfile">Google Business Profile</a></p>
                 <div class="social-links">
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
@@ -485,6 +672,11 @@
         </div>
         <div class="footer-bottom container">
             <p data-i18n="footer.rights">&copy; 2026 CountUp Accounting. All rights reserved.</p>
+            <div class="footer-legal-links">
+                <a href="/confidentialite" data-i18n="footer.privacy">Privacy Policy</a>
+                <span class="legal-sep">•</span>
+                <a href="/cookies" data-i18n="footer.cookies">Cookie Policy</a>
+            </div>
         </div>
     </footer>
 

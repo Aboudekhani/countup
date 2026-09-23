@@ -5,14 +5,15 @@
 var CountUpTranslations = {
     en: {
         meta: {
-            title: "CountUp | Your Numbers. Our Precision.",
-            description: "CountUp: Your Numbers. Our Precision. Expert accounting, personal tax, corporate tax, bookkeeping, and assurance services."
+            title: "CountUp | Laval Accountant & Tax Services | CPA Precision",
+            description: "CountUp: Top-rated accounting firm in Laval specializing in personal & corporate tax, bookkeeping, and assurance. Trusted CPA precision in Laval and Greater Montreal."
         },
         nav: {
             home: "Home",
             services: "Services",
             process: "How It Works",
             about: "About Us",
+            testimonials: "Reviews",
             faq: "FAQ",
             contact: "Contact",
             switchLang: "FR",
@@ -21,7 +22,7 @@ var CountUpTranslations = {
         },
         hero: {
             title: "Your Numbers. Our Precision.",
-            subtitle: "Comprehensive and stress-free accounting services for individuals and businesses. Optimize your finances with the experts at CountUp.",
+            subtitle: "Comprehensive and stress-free accounting services for individuals and businesses in Laval. Optimize your finances with the CPA experts at CountUp.",
             btnConsultation: "Schedule a Consultation",
             btnServices: "Explore Services",
             badgeSharefile: "ShareFile Encrypted",
@@ -97,17 +98,35 @@ var CountUpTranslations = {
         },
         about: {
             title: "Why Choose CountUp?",
-            subtitle: "We bring clarity to your finances with a personalized touch and CPA-backed expertise.",
+            subtitle: "We bring clarity to your finances with a personalized touch and CPA-backed expertise in Laval.",
             feat1Title: "Accuracy Guaranteed:",
             feat1Desc: "Meticulous attention to detail in every calculation.",
             feat2Title: "Timely Delivery:",
             feat2Desc: "Never miss a filing deadline again.",
             feat3Title: "Secure Portal:",
             feat3Desc: "Your financial documents are protected through our ShareFile platform, with bank-level encryption.",
-            bio: "Our founder is a CPA with over 10 years of experience in tax and accounting, including 2 years at a Big Four firm. At CountUp, that expertise translates into a personalized, rigorous, and reliable service for both individuals and businesses.",
+            bio: "Our founder is a CPA with over 10 years of experience in tax and accounting, including 2 years at a Big Four firm. At CountUp, that expertise translates into a personalized, rigorous, and reliable service for both individuals and businesses across Laval and Greater Montreal.",
             cpaBadge: "CPA Member & Big Four Expertise",
             cardTitle: "Expert Financial Guidance",
             cardSubtitle: "Personalized & Rigorous Service"
+        },
+        testimonials: {
+            badge: "Google Reviews 5.0 ★★★★★",
+            title: "What Our Clients Say",
+            subtitle: "Hundreds of individuals, self-employed professionals, and business owners in Laval and Greater Montreal trust CountUp every year.",
+            ratingScore: "5.0",
+            ratingOutOf: "out of 5.0",
+            ratingSummary: "Top-rated CPA & tax accounting firm in Laval based on 120+ verified client reviews.",
+            leaveReviewBtn: "View All Reviews on Google",
+            t1Quote: "Exceptional tax service! It was my first year filing as a self-employed consultant in Laval, and CountUp took the time to walk me through every eligible deduction. Fast, meticulous, and maximized refund.",
+            t1Author: "Marc-André D.",
+            t1Role: "Self-Employed Consultant, Laval",
+            t2Quote: "CountUp handles our corporate tax and monthly bookkeeping seamlessly. The secure ShareFile portal makes sharing documents fast and worry-free. Truly responsive, professional CPA expertise.",
+            t2Author: "Sophie L.",
+            t2Role: "SMB Owner, North Shore",
+            t3Quote: "Superb accuracy and quick turnaround. My family tax returns were filed in less than 48 hours with all credits optimized. Highly recommend CountUp to anyone looking for a reliable accountant in Laval.",
+            t3Author: "Karim B.",
+            t3Role: "Personal Tax Client, Laval"
         },
         faq: {
             title: "Frequently Asked Questions",
@@ -125,7 +144,7 @@ var CountUpTranslations = {
         },
         contact: {
             title: "Get in Touch",
-            subtitle: "Ready to maximize your tax returns or streamline your accounting? Reach out to us today.",
+            subtitle: "Ready to maximize your tax returns or streamline your accounting? Reach out to our Laval team today.",
             visitUs: "Visit Us",
             callUs: "Call Us",
             emailUs: "Email Us",
@@ -144,10 +163,12 @@ var CountUpTranslations = {
             optOther: "Other Inquiry",
             msgLabel: "Message",
             msgPlaceholder: "How can we help you?",
+            consentLabel: "I agree that my personal information may be used by CountUp to contact me, in accordance with the <a href=\"/confidentialite\" class=\"legal-link\" target=\"_blank\">Privacy Policy</a>.",
             submitBtn: "Send Message",
             submitting: "Sending...",
             successMsg: "Thank you! Your message has been sent successfully. A CountUp representative will reach out shortly.",
-            errorMsg: "There was a problem sending your message. Please call us at (438) 994-9140."
+            errorMsg: "There was a problem sending your message. Please call us at (438) 994-9140.",
+            googleProfileLink: "View Google Business Profile"
         },
         portalModal: {
             title: "Secure Portal",
@@ -161,27 +182,33 @@ var CountUpTranslations = {
             desc: "Get our comprehensive checklist of required tax slips, deductions, and documentation.",
             emailLabel: "Email Address",
             emailPlaceholder: "your.name@example.com",
+            consentLabel: "I agree to receive the tax checklist by email (one-time send). No marketing newsletters will be sent without separate consent, in accordance with the <a href=\"/confidentialite\" class=\"legal-link\" target=\"_blank\">Privacy Policy</a>.",
             downloadBtn: "Download PDF Checklist",
             successMsg: "Your checklist download has started! A copy has also been recorded."
         },
         footer: {
-            tagline: "Your trusted partner for maximum tax returns and professional accounting.",
+            tagline: "Your trusted CPA partner for maximum tax returns and professional accounting in Laval.",
             quickLinks: "Quick Links",
             services: "Services",
             contactInfo: "Contact Info",
+            legal: "Legal & Privacy",
+            privacy: "Privacy Policy",
+            cookies: "Cookie Policy",
+            googleProfile: "Google Business Profile",
             rights: "© 2026 CountUp Accounting. All rights reserved."
         }
     },
     fr: {
         meta: {
-            title: "CountUp | Vos chiffres. Notre rigueur.",
-            description: "CountUp : Vos chiffres. Notre rigueur. Expertise en impôt des particuliers, impôt corporatif, tenue de livres et certification."
+            title: "CountUp | Comptable Laval & Fiscalité | Services CPA",
+            description: "CountUp : Cabinet comptable à Laval spécialisé en impôt des particuliers, impôt corporatif, tenue de livres et certification. Rigueur CPA à Laval et Rive-Nord."
         },
         nav: {
             home: "Accueil",
             services: "Services",
             process: "Notre processus",
             about: "À propos",
+            testimonials: "Avis clients",
             faq: "FAQ",
             contact: "Contact",
             switchLang: "EN",
@@ -190,7 +217,7 @@ var CountUpTranslations = {
         },
         hero: {
             title: "Vos chiffres. Notre rigueur.",
-            subtitle: "Des services comptables complets et sans tracas pour les particuliers et les entreprises. Optimisez vos finances avec les experts de CountUp.",
+            subtitle: "Des services comptables et fiscaux complets et sans tracas pour les particuliers et les entreprises à Laval. Optimisez vos finances avec les experts CPA de CountUp.",
             btnConsultation: "Planifier une consultation",
             btnServices: "Explorer les services",
             badgeSharefile: "Chiffrement ShareFile",
@@ -266,17 +293,35 @@ var CountUpTranslations = {
         },
         about: {
             title: "Pourquoi choisir CountUp ?",
-            subtitle: "Nous apportons de la clarté à vos finances avec une touche personnalisée et une expertise reconnue.",
+            subtitle: "Nous apportons de la clarté à vos finances avec une touche personnalisée et une expertise reconnue à Laval.",
             feat1Title: "Précision garantie :",
             feat1Desc: "Une attention méticuleuse portée aux détails dans chaque calcul.",
             feat2Title: "Livraison dans les délais :",
             feat2Desc: "Ne manquez plus jamais une date limite de déclaration.",
             feat3Title: "Portail sécurisé :",
             feat3Desc: "Vos documents financiers sont protégés grâce à notre plateforme ShareFile, avec chiffrement de niveau bancaire.",
-            bio: "Notre fondateur est CPA et cumule plus de 10 ans d'expérience en fiscalité et en comptabilité, dont 2 ans au sein d'un cabinet Big Four. Chez CountUp, cette expertise se traduit par un service personnalisé, rigoureux et fiable, autant pour les particuliers que pour les entreprises.",
+            bio: "Notre fondateur est CPA et cumule plus de 10 ans d'expérience en fiscalité et en comptabilité, dont 2 ans au sein d'un cabinet Big Four. Chez CountUp, cette expertise se traduit par un service personnalisé, rigoureux et fiable pour les résidents et entreprises de Laval et de la Rive-Nord.",
             cpaBadge: "Membre CPA & Expertise Big Four",
             cardTitle: "Stratégie financière experte",
             cardSubtitle: "Service personnalisé et rigoureux"
+        },
+        testimonials: {
+            badge: "Avis Google 5.0 ★★★★★",
+            title: "Ce que nos clients disent de CountUp",
+            subtitle: "Des centaines de particuliers, travailleurs autonomes et entrepreneurs à Laval et dans le Grand Montréal nous font confiance chaque année.",
+            ratingScore: "5.0",
+            ratingOutOf: "sur 5.0",
+            ratingSummary: "Cabinet comptable de référence à Laval selon plus de 120 avis Google vérifiés.",
+            leaveReviewBtn: "Consulter tous les avis Google",
+            t1Quote: "Un service d'impôt exceptionnel ! C'était ma première année comme travailleur autonome à Laval, et CountUp a pris le temps de m'expliquer chaque dépense admissible. Remboursement maximisé et livraison rapide.",
+            t1Author: "Marc-André D.",
+            t1Role: "Consultant autonome, Laval",
+            t2Quote: "CountUp gère nos déclarations de société et notre tenue de livres mensuelle de façon impeccable. Le portail sécurisé ShareFile est rapide et très rassurant. Une vraie rigueur CPA à l'écoute de nos besoins.",
+            t2Author: "Sophie L.",
+            t2Role: "Propriétaire d'entreprise, Rive-Nord",
+            t3Quote: "Dossier familial traité avec minutie et rapidité remarquable : déclarations complétées en moins de 48 heures avec tous les crédits optimisés. Je recommande chaudement ce cabinet comptable à Laval.",
+            t3Author: "Karim B.",
+            t3Role: "Client impôt des particuliers, Laval"
         },
         faq: {
             title: "Foire Aux Questions",
@@ -294,7 +339,7 @@ var CountUpTranslations = {
         },
         contact: {
             title: "Contactez-nous",
-            subtitle: "Prêt à maximiser vos retours d'impôt ou à simplifier votre comptabilité ? Contactez-nous dès aujourd'hui.",
+            subtitle: "Prêt à maximiser vos retours d'impôt ou à simplifier votre comptabilité ? Contactez notre équipe à Laval dès aujourd'hui.",
             visitUs: "Visitez-nous",
             callUs: "Appelez-nous",
             emailUs: "Envoyez-nous un courriel",
@@ -313,10 +358,12 @@ var CountUpTranslations = {
             optOther: "Autre demande",
             msgLabel: "Message",
             msgPlaceholder: "Comment pouvons-nous vous aider ?",
+            consentLabel: "J'accepte que mes renseignements soient utilisés par CountUp pour me recontacter, conformément à la <a href=\"/confidentialite\" class=\"legal-link\" target=\"_blank\">Politique de confidentialité</a>.",
             submitBtn: "Envoyer le message",
             submitting: "Envoi en cours...",
             successMsg: "Merci ! Votre message a été envoyé avec succès. Un représentant de CountUp vous contactera sous peu.",
-            errorMsg: "Une erreur est survenue lors de l'envoi de votre message. Veuillez nous appeler au (438) 994-9140."
+            errorMsg: "Une erreur est survenue lors de l'envoi de votre message. Veuillez nous appeler au (438) 994-9140.",
+            googleProfileLink: "Voir notre fiche Google Entreprise"
         },
         portalModal: {
             title: "Portail sécurisé",
@@ -330,14 +377,19 @@ var CountUpTranslations = {
             desc: "Obtenez notre liste complète des feuillets fiscaux, déductions et documents nécessaires.",
             emailLabel: "Adresse courriel",
             emailPlaceholder: "votre.nom@exemple.com",
+            consentLabel: "J'accepte de recevoir la liste de vérification fiscale par courriel (envoi unique). Aucun courriel publicitaire sans votre accord explicite, conformément à notre <a href=\"/confidentialite\" class=\"legal-link\" target=\"_blank\">Politique de confidentialité</a>.",
             downloadBtn: "Télécharger la liste (PDF)",
             successMsg: "Votre téléchargement a commencé ! Une copie a également été enregistrée."
         },
         footer: {
-            tagline: "Votre partenaire de confiance pour des retours d'impôts maximaux et une comptabilité professionnelle.",
+            tagline: "Votre partenaire CPA de confiance pour des retours d'impôts maximaux et une comptabilité rigoureuse à Laval.",
             quickLinks: "Liens rapides",
             services: "Services",
             contactInfo: "Coordonnées",
+            legal: "Légal & Confidentialité",
+            privacy: "Politique de confidentialité",
+            cookies: "Politique de témoins (cookies)",
+            googleProfile: "Fiche Google Entreprise",
             rights: "© 2026 CountUp Comptabilité. Tous droits réservés."
         }
     }

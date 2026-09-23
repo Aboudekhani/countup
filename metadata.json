@@ -1,6 +1,6 @@
 {
   "name": "CountUp",
-  "description": "Expert accounting, personal tax, corporate tax, bookkeeping, and assurance services.",
+  "description": "Expert accounting, personal tax, corporate tax, bookkeeping, and assurance services in Laval.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

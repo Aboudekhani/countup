@@ -160,16 +160,57 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. Tax Checklist Download & Generator
     // ==========================================
     const checklistForm = document.getElementById('checklist-download-form');
+    const checklistConsent = document.getElementById('checklist-consent');
+    const checklistSubmitBtn = document.getElementById('checklist-submit-btn');
+    const checklistFormTime = document.getElementById('checklist-form-time');
+
+    if (checklistFormTime) {
+        checklistFormTime.value = Date.now();
+    }
+
+    if (checklistConsent && checklistSubmitBtn) {
+        checklistConsent.addEventListener('change', () => {
+            checklistSubmitBtn.disabled = !checklistConsent.checked;
+        });
+    }
+
     if (checklistForm) {
-        checklistForm.addEventListener('submit', (e) => {
+        checklistForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const emailInput = document.getElementById('checklist-email');
             const feedback = document.getElementById('checklist-feedback');
+            const honeypot = document.getElementById('checklist-honeypot');
             const email = emailInput ? emailInput.value.trim() : '';
 
             if (!email) return;
 
+            if (!checklistConsent || !checklistConsent.checked) {
+                if (feedback) {
+                    feedback.className = 'form-feedback error';
+                    feedback.style.display = 'block';
+                    feedback.textContent = isFrench() 
+                        ? 'Veuillez accepter le consentement requis par la Loi 25.' 
+                        : 'Please check the consent box required under Law 25.';
+                }
+                return;
+            }
+
             const french = isFrench();
+
+            // Track checklist request on server
+            try {
+                fetch('/api/checklist', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email,
+                        lang: french ? 'fr' : 'en',
+                        consent: true,
+                        website_url: honeypot ? honeypot.value : '',
+                        form_time: checklistFormTime ? checklistFormTime.value : ''
+                    })
+                }).catch(() => {});
+            } catch (err) {}
 
             // Trigger file generation / download
             downloadChecklistFile(email, french);
@@ -179,14 +220,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 feedback.style.display = 'block';
                 feedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> ${
                     french
-                        ? `Merci ! La liste de vérification a été générée et envoyée à <strong>${escapeHtml(email)}</strong>.`
-                        : `Thank you! The checklist has been generated and sent to <strong>${escapeHtml(email)}</strong>.`
+                        ? `Merci ! La liste de vérification a été générée et téléchargée avec succès pour <strong>${escapeHtml(email)}</strong>.`
+                        : `Thank you! The checklist has been generated and downloaded successfully for <strong>${escapeHtml(email)}</strong>.`
                 }`;
             }
 
             checklistForm.reset();
+            if (checklistSubmitBtn) checklistSubmitBtn.disabled = true;
 
-            // Auto close modal after 3 seconds
+            // Auto close modal after 3.5 seconds
             setTimeout(() => {
                 if (checklistModalObj) checklistModalObj.closeModal();
                 if (feedback) feedback.style.display = 'none';
@@ -304,6 +346,19 @@ Thank you for choosing CountUp Accounting!
     const contactForm = document.getElementById('contact-form');
     const feedbackEl = document.getElementById('contact-feedback');
     const submitBtn = document.getElementById('contact-submit-btn');
+    const contactConsent = document.getElementById('contact-consent');
+    const contactHoneypot = document.getElementById('contact-honeypot');
+    const contactFormTime = document.getElementById('contact-form-time');
+
+    if (contactFormTime) {
+        contactFormTime.value = Date.now();
+    }
+
+    if (contactConsent && submitBtn) {
+        contactConsent.addEventListener('change', () => {
+            submitBtn.disabled = !contactConsent.checked;
+        });
+    }
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -313,10 +368,26 @@ Thank you for choosing CountUp Accounting!
             const email = document.getElementById('email')?.value?.trim() || '';
             const service = document.getElementById('service')?.value || '';
             const message = document.getElementById('message')?.value?.trim() || '';
-
-            if (!name || !email || !message) return;
-
             const french = isFrench();
+
+            if (!name || !email || !message) {
+                showFeedback(
+                    false,
+                    french ? 'Veuillez remplir tous les champs obligatoires.' : 'Please fill in all required fields.'
+                );
+                return;
+            }
+
+            // Verify Law 25 consent
+            if (!contactConsent || !contactConsent.checked) {
+                showFeedback(
+                    false,
+                    french
+                        ? 'Veuillez accepter le consentement d’utilisation des données selon la Loi 25.'
+                        : 'Please agree to the privacy consent required under Law 25.'
+                );
+                return;
+            }
 
             // Set loading state
             const originalBtnContent = submitBtn ? submitBtn.innerHTML : '';
@@ -331,27 +402,47 @@ Thank you for choosing CountUp Accounting!
             }
 
             try {
-                // Attempt to send to Express /api/contact endpoint
+                // Send to Express /api/contact endpoint
                 const response = await fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, service, message, lang: french ? 'fr' : 'en' })
+                    body: JSON.stringify({ 
+                        name, 
+                        email, 
+                        service, 
+                        message, 
+                        lang: french ? 'fr' : 'en',
+                        consent: true,
+                        website_url: contactHoneypot ? contactHoneypot.value : '',
+                        form_time: contactFormTime ? contactFormTime.value : ''
+                    })
                 });
+
+                const data = await response.json().catch(() => ({}));
 
                 if (response.ok) {
                     showFeedback(
                         true,
                         french
-                            ? `Merci, ${escapeHtml(name)} ! Votre message a été reçu avec succès. Notre équipe vous contactera dans les plus brefs délais.`
-                            : `Thank you, ${escapeHtml(name)}! Your message has been received. Our team will contact you shortly.`
+                            ? `Merci, ${escapeHtml(name)} ! Votre message a été reçu avec succès. Notre équipe de Laval vous contactera dans les plus brefs délais.`
+                            : `Thank you, ${escapeHtml(name)}! Your message has been received successfully. Our Laval team will contact you shortly.`
                     );
                     contactForm.reset();
+                    if (contactConsent) contactConsent.checked = false;
+                    if (submitBtn) submitBtn.disabled = true;
+                } else if (response.status === 429) {
+                    showFeedback(
+                        false,
+                        french
+                            ? 'Trop de soumissions récentes. Veuillez nous contacter directement au (438) 994-9140.'
+                            : 'Too many requests. Please contact us directly at (438) 994-9140.'
+                    );
                 } else {
-                    throw new Error('Server response was not ok');
+                    throw new Error(data.error || 'Server error');
                 }
             } catch (err) {
-                // Graceful fallback: show confirmation since lead is recorded client-side
-                console.warn('API endpoint unavailable, falling back to local acknowledgment:', err);
+                // Graceful fallback
+                console.warn('API error, providing acknowledgment:', err);
                 showFeedback(
                     true,
                     french
@@ -359,9 +450,11 @@ Thank you for choosing CountUp Accounting!
                         : `Thank you, ${escapeHtml(name)}! Your message has been noted. You can also reach us directly at (438) 994-9140.`
                 );
                 contactForm.reset();
+                if (contactConsent) contactConsent.checked = false;
+                if (submitBtn) submitBtn.disabled = true;
             } finally {
                 if (submitBtn) {
-                    submitBtn.disabled = false;
+                    submitBtn.disabled = !contactConsent?.checked;
                     submitBtn.innerHTML = originalBtnContent;
                 }
             }
