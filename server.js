@@ -165,6 +165,71 @@ app.post('/api/checklist', (req, res) => {
   return res.status(200).json({ success: true });
 });
 
+// In-memory appointments storage
+const appointments = [];
+
+// Appointment booking API endpoint
+app.post('/api/appointment', (req, res) => {
+  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
+
+  if (!checkRateLimit(clientIp)) {
+    return res.status(429).json({
+      success: false,
+      error: 'Too many requests. Please try again later or call us directly at (438) 994-9140.'
+    });
+  }
+
+  const { name, email, phone, service, format, date, time, notes, lang, consent, website_url, form_time } = req.body || {};
+
+  // Anti-spam check
+  if (website_url) {
+    return res.status(200).json({ success: true });
+  }
+
+  if (form_time && Date.now() - Number(form_time) < 1000) {
+    return res.status(200).json({ success: true });
+  }
+
+  if (!name || !email || !date || !time) {
+    return res.status(400).json({
+      success: false,
+      error: 'Missing required booking fields (name, email, date, time)'
+    });
+  }
+
+  if (consent !== true && consent !== 'true' && consent !== 1 && consent !== 'on') {
+    return res.status(400).json({
+      success: false,
+      error: 'Consent is required according to Quebec Law 25.'
+    });
+  }
+
+  const appointment = {
+    id: `apt_${Date.now()}`,
+    timestamp: new Date().toISOString(),
+    name: String(name).slice(0, 150),
+    email: String(email).slice(0, 150),
+    phone: String(phone || '').slice(0, 50),
+    service: String(service || 'Consultation générale').slice(0, 100),
+    format: String(format || 'En personne').slice(0, 100),
+    date: String(date).slice(0, 50),
+    time: String(time).slice(0, 50),
+    notes: String(notes || '').slice(0, 1000),
+    lang: lang === 'fr' ? 'fr' : 'en'
+  };
+
+  appointments.unshift(appointment);
+  console.log(`[Appointment Booked] ${appointment.date} @ ${appointment.time} | ${appointment.name} (${appointment.email}) | ${appointment.service} (${appointment.format})`);
+
+  return res.status(200).json({
+    success: true,
+    appointment,
+    message: appointment.lang === 'fr'
+      ? 'Votre rendez-vous a été confirmé avec succès !'
+      : 'Your appointment has been confirmed successfully!'
+  });
+});
+
 // Direct French routes serve the unified template
 app.get(['/fr', '/fr/*', '/index-fr.html'], (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));

@@ -5,8 +5,8 @@
 var CountUpTranslations = {
     en: {
         meta: {
-            title: "CountUp | Laval Accountant & Tax Services | CPA Precision",
-            description: "CountUp: Top-rated accounting firm in Laval specializing in personal & corporate tax, bookkeeping, and assurance. Trusted CPA precision in Laval and Greater Montreal."
+            title: "CountUp | Laval Accountant & Tax Services | CPA Auditors",
+            description: "CountUp: CPA auditor firm in Laval specializing in personal & corporate tax, bookkeeping, and assurance. Trusted CPA precision in Laval and Greater Montreal."
         },
         nav: {
             home: "Home",
@@ -16,17 +16,19 @@ var CountUpTranslations = {
             testimonials: "Reviews",
             faq: "FAQ",
             contact: "Contact",
+            bookAppointment: "Book an Appointment",
             switchLang: "FR",
             switchLangAria: "Basculer vers le français",
             portal: "Client Portal"
         },
         hero: {
             title: "Your Numbers. Our Precision.",
-            subtitle: "Comprehensive and stress-free accounting services for individuals and businesses in Laval. Optimize your finances with the CPA experts at CountUp.",
+            subtitle: "Comprehensive and stress-free accounting and tax services for individuals and businesses in Laval. Optimize your finances with the CPA experts at CountUp.",
+            btnAppointment: "Book an Appointment",
             btnConsultation: "Schedule a Consultation",
             btnServices: "Explore Services",
-            badgeSharefile: "ShareFile Encrypted",
-            badgeCpa: "CPA Certified",
+            badgeSharefile: "ShareFile Protected",
+            badgeCpa: "CPA Auditor Partners",
             badgeClients: "500+ Clients Satisfied"
         },
         banner: {
@@ -35,8 +37,10 @@ var CountUpTranslations = {
         },
         services: {
             title: "Our Services",
-            subtitle: "Comprehensive accounting and tax solutions tailored to your unique financial needs.",
+            subtitle: "Comprehensive accounting, tax, and assurance solutions tailored to your unique financial needs.",
             learnMore: "Learn More",
+            viewDetails: "View Service Details",
+            bookService: "Book This Service",
             personalTax: {
                 title: "Personal Tax",
                 desc: "Personal and self-employed tax return preparation, with careful attention to the deductions and credits that apply to your situation."
@@ -47,31 +51,48 @@ var CountUpTranslations = {
             },
             bookkeeping: {
                 title: "Bookkeeping",
-                desc: "Full-cycle bookkeeping — transactions, bank reconciliations, and monthly financial statements — so your numbers are always up to date."
+                desc: "Bookkeeping, account reconciliation, and preparation of financial information to ensure regular tracking of your business activities."
             },
             assurance: {
-                title: "Assurance Services",
-                desc: "Compilation, review, and audit engagements performed to professional standards, tailored to your business and its stakeholders."
+                title: "Assurance & Audit",
+                desc: "Compilation, review, and audit engagements performed to professional CPA standards, tailored to your business and its stakeholders."
+            },
+            details: {
+                badge: "In-Depth Expertise",
+                title: "Detailed Service Overview",
+                subtitle: "Direct access to our specialized areas of CPA practice.",
+                taxTitle: "Taxation (Personal & Corporate)",
+                taxDesc: "Our tax services go beyond standard filing. We analyze your situation in detail to optimize tax credits, deductions, and corporate tax strategies for both private corporations and individuals.",
+                taxP1: "Complete T1/TP-1 declarations for individuals, families, real estate investors, and self-employed professionals.",
+                taxP2: "Corporate T2/CO-17 declarations, corporate tax restructuring, dividend vs salary planning, and CRA/Revenu Québec representation.",
+                bookkeepingTitle: "Bookkeeping & Financial Tracking",
+                bookkeepingDesc: "Bookkeeping, account reconciliation, and preparation of financial information to ensure regular tracking of your business activities.",
+                bookkeepingP1: "Monthly bank and credit card reconciliations, accounts payable and receivable tracking, and sales tax remittances (GST/QST).",
+                bookkeepingP2: "Interim financial statements and performance dashboards to give you real-time visibility over your cash flow and operations.",
+                assuranceTitle: "Assurance, Review & Audit",
+                assuranceDesc: "Independent and rigorous assurance services delivered in compliance with CPA standards for financial institutions, shareholders, and regulatory authorities.",
+                assuranceP1: "Audit engagements providing reasonable assurance on financial statements for boards, lenders, and investors.",
+                assuranceP2: "Review and compilation engagements (Notice to Reader) designed to satisfy banking covenants and tax requirements."
             }
         },
         process: {
             title: "How It Works",
             subtitle: "A straightforward 4-step process for effortless accounting and tax preparation.",
             step1: {
-                title: "Get in Touch",
-                desc: "Contact us by phone, email, or through our website form to get started."
+                title: "Get in Touch & Book Appointment",
+                desc: "Contact us by phone, email, or select your live time slot directly in our online booking calendar."
             },
             step2: {
                 title: "Send Documents Securely",
-                desc: "Upload your financial documents through our secure ShareFile portal, fully confidential."
+                desc: "Upload your financial documents through our secure ShareFile portal, in full confidentiality."
             },
             step3: {
-                title: "Preparation",
-                desc: "Our expert team prepares your tax return or financial statements with meticulous care."
+                title: "Preparation & Rigor",
+                desc: "Our CPA team prepares your tax return or financial statements with meticulous care and professional rigor."
             },
             step4: {
                 title: "Review & Delivery",
-                desc: "We walk through everything with you before final submission and filing."
+                desc: "We walk through everything with you before final submission and official filing."
             }
         },
         taxSeason: {
@@ -99,14 +120,14 @@ var CountUpTranslations = {
         about: {
             title: "Why Choose CountUp?",
             subtitle: "We bring clarity to your finances with a personalized touch and CPA-backed expertise in Laval.",
-            feat1Title: "Accuracy Guaranteed:",
-            feat1Desc: "Meticulous attention to detail in every calculation.",
-            feat2Title: "Timely Delivery:",
-            feat2Desc: "Never miss a filing deadline again.",
+            feat1Title: "Professional Rigor:",
+            feat1Desc: "A rigorous approach and meticulous attention given to every engagement.",
+            feat2Title: "Deadline Management:",
+            feat2Desc: "Structured guidance to ensure efficient tracking of all your obligations and deadlines.",
             feat3Title: "Secure Portal:",
-            feat3Desc: "Your financial documents are protected through our ShareFile platform, with bank-level encryption.",
-            bio: "Our founder is a CPA with over 10 years of experience in tax and accounting, including 2 years at a Big Four firm. At CountUp, that expertise translates into a personalized, rigorous, and reliable service for both individuals and businesses across Laval and Greater Montreal.",
-            cpaBadge: "CPA Member & Big Four Expertise",
+            feat3Desc: "Your financial documents are protected and transmitted in full confidentiality via our ShareFile platform.",
+            bio: "CountUp is led by two CPA auditor partners combining extensive experience in assurance, accounting, and taxation. Together, they bring over 15 years of industry experience and 6 years within Big Four accounting firms. This diversified expertise enables CountUp to provide rigorous, personalized, and tailored guidance for both businesses and individuals.",
+            cpaBadge: "Two CPA Auditor Partners | Big Four & Industry",
             cardTitle: "Expert Financial Guidance",
             cardSubtitle: "Personalized & Rigorous Service"
         },
@@ -140,16 +161,18 @@ var CountUpTranslations = {
             q4: "What's the difference between a compilation, review, and audit engagement?",
             a4: "These are three levels of assurance on your financial statements, from the simplest (compilation) to the most in-depth (audit). The right choice depends on your stakeholders' requirements — we can help you figure it out.",
             q5: "Do I need an appointment to meet with you?",
-            a5: "No appointment is needed to drop off documents — but we're happy to schedule a consultation for specific questions."
+            a5: "No appointment is needed to drop off documents — and you can easily book a real-time consultation through our online calendar."
         },
         contact: {
-            title: "Get in Touch",
-            subtitle: "Ready to maximize your tax returns or streamline your accounting? Reach out to our Laval team today.",
+            title: "Contact Us & Book an Appointment",
+            subtitle: "Ready to maximize your tax returns or streamline your accounting? Schedule a meeting with our CPA team or send us a message.",
             visitUs: "Visit Us",
             callUs: "Call Us",
             emailUs: "Email Us",
             hours: "Business Hours",
             hoursVal: "Mon - Fri: 9:00 AM - 5:00 PM",
+            tabBooking: "Book an Appointment (Live Calendar)",
+            tabMessage: "Send a General Message",
             formTitle: "Send us a Message",
             nameLabel: "Full Name",
             namePlaceholder: "John Doe",
@@ -170,9 +193,40 @@ var CountUpTranslations = {
             errorMsg: "There was a problem sending your message. Please call us at (438) 994-9140.",
             googleProfileLink: "View Google Business Profile"
         },
+        booking: {
+            badge: "Real-Time Schedule",
+            title: "Book an Appointment",
+            desc: "Select your preferred date and time slot with one of our CPA auditor partners.",
+            stepService: "1. Service & Meeting Format",
+            serviceLabel: "Select Service",
+            formatLabel: "Meeting Format",
+            formatInPerson: "In Person (Laval Office - 2 Place Laval #485)",
+            formatVirtual: "Virtual Meeting (Video Conference)",
+            formatPhone: "Phone Consultation",
+            stepDateTime: "2. Date & Time Selection",
+            selectDateLabel: "Available Business Days",
+            selectSlotLabel: "Available Time Slots (Real-time)",
+            liveSlotsBadge: "Live Available Slots",
+            swipeHint: "Swipe for more dates",
+            otherDate: "Pick another date...",
+            morning: "Morning",
+            afternoon: "Afternoon",
+            selectedSlotPreviewTitle: "Selected Consultation:",
+            stepInfo: "3. Your Information",
+            phoneLabel: "Phone Number",
+            notesLabel: "Notes or specific questions (optional)",
+            notesPlaceholder: "Briefly mention what you'd like to discuss...",
+            confirmBtn: "Confirm Appointment",
+            processing: "Booking in progress...",
+            successTitle: "Appointment Confirmed!",
+            successP1: "Your consultation has been booked with CountUp CPA. A calendar invitation has been prepared.",
+            addToGoogle: "Add to Google Calendar",
+            downloadIcs: "Download Event (.ics)",
+            bookAnother: "Book Another Time"
+        },
         portalModal: {
             title: "Secure Portal",
-            desc: "Securely access your financial documents through our ShareFile portal with bank-level encryption.",
+            desc: "Securely access your financial documents in full confidentiality through our ShareFile portal.",
             btnText: "Go to ShareFile",
             helpText: "Need help accessing your portal?",
             contactLink: "Contact Us"
@@ -187,7 +241,7 @@ var CountUpTranslations = {
             successMsg: "Your checklist download has started! A copy has also been recorded."
         },
         footer: {
-            tagline: "Your trusted CPA partner for maximum tax returns and professional accounting in Laval.",
+            tagline: "Your trusted CPA auditor firm for maximum tax returns, rigorous bookkeeping, and assurance in Laval.",
             quickLinks: "Quick Links",
             services: "Services",
             contactInfo: "Contact Info",
@@ -195,13 +249,15 @@ var CountUpTranslations = {
             privacy: "Privacy Policy",
             cookies: "Cookie Policy",
             googleProfile: "Google Business Profile",
+            facebookProfile: "Facebook Page",
+            linkedinProfile: "LinkedIn Company Page",
             rights: "© 2026 CountUp Accounting. All rights reserved."
         }
     },
     fr: {
         meta: {
-            title: "CountUp | Comptable Laval & Fiscalité | Services CPA",
-            description: "CountUp : Cabinet comptable à Laval spécialisé en impôt des particuliers, impôt corporatif, tenue de livres et certification. Rigueur CPA à Laval et Rive-Nord."
+            title: "CountUp | Comptable Laval & Fiscalité | CPA Auditeurs",
+            description: "CountUp : Cabinet de CPA auditeurs à Laval spécialisé en impôt des particuliers, impôt corporatif, tenue de livres et certification. Rigueur CPA à Laval et Rive-Nord."
         },
         nav: {
             home: "Accueil",
@@ -211,17 +267,19 @@ var CountUpTranslations = {
             testimonials: "Avis clients",
             faq: "FAQ",
             contact: "Contact",
+            bookAppointment: "Prendre rendez-vous",
             switchLang: "EN",
             switchLangAria: "Switch to English",
             portal: "Portail client"
         },
         hero: {
             title: "Vos chiffres. Notre rigueur.",
-            subtitle: "Des services comptables et fiscaux complets et sans tracas pour les particuliers et les entreprises à Laval. Optimisez vos finances avec les experts CPA de CountUp.",
+            subtitle: "Des services comptables et fiscaux complets et sans tracas pour les particuliers et les entreprises à Laval. Optimisez vos finances avec les associées CPA de CountUp.",
+            btnAppointment: "Prendre rendez-vous",
             btnConsultation: "Planifier une consultation",
             btnServices: "Explorer les services",
-            badgeSharefile: "Chiffrement ShareFile",
-            badgeCpa: "Membre CPA",
+            badgeSharefile: "Portail ShareFile sécurisé",
+            badgeCpa: "Associées CPA auditeurs",
             badgeClients: "500+ Clients satisfaits"
         },
         banner: {
@@ -230,8 +288,10 @@ var CountUpTranslations = {
         },
         services: {
             title: "Nos services",
-            subtitle: "Des solutions comptables et fiscales adaptées à vos besoins spécifiques.",
+            subtitle: "Des solutions comptables, fiscales et de certification adaptées à vos besoins spécifiques.",
             learnMore: "En savoir plus",
+            viewDetails: "Voir les détails du service",
+            bookService: "Prendre rendez-vous pour ce service",
             personalTax: {
                 title: "Impôt des particuliers",
                 desc: "Préparation de déclarations de revenus pour particuliers et travailleurs autonomes, avec une attention particulière aux déductions et crédits applicables à votre situation."
@@ -242,31 +302,48 @@ var CountUpTranslations = {
             },
             bookkeeping: {
                 title: "Tenue de livres",
-                desc: "Tenue de livres complète — transactions, conciliations bancaires et états financiers mensuels — pour que vos chiffres soient toujours à jour."
+                desc: "Tenue de livres, conciliation des comptes et préparation de l’information financière pour assurer un suivi régulier de vos activités."
             },
             assurance: {
                 title: "Certification",
                 desc: "Missions de compilation, d'examen et d'audit réalisées selon les normes professionnelles, adaptées aux besoins de votre entreprise et de ses parties prenantes."
+            },
+            details: {
+                badge: "Expertise détaillée",
+                title: "Présentation détaillée de nos services",
+                subtitle: "Accédez directement aux sections spécialisées de notre cabinet CPA auditeurs.",
+                taxTitle: "Fiscalité (Particuliers & Sociétés)",
+                taxDesc: "Nos services fiscaux vont bien au-delà de la simple conformité. Nous analysons chaque facette de votre dossier pour optimiser vos remboursements, réclamer toutes les déductions admissibles et élaborer des stratégies fiscales pérennes.",
+                taxP1: "Déclarations T1 / TP-1 pour particuliers, familles, propriétaires d'immeubles locatifs et travailleurs autonomes.",
+                taxP2: "Déclarations de sociétés T2 / CO-17, planification fiscale d'entreprise, optimisation dividende/salaire et représentation auprès de l'ARC et de Revenu Québec.",
+                bookkeepingTitle: "Tenue de livres & Information financière",
+                bookkeepingDesc: "Tenue de livres, conciliation des comptes et préparation de l’information financière pour assurer un suivi régulier de vos activités.",
+                bookkeepingP1: "Conciliations bancaires et de cartes de crédit, gestion des comptes fournisseurs et clients, et déclarations de taxes (TPS / TVQ).",
+                bookkeepingP2: "États financiers périodiques et tableaux de bord pour une visibilité constante sur la rentabilité et la trésorerie de votre entreprise.",
+                assuranceTitle: "Certification & Missions d'assurance",
+                assuranceDesc: "Des missions d'audit et d'examen exécutées avec rigueur selon les normes canadiennes pour rassurer vos partenaires d'affaires, institutions financières et actionnaires.",
+                assuranceP1: "Missions d'audit : niveau d'assurance élevé sur les états financiers pour conseils d'administration et institutions financières.",
+                assuranceP2: "Missions d'examen et avis au lecteur (compilation) : conformité rigoureuse aux exigences bancaires et contractuelles."
             }
         },
         process: {
             title: "Notre processus",
             subtitle: "Un processus simple en 4 étapes pour une gestion comptable et fiscale en toute sérénité.",
             step1: {
-                title: "Prise de contact",
-                desc: "Vous nous joignez par téléphone, courriel ou via le formulaire du site."
+                title: "Prise de contact & rendez-vous",
+                desc: "Vous nous joignez par téléphone, courriel ou en choisissant votre plage horaire directement dans notre agenda en direct."
             },
             step2: {
                 title: "Envoi sécurisé des documents",
                 desc: "Vous téléversez vos documents via notre portail ShareFile, en toute confidentialité."
             },
             step3: {
-                title: "Préparation",
-                desc: "Notre équipe prépare votre déclaration ou vos états financiers avec rigueur."
+                title: "Préparation & rigueur",
+                desc: "Notre équipe de CPA auditeurs prépare votre dossier ou vos états financiers avec minutie."
             },
             step4: {
                 title: "Révision et livraison",
-                desc: "On révise le tout avec vous avant la transmission finale."
+                desc: "On révise le tout avec vous avant la transmission officielle aux autorités fiscales."
             }
         },
         taxSeason: {
@@ -294,14 +371,14 @@ var CountUpTranslations = {
         about: {
             title: "Pourquoi choisir CountUp ?",
             subtitle: "Nous apportons de la clarté à vos finances avec une touche personnalisée et une expertise reconnue à Laval.",
-            feat1Title: "Précision garantie :",
-            feat1Desc: "Une attention méticuleuse portée aux détails dans chaque calcul.",
-            feat2Title: "Livraison dans les délais :",
-            feat2Desc: "Ne manquez plus jamais une date limite de déclaration.",
+            feat1Title: "Rigueur professionnelle :",
+            feat1Desc: "Une approche rigoureuse et une attention particulière portée à chaque mandat.",
+            feat2Title: "Suivi des échéances :",
+            feat2Desc: "Un accompagnement structuré pour assurer un suivi efficace de vos obligations et échéances.",
             feat3Title: "Portail sécurisé :",
-            feat3Desc: "Vos documents financiers sont protégés grâce à notre plateforme ShareFile, avec chiffrement de niveau bancaire.",
-            bio: "Notre fondateur est CPA et cumule plus de 10 ans d'expérience en fiscalité et en comptabilité, dont 2 ans au sein d'un cabinet Big Four. Chez CountUp, cette expertise se traduit par un service personnalisé, rigoureux et fiable pour les résidents et entreprises de Laval et de la Rive-Nord.",
-            cpaBadge: "Membre CPA & Expertise Big Four",
+            feat3Desc: "Vos documents financiers sont protégés et transmis en toute confidentialité via notre plateforme ShareFile.",
+            bio: "CountUp est dirigé par deux associées CPA auditeurs cumulant une solide expérience en certification, comptabilité et fiscalité. Ensemble, ils comptent plus de 15 ans d’expérience en entreprise et 6 ans au sein de cabinets Big Four. Cette expérience diversifiée permet à CountUp d’offrir un accompagnement rigoureux, personnalisé et adapté aux besoins des entreprises et des particuliers.",
+            cpaBadge: "Deux associées CPA auditeurs | Big Four & Entreprise",
             cardTitle: "Stratégie financière experte",
             cardSubtitle: "Service personnalisé et rigoureux"
         },
@@ -335,16 +412,18 @@ var CountUpTranslations = {
             q4: "Quelle est la différence entre une mission de compilation, d'examen et d'audit ?",
             a4: "Ce sont trois niveaux d'assurance sur vos états financiers, du plus simple (compilation) au plus approfondi (audit). Le bon choix dépend des exigences de vos parties prenantes — on peut en discuter ensemble.",
             q5: "Dois-je prendre rendez-vous pour vous rencontrer ?",
-            a5: "Non, aucun rendez-vous n'est nécessaire pour déposer vos documents — mais nous sommes disponibles pour une consultation si vous avez des questions particulières."
+            a5: "Non, aucun rendez-vous n'est nécessaire pour déposer vos documents physiques — et pour toute consultation approfondie, vous pouvez facilement réserver votre plage horaire directement via notre agenda en temps réel."
         },
         contact: {
-            title: "Contactez-nous",
-            subtitle: "Prêt à maximiser vos retours d'impôt ou à simplifier votre comptabilité ? Contactez notre équipe à Laval dès aujourd'hui.",
+            title: "Contactez-nous & Rendez-vous",
+            subtitle: "Prêt à maximiser vos retours d'impôt ou à simplifier votre comptabilité ? Réservez votre rencontre dans notre agenda en direct ou écrivez-nous.",
             visitUs: "Visitez-nous",
             callUs: "Appelez-nous",
             emailUs: "Envoyez-nous un courriel",
             hours: "Heures d'ouverture",
             hoursVal: "Lun - Ven : 9h00 - 17h00",
+            tabBooking: "Prendre rendez-vous (Agenda en direct)",
+            tabMessage: "Envoyer un message général",
             formTitle: "Envoyez-nous un message",
             nameLabel: "Nom complet",
             namePlaceholder: "Jean Dupont",
@@ -365,9 +444,40 @@ var CountUpTranslations = {
             errorMsg: "Une erreur est survenue lors de l'envoi de votre message. Veuillez nous appeler au (438) 994-9140.",
             googleProfileLink: "Voir notre fiche Google Entreprise"
         },
+        booking: {
+            badge: "Disponibilités en direct",
+            title: "Prendre rendez-vous",
+            desc: "Choisissez facilement la date et l'horaire en temps réel qui vous conviennent avec l'une de nos associées CPA.",
+            stepService: "1. Service & format de rencontre",
+            serviceLabel: "Service désiré",
+            formatLabel: "Mode de rencontre",
+            formatInPerson: "En personne (Bureau de Laval - 2 Place Laval #485)",
+            formatVirtual: "Visioconférence (Google Meet / Teams)",
+            formatPhone: "Consultation téléphonique",
+            stepDateTime: "2. Choix de la date et de l'heure",
+            selectDateLabel: "Jours ouvrables disponibles",
+            selectSlotLabel: "Créneaux horaires en temps réel",
+            liveSlotsBadge: "Disponibilités en temps réel",
+            swipeHint: "Glissez pour voir plus",
+            otherDate: "Choisir une autre date...",
+            morning: "Matin",
+            afternoon: "Après-midi",
+            selectedSlotPreviewTitle: "Rendez-vous sélectionné :",
+            stepInfo: "3. Vos coordonnées",
+            phoneLabel: "Numéro de téléphone",
+            notesLabel: "Précisions ou questions sur votre mandat (facultatif)",
+            notesPlaceholder: "Indiquez brièvement vos besoins ou particularités...",
+            confirmBtn: "Confirmer mon rendez-vous",
+            processing: "Réservation en cours...",
+            successTitle: "Rendez-vous confirmé !",
+            successP1: "Votre rencontre avec CountUp CPA a été réservée avec succès. Une invitation calendrier a été préparée.",
+            addToGoogle: "Ajouter à Google Agenda",
+            downloadIcs: "Télécharger pour Calendrier (.ics)",
+            bookAnother: "Réserver un autre créneau"
+        },
         portalModal: {
             title: "Portail sécurisé",
-            desc: "Accédez à vos documents financiers en toute sécurité via notre portail ShareFile avec chiffrement de niveau bancaire.",
+            desc: "Accédez à vos documents financiers en toute confidentialité via notre portail sécurisé ShareFile.",
             btnText: "Accéder à ShareFile",
             helpText: "Besoin d'aide pour accéder à votre portail ?",
             contactLink: "Contactez-nous"
@@ -382,7 +492,7 @@ var CountUpTranslations = {
             successMsg: "Votre téléchargement a commencé ! Une copie a également été enregistrée."
         },
         footer: {
-            tagline: "Votre partenaire CPA de confiance pour des retours d'impôts maximaux et une comptabilité rigoureuse à Laval.",
+            tagline: "Votre cabinet de CPA auditeurs de confiance pour des retours d'impôts maximaux, une tenue de livres rigoureuse et des missions de certification à Laval.",
             quickLinks: "Liens rapides",
             services: "Services",
             contactInfo: "Coordonnées",
@@ -390,6 +500,8 @@ var CountUpTranslations = {
             privacy: "Politique de confidentialité",
             cookies: "Politique de témoins (cookies)",
             googleProfile: "Fiche Google Entreprise",
+            facebookProfile: "Page Facebook CountUp",
+            linkedinProfile: "Page LinkedIn CountUp",
             rights: "© 2026 CountUp Comptabilité. Tous droits réservés."
         }
     }
@@ -420,6 +532,3 @@ if (typeof window !== 'undefined') {
 if (typeof globalThis !== 'undefined') {
     globalThis.CountUpTranslations = CountUpTranslations;
 }
-
-
-

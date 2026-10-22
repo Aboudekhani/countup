@@ -112,6 +112,7 @@
                 <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Reviews</a>
                 <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
                 <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+                <a href="#contact" class="btn btn-secondary btn-sm nav-booking-btn" data-i18n="nav.bookAppointment"><i class="fa-regular fa-calendar-check"></i> <span>Prendre rendez-vous</span></a>
                 <a href="#portal" class="btn btn-primary portal-btn" id="header-portal-btn"><i class="fa-solid fa-lock"></i> <span data-i18n="nav.portal">Client Portal</span></a>
             </nav>
             <div class="nav-header-actions">
@@ -133,12 +134,12 @@
                     <h1 class="hero-title" data-i18n="hero.title">Your Numbers. Our Precision.</h1>
                     <p class="hero-subtitle" data-i18n="hero.subtitle">Comprehensive and stress-free accounting services for individuals and businesses. Optimize your finances with the experts at CountUp.</p>
                     <div class="hero-buttons">
-                        <a href="#contact" class="btn btn-primary btn-large" data-i18n="hero.btnConsultation">Schedule a Consultation</a>
+                        <a href="#contact" class="btn btn-primary btn-large" data-i18n="hero.btnAppointment"><i class="fa-regular fa-calendar-check"></i> <span data-i18n="hero.btnAppointment">Prendre rendez-vous</span></a>
                         <a href="#services" class="btn btn-secondary btn-large" data-i18n="hero.btnServices">Explore Services</a>
                     </div>
                     <div class="hero-badges">
-                        <span class="hero-badge-item"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="hero.badgeSharefile">ShareFile Encrypted</span></span>
-                        <span class="hero-badge-item"><i class="fa-solid fa-award"></i> <span data-i18n="hero.badgeCpa">CPA Certified</span></span>
+                        <span class="hero-badge-item"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="hero.badgeSharefile">ShareFile Protected</span></span>
+                        <span class="hero-badge-item"><i class="fa-solid fa-award"></i> <span data-i18n="hero.badgeCpa">Associées CPA auditeurs</span></span>
                         <span class="hero-badge-item"><i class="fa-solid fa-user-check"></i> <span data-i18n="hero.badgeClients">500+ Clients Satisfied</span></span>
                     </div>
                 </div>
@@ -165,28 +166,119 @@
                         <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
                         <h3 data-i18n="services.personalTax.title">Personal Tax</h3>
                         <p data-i18n="services.personalTax.desc">Personal and self-employed tax return preparation, with careful attention to the deductions and credits that apply to your situation.</p>
-                        <a href="#contact" class="btn-link"><span data-i18n="services.learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#service-impot" class="btn-link"><span data-i18n="services.viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <!-- Service Card 2: Corporate Tax -->
                     <div class="service-card animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-building"></i></div>
                         <h3 data-i18n="services.corporateTax.title">Corporate Tax</h3>
                         <p data-i18n="services.corporateTax.desc">Corporate tax returns, tax planning, and compliance for businesses of all sizes.</p>
-                        <a href="#contact" class="btn-link"><span data-i18n="services.learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#service-impot" class="btn-link"><span data-i18n="services.viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <!-- Service Card 3: Bookkeeping -->
                     <div class="service-card animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-book-bookmark"></i></div>
                         <h3 data-i18n="services.bookkeeping.title">Bookkeeping</h3>
-                        <p data-i18n="services.bookkeeping.desc">Full-cycle bookkeeping — transactions, bank reconciliations, and monthly financial statements — so your numbers are always up to date.</p>
-                        <a href="#contact" class="btn-link"><span data-i18n="services.learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <p data-i18n="services.bookkeeping.desc">Tenue de livres, conciliation des comptes et préparation de l’information financière pour assurer un suivi régulier de vos activités.</p>
+                        <a href="#service-tenue-de-livres" class="btn-link"><span data-i18n="services.viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <!-- Service Card 4: Assurance Services -->
                     <div class="service-card animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
                         <h3 data-i18n="services.assurance.title">Assurance Services</h3>
                         <p data-i18n="services.assurance.desc">Compilation, review, and audit engagements performed to professional standards, tailored to your business and its stakeholders.</p>
-                        <a href="#contact" class="btn-link"><span data-i18n="services.learnMore">Learn More</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#service-certification" class="btn-link"><span data-i18n="services.viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Services Breakdown Section -->
+        <section id="services-details" class="services-detailed-section">
+            <div class="container">
+                <div class="section-header text-center animate-on-scroll" style="margin-bottom: 3.5rem;">
+                    <div class="section-badge"><i class="fa-solid fa-folder-tree"></i> <span data-i18n="services.details.badge">Expertise détaillée</span></div>
+                    <h2 class="section-title" data-i18n="services.details.title">Présentation détaillée de nos services</h2>
+                    <p class="section-subtitle" data-i18n="services.details.subtitle">Accédez directement aux sections spécialisées de notre cabinet CPA auditeurs.</p>
+                </div>
+
+                <div class="detailed-services-container">
+                    <!-- Detailed Block 1: Impôt -->
+                    <div id="service-impot" class="detailed-service-card detailed-service-anchor animate-on-scroll">
+                        <div class="detailed-service-icon-box">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <div class="detailed-service-info">
+                            <h3>
+                                <span data-i18n="services.details.taxTitle">Fiscalité (Particuliers &amp; Sociétés)</span>
+                                <span class="detailed-service-tag">T1 • TP-1 • T2 • CO-17</span>
+                            </h3>
+                            <p class="lead-desc" data-i18n="services.details.taxDesc">Nos services fiscaux vont bien au-delà de la simple conformité. Nous analysons chaque facette de votre dossier pour optimiser vos remboursements, réclamer toutes les déductions admissibles et élaborer des stratégies fiscales pérennes.</p>
+                            <ul class="detailed-service-features">
+                                <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="services.details.taxP1">Déclarations T1 / TP-1 pour particuliers, familles, propriétaires d'immeubles locatifs et travailleurs autonomes.</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="services.details.taxP2">Déclarations de sociétés T2 / CO-17, planification fiscale d'entreprise, optimisation dividende/salaire et représentation auprès de l'ARC et de Revenu Québec.</span></li>
+                            </ul>
+                        </div>
+                        <div class="detailed-service-actions">
+                            <a href="#contact" class="btn btn-primary select-booking-service-btn" data-service="Personal Tax" data-i18n="services.bookService">
+                                <i class="fa-regular fa-calendar-check"></i> <span>Prendre rendez-vous</span>
+                            </a>
+                            <a href="#tax-season" class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-circle-info"></i> <span>Dates limites fiscales</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Block 2: Tenue de livres -->
+                    <div id="service-tenue-de-livres" class="detailed-service-card theme-emerald detailed-service-anchor animate-on-scroll">
+                        <div class="detailed-service-icon-box">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div class="detailed-service-info">
+                            <h3>
+                                <span data-i18n="services.details.bookkeepingTitle">Tenue de livres &amp; Information financière</span>
+                                <span class="detailed-service-tag">Suivi régulier • PME</span>
+                            </h3>
+                            <p class="lead-desc" data-i18n="services.details.bookkeepingDesc">Tenue de livres, conciliation des comptes et préparation de l’information financière pour assurer un suivi régulier de vos activités.</p>
+                            <ul class="detailed-service-features">
+                                <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="services.details.bookkeepingP1">Conciliations bancaires et de cartes de crédit, gestion des comptes fournisseurs et clients, et déclarations de taxes (TPS / TVQ).</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="services.details.bookkeepingP2">États financiers périodiques et tableaux de bord pour une visibilité constante sur la rentabilité et la trésorerie de votre entreprise.</span></li>
+                            </ul>
+                        </div>
+                        <div class="detailed-service-actions">
+                            <a href="#contact" class="btn btn-primary select-booking-service-btn" data-service="Bookkeeping" data-i18n="services.bookService">
+                                <i class="fa-regular fa-calendar-check"></i> <span>Prendre rendez-vous</span>
+                            </a>
+                            <a href="#process" class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-arrow-right"></i> <span>Voir le fonctionnement</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Block 3: Certification -->
+                    <div id="service-certification" class="detailed-service-card theme-navy detailed-service-anchor animate-on-scroll">
+                        <div class="detailed-service-icon-box">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="detailed-service-info">
+                            <h3>
+                                <span data-i18n="services.details.assuranceTitle">Certification &amp; Missions d'assurance</span>
+                                <span class="detailed-service-tag">Audit • Examen • Compilation</span>
+                            </h3>
+                            <p class="lead-desc" data-i18n="services.details.assuranceDesc">Des missions d'audit et d'examen exécutées avec rigueur selon les normes canadiennes pour rassurer vos partenaires d'affaires, institutions financières et actionnaires.</p>
+                            <ul class="detailed-service-features">
+                                <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="services.details.assuranceP1">Missions d'audit : niveau d'assurance élevé sur les états financiers pour conseils d'administration et institutions financières.</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="services.details.assuranceP2">Missions d'examen et avis au lecteur (compilation) : conformité rigoureuse aux exigences bancaires et contractuelles.</span></li>
+                            </ul>
+                        </div>
+                        <div class="detailed-service-actions">
+                            <a href="#contact" class="btn btn-primary select-booking-service-btn" data-service="Assurance Services" data-i18n="services.bookService">
+                                <i class="fa-regular fa-calendar-check"></i> <span>Prendre rendez-vous</span>
+                            </a>
+                            <a href="#about" class="btn btn-secondary btn-sm">
+                                <i class="fa-solid fa-award"></i> <span>Expertise des associées</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -302,25 +394,43 @@
         <section id="about" class="section">
             <div class="container about-container">
                 <div class="about-content animate-on-scroll">
-                    <h2 class="section-title" data-i18n="about.title">Why Choose CountUp?</h2>
-                    <p class="section-subtitle" style="margin-left:0; text-align:left;" data-i18n="about.subtitle">We bring clarity to your finances with a personalized touch and CPA-backed expertise.</p>
+                    <h2 class="section-title" data-i18n="about.title">Pourquoi choisir CountUp ?</h2>
+                    <p class="section-subtitle" style="margin-left:0; text-align:left;" data-i18n="about.subtitle">Nous apportons de la clarté à vos finances avec une touche personnalisée et une expertise reconnue à Laval.</p>
                     <ul class="feature-list">
-                        <li><i class="fa-regular fa-circle-check"></i> <strong data-i18n="about.feat1Title">Accuracy Guaranteed:</strong> <span data-i18n="about.feat1Desc">Meticulous attention to detail in every calculation.</span></li>
-                        <li><i class="fa-regular fa-clock"></i> <strong data-i18n="about.feat2Title">Timely Delivery:</strong> <span data-i18n="about.feat2Desc">Never miss a filing deadline again.</span></li>
-                        <li><i class="fa-solid fa-user-shield"></i> <strong data-i18n="about.feat3Title">Secure Portal:</strong> <span data-i18n="about.feat3Desc">Your financial documents are protected through our ShareFile platform, with bank-level encryption.</span></li>
+                        <li>
+                            <div class="feature-icon-wrapper"><i class="fa-solid fa-award"></i></div>
+                            <div class="feature-text">
+                                <strong data-i18n="about.feat1Title">Rigueur professionnelle :</strong>
+                                <span data-i18n="about.feat1Desc">Une approche rigoureuse et une attention particulière portée à chaque mandat.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon-wrapper"><i class="fa-regular fa-clock"></i></div>
+                            <div class="feature-text">
+                                <strong data-i18n="about.feat2Title">Suivi des échéances :</strong>
+                                <span data-i18n="about.feat2Desc">Un accompagnement structuré pour assurer un suivi efficace de vos obligations et échéances.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="feature-icon-wrapper"><i class="fa-solid fa-user-shield"></i></div>
+                            <div class="feature-text">
+                                <strong data-i18n="about.feat3Title">Portail sécurisé :</strong>
+                                <span data-i18n="about.feat3Desc">Vos documents financiers sont protégés et transmis en toute confidentialité via notre plateforme ShareFile.</span>
+                            </div>
+                        </li>
                     </ul>
-                    <p style="color: var(--text-light); line-height: 1.7;" data-i18n="about.bio">
-                        Our founder is a CPA with over 10 years of experience in tax and accounting, including 2 years at a Big Four firm. At CountUp, that expertise translates into a personalized, rigorous, and reliable service for both individuals and businesses.
-                    </p>
+                    <div class="about-bio-card">
+                        <p class="about-bio-text" data-i18n="about.bio">
+                            CountUp est dirigé par deux associées CPA auditeurs cumulant une solide expérience en certification, comptabilité et fiscalité. Ensemble, ils comptent plus de 15 ans d’expérience en entreprise et 6 ans au sein de cabinets Big Four. Cette expérience diversifiée permet à CountUp d’offrir un accompagnement rigoureux, personnalisé et adapté aux besoins des entreprises et des particuliers.
+                        </p>
+                    </div>
                     <div class="cpa-badge">
-                        <i class="fa-solid fa-award"></i> <span data-i18n="about.cpaBadge">CPA Member & Big Four Expertise</span>
+                        <i class="fa-solid fa-award"></i> <span data-i18n="about.cpaBadge">Deux associées CPA auditeurs | Big Four &amp; Entreprise</span>
                     </div>
                 </div>
                 <div class="about-image animate-on-scroll">
-                    <div class="image-placeholder">
-                        <i class="fa-solid fa-chart-line"></i>
-                        <p data-i18n="about.cardTitle">Expert Financial Guidance</p>
-                        <span data-i18n="about.cardSubtitle">Personalized & Rigorous Service</span>
+                    <div class="about-illustration-wrapper">
+                        <img src="cpa-audit-accounting.svg" alt="Comptabilité et certification CPA auditeurs CountUp" class="about-cpa-img" loading="lazy" referrerpolicy="no-referrer">
                     </div>
                 </div>
             </div>
@@ -467,37 +577,53 @@
         <section id="contact" class="section">
             <div class="container contact-container">
                 <div class="contact-info animate-on-scroll">
-                    <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
-                    <p class="section-subtitle" style="margin-left:0; text-align:left;" data-i18n="contact.subtitle">Ready to maximize your tax returns or streamline your accounting? Reach out to us today.</p>
+                    <h2 class="section-title" data-i18n="contact.title">Contactez-nous &amp; Rendez-vous</h2>
+                    <p class="section-subtitle" style="margin-left:0; text-align:left;" data-i18n="contact.subtitle">Prêt à maximiser vos retours d'impôt ou à simplifier votre comptabilité ? Réservez votre rencontre dans notre agenda en direct ou écrivez-nous.</p>
                     
                     <div class="contact-details" style="margin-top: 2rem;">
                         <div class="contact-item">
                             <i class="fa-solid fa-location-dot"></i>
                             <div>
-                                <h4 data-i18n="contact.visitUs">Visit Us</h4>
+                                <h4 data-i18n="contact.visitUs">Visitez-nous</h4>
                                 <p>2 Place Laval, bureau 485<br>Laval, QC H7N 5N6</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-phone"></i>
                             <div>
-                                <h4 data-i18n="contact.callUs">Call Us</h4>
+                                <h4 data-i18n="contact.callUs">Appelez-nous</h4>
                                 <p><a href="tel:4389949140" style="color: inherit;">(438) 994-9140</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fa-solid fa-envelope"></i>
                             <div>
-                                <h4 data-i18n="contact.emailUs">Email Us</h4>
+                                <h4 data-i18n="contact.emailUs">Envoyez-nous un courriel</h4>
                                 <p><a href="mailto:client@countup.ca" style="color: inherit;">client@countup.ca</a></p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fa-regular fa-clock"></i>
                             <div>
-                                <h4 data-i18n="contact.hours">Business Hours</h4>
-                                <p data-i18n="contact.hoursVal">Mon - Fri: 9:00 AM - 5:00 PM</p>
+                                <h4 data-i18n="contact.hours">Heures d'ouverture</h4>
+                                <p data-i18n="contact.hoursVal">Lun - Ven : 9h00 - 17h00</p>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Official Social Media Profiles -->
+                    <div class="social-connect-box">
+                        <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-heading); font-weight: 700;">
+                            <i class="fa-solid fa-share-nodes" style="color: var(--cobalt-primary); margin-right: 0.35rem;"></i> Retrouvez CountUp en ligne
+                        </h4>
+                        <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 0.75rem;">Suivez nos actualités fiscales et comptables sur nos pages officielles :</p>
+                        <div class="social-connect-links">
+                            <a href="https://www.facebook.com/share/1JnFKfavop/" target="_blank" rel="noopener noreferrer" class="social-badge-link facebook-link">
+                                <i class="fa-brands fa-facebook-f"></i> <span>Page Facebook</span>
+                            </a>
+                            <a href="https://www.linkedin.com/company/countup-cpa-auditeurs/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="social-badge-link linkedin-link">
+                                <i class="fa-brands fa-linkedin-in"></i> <span>Page LinkedIn</span>
+                            </a>
                         </div>
                     </div>
 
@@ -515,57 +641,283 @@
                         </iframe>
                     </div>
                     <a href="https://www.google.com/maps/search/?api=1&query=2+Place+Laval+%23485%2C+Laval%2C+QC+H7N+5N6" target="_blank" rel="noopener noreferrer" class="google-maps-link">
-                        <i class="fa-brands fa-google"></i> <span data-i18n="contact.googleProfileLink">View Google Business Profile</span> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; margin-left: 0.35rem;"></i>
+                        <i class="fa-brands fa-google"></i> <span data-i18n="contact.googleProfileLink">Voir notre fiche Google Entreprise</span> <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem; margin-left: 0.35rem;"></i>
                     </a>
                 </div>
                 
                 <div class="contact-form-wrapper animate-on-scroll">
-                    <form class="contact-form" id="contact-form" novalidate>
-                        <h3 data-i18n="contact.formTitle">Send us a Message</h3>
-                        
-                        <!-- Inline Form Feedback Alert -->
-                        <div id="contact-feedback" class="form-feedback" style="display: none;"></div>
-
-                        <!-- Anti-spam Honeypot & Timestamp -->
-                        <input type="text" name="website_url" id="contact-honeypot" class="honeypot-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
-                        <input type="hidden" name="form_time" id="contact-form-time" value="">
-
-                        <div class="form-group">
-                            <label for="name" data-i18n="contact.nameLabel">Full Name</label>
-                            <input type="text" id="name" name="name" data-i18n-attr="placeholder:contact.namePlaceholder" placeholder="John Doe" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-i18n="contact.emailLabel">Email Address</label>
-                            <input type="email" id="email" name="email" data-i18n-attr="placeholder:contact.emailPlaceholder" placeholder="john@example.com" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="service" data-i18n="contact.serviceLabel">Interested Service</label>
-                            <select id="service" name="service" required aria-required="true">
-                                <option value="Personal Tax" data-i18n="contact.optPersonalTax">Personal Tax</option>
-                                <option value="Corporate Tax" data-i18n="contact.optCorporateTax">Corporate Tax</option>
-                                <option value="Bookkeeping" data-i18n="contact.optBookkeeping">Bookkeeping</option>
-                                <option value="Assurance Services" data-i18n="contact.optAssurance">Assurance / Certification</option>
-                                <option value="Other" data-i18n="contact.optOther">Other Inquiry</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-i18n="contact.msgLabel">Message</label>
-                            <textarea id="message" name="message" rows="4" data-i18n-attr="placeholder:contact.msgPlaceholder" placeholder="How can we help you?" required aria-required="true"></textarea>
-                        </div>
-
-                        <!-- Loi 25 Explicit Consent Checkbox -->
-                        <div class="form-checkbox-group">
-                            <input type="checkbox" id="contact-consent" name="consent" required aria-required="true">
-                            <label for="contact-consent" class="checkbox-label" data-i18n-html="contact.consentLabel">
-                                I agree that my personal information may be used by CountUp to contact me, in accordance with the <a href="#privacy-modal" class="legal-link open-privacy-trigger">Privacy Policy</a>.
-                            </label>
-                        </div>
-
-                        <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-large" style="width: 100%;" disabled>
-                            <span class="btn-text" data-i18n="contact.submitBtn">Send Message</span>
-                            <i class="fa-solid fa-paper-plane"></i>
+                    <!-- Mode Switcher Tabs: Booking Agenda vs General Message -->
+                    <div class="contact-mode-tabs" role="tablist">
+                        <button type="button" class="contact-tab-btn active" id="tab-btn-booking" role="tab" aria-selected="true" aria-controls="booking-panel">
+                            <i class="fa-regular fa-calendar-check"></i> <span data-i18n="contact.tabBooking">Prendre rendez-vous (Agenda en direct)</span>
                         </button>
-                    </form>
+                        <button type="button" class="contact-tab-btn" id="tab-btn-message" role="tab" aria-selected="false" aria-controls="message-panel">
+                            <i class="fa-regular fa-envelope"></i> <span data-i18n="contact.tabMessage">Envoyer un message</span>
+                        </button>
+                    </div>
+
+                    <!-- TAB 1: Real-Time Online Booking Agenda -->
+                    <div id="booking-panel" role="tabpanel" aria-labelledby="tab-btn-booking">
+                        <!-- Live Availability Header -->
+                        <div class="booking-header-bar">
+                            <div class="booking-header-text">
+                                <h3 class="booking-title" data-i18n="booking.title">Prendre rendez-vous</h3>
+                                <p class="booking-subtitle" data-i18n="booking.desc">Choisissez facilement la date et l'horaire en temps réel qui vous conviennent avec l'une de nos associées CPA.</p>
+                            </div>
+                            <span class="live-badge-indicator">
+                                <span class="live-pulse-dot"></span>
+                                <span data-i18n="booking.liveSlotsBadge">Disponibilités en temps réel</span>
+                            </span>
+                        </div>
+
+                        <!-- Feedback Alert -->
+                        <div id="booking-feedback" class="form-feedback" style="display: none; margin-bottom: 1.25rem;"></div>
+
+                        <form id="appointment-booking-form" novalidate>
+                            <!-- Anti-spam Honeypot & Timestamp -->
+                            <input type="text" name="website_url" id="booking-honeypot" class="honeypot-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <input type="hidden" name="form_time" id="booking-form-time" value="">
+
+                            <!-- Step 1: Service & Format -->
+                            <div class="booking-step">
+                                <div class="booking-step-header">
+                                    <div class="booking-step-title">
+                                        <span class="booking-step-number">1</span>
+                                        <span data-i18n="booking.stepService">Service &amp; format de rencontre</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 1rem;">
+                                    <label for="booking-service" data-i18n="booking.serviceLabel">Service désiré</label>
+                                    <select id="booking-service" name="service" required aria-required="true">
+                                        <option value="Personal Tax" data-i18n="contact.optPersonalTax">Impôt des particuliers (30 min)</option>
+                                        <option value="Corporate Tax" data-i18n="contact.optCorporateTax">Impôt corporatif &amp; PME (45 min)</option>
+                                        <option value="Bookkeeping" data-i18n="contact.optBookkeeping">Tenue de livres &amp; gestion financière (30 min)</option>
+                                        <option value="Assurance Services" data-i18n="contact.optAssurance">Certification &amp; Mission d'examen / Audit (45 min)</option>
+                                        <option value="Other" data-i18n="contact.optOther">Consultation générale / Autre (30 min)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 0;">
+                                    <label data-i18n="booking.formatLabel">Mode de rencontre</label>
+                                    <div class="booking-choice-grid">
+                                        <label class="booking-choice-card selected" id="choice-office">
+                                            <input type="radio" name="booking_format" value="En personne (Bureau de Laval)" checked>
+                                            <span class="choice-text"><i class="fa-solid fa-building" style="color: var(--cobalt-primary);"></i> En personne (Laval)</span>
+                                        </label>
+                                        <label class="booking-choice-card" id="choice-virtual">
+                                            <input type="radio" name="booking_format" value="Visioconférence (Meet / Teams)">
+                                            <span class="choice-text"><i class="fa-solid fa-video" style="color: var(--fiscal-emerald);"></i> Visioconférence</span>
+                                        </label>
+                                        <label class="booking-choice-card" id="choice-phone">
+                                            <input type="radio" name="booking_format" value="Téléphone">
+                                            <span class="choice-text"><i class="fa-solid fa-phone" style="color: #F59E0B;"></i> Téléphone</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Date & Live Time Slots -->
+                            <div class="booking-step">
+                                <div class="booking-step-header">
+                                    <div class="booking-step-title">
+                                        <span class="booking-step-number">2</span>
+                                        <span data-i18n="booking.stepDateTime">Choix de la date et de l'heure</span>
+                                    </div>
+                                    <span class="tz-badge"><i class="fa-regular fa-clock"></i> Heure de l'Est (Laval)</span>
+                                </div>
+
+                                <!-- Date Navigation & Controls -->
+                                <div class="booking-date-nav-row">
+                                    <label class="booking-label" data-i18n="booking.selectDateLabel">Jours ouvrables disponibles</label>
+                                    <div class="booking-date-controls">
+                                        <span class="booking-swipe-hint"><i class="fa-solid fa-arrows-left-right"></i> <span data-i18n="booking.swipeHint">Glissez pour voir plus</span></span>
+                                        <div class="date-arrow-btns">
+                                            <button type="button" class="date-arrow-btn" id="date-scroll-prev" aria-label="Dates précédentes" title="Précédent">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </button>
+                                            <button type="button" class="date-arrow-btn" id="date-scroll-next" aria-label="Dates suivantes" title="Suivant">
+                                                <i class="fa-solid fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Mobile Touch Scroll Carousel with Fade Indicators -->
+                                <div class="booking-date-scroller-wrapper">
+                                    <div class="booking-date-selector" id="booking-date-days-container" role="radiogroup" aria-label="Sélection de date">
+                                        <!-- Populated dynamically by script.js with upcoming business days -->
+                                    </div>
+                                </div>
+                                <input type="hidden" id="selected-booking-date" name="selected_date" value="">
+
+                                <!-- Optional Native Date Picker Trigger for mobile users who want another date -->
+                                <div class="custom-date-row">
+                                    <label for="booking-custom-date" class="custom-date-trigger">
+                                        <i class="fa-regular fa-calendar-days"></i>
+                                        <span data-i18n="booking.otherDate">Choisir une autre date...</span>
+                                    </label>
+                                    <input type="date" id="booking-custom-date" class="hidden-native-date-input" aria-label="Sélectionner une date précise">
+                                </div>
+
+                                <!-- Time Slots Header -->
+                                <div class="booking-slots-header">
+                                    <label class="booking-label" data-i18n="booking.selectSlotLabel">Créneaux horaires en direct</label>
+                                    <span class="slots-duration-badge"><i class="fa-regular fa-hourglass-half"></i> 30-45 min</span>
+                                </div>
+
+                                <!-- Responsive Grouped Slots -->
+                                <div class="booking-slots-wrapper">
+                                    <div class="slot-group-header">
+                                        <span class="slot-group-title"><i class="fa-regular fa-sun" style="color: #F59E0B;"></i> <span data-i18n="booking.morning">Matin</span></span>
+                                    </div>
+                                    <div class="booking-slots-grid" id="slots-morning">
+                                        <button type="button" class="booking-slot-btn active" data-time="09:00"><i class="fa-regular fa-clock"></i> 09:00</button>
+                                        <button type="button" class="booking-slot-btn" data-time="10:00"><i class="fa-regular fa-clock"></i> 10:00</button>
+                                        <button type="button" class="booking-slot-btn" data-time="11:15"><i class="fa-regular fa-clock"></i> 11:15</button>
+                                    </div>
+
+                                    <div class="slot-group-header" style="margin-top: 0.85rem;">
+                                        <span class="slot-group-title"><i class="fa-solid fa-cloud-sun" style="color: var(--cobalt-primary);"></i> <span data-i18n="booking.afternoon">Après-midi</span></span>
+                                    </div>
+                                    <div class="booking-slots-grid" id="slots-afternoon">
+                                        <button type="button" class="booking-slot-btn" data-time="13:30"><i class="fa-regular fa-clock"></i> 13:30</button>
+                                        <button type="button" class="booking-slot-btn" data-time="14:45"><i class="fa-regular fa-clock"></i> 14:45</button>
+                                        <button type="button" class="booking-slot-btn" data-time="16:00"><i class="fa-regular fa-clock"></i> 16:00</button>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="selected-booking-time" name="selected_time" value="09:00">
+
+                                <!-- Real-time Selection Highlight Bar -->
+                                <div class="booking-live-summary" id="booking-live-summary">
+                                    <div class="booking-summary-pill">
+                                        <i class="fa-regular fa-calendar-check"></i>
+                                        <span class="summary-text" id="booking-live-summary-text">Rendez-vous : Chargement...</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Client Info & Law 25 Consent -->
+                            <div class="booking-step">
+                                <div class="booking-step-header">
+                                    <div class="booking-step-title">
+                                        <span class="booking-step-number">3</span>
+                                        <span data-i18n="booking.stepInfo">Vos coordonnées</span>
+                                    </div>
+                                </div>
+
+                                <div class="booking-form-row">
+                                    <div class="form-group" style="margin-bottom: 0.85rem;">
+                                        <label for="booking-name" data-i18n="contact.nameLabel">Nom complet</label>
+                                        <input type="text" id="booking-name" name="name" placeholder="Jean Dupont" required aria-required="true">
+                                    </div>
+                                    <div class="form-group" style="margin-bottom: 0.85rem;">
+                                        <label for="booking-email" data-i18n="contact.emailLabel">Adresse courriel</label>
+                                        <input type="email" id="booking-email" name="email" placeholder="jean@exemple.com" required aria-required="true">
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 0.85rem;">
+                                    <label for="booking-phone" data-i18n="booking.phoneLabel">Numéro de téléphone</label>
+                                    <input type="tel" id="booking-phone" name="phone" placeholder="(438) 994-XXXX" required aria-required="true">
+                                </div>
+
+                                <div class="form-group" style="margin-bottom: 0.85rem;">
+                                    <label for="booking-notes" data-i18n="booking.notesLabel">Précisions ou questions sur votre mandat (facultatif)</label>
+                                    <textarea id="booking-notes" name="notes" rows="2" placeholder="Indiquez brièvement vos besoins ou particularités..."></textarea>
+                                </div>
+
+                                <!-- Law 25 Consent Checkbox -->
+                                <div class="form-checkbox-group" style="margin-bottom: 0;">
+                                    <input type="checkbox" id="booking-consent" name="consent" required aria-required="true">
+                                    <label for="booking-consent" class="checkbox-label" data-i18n-html="contact.consentLabel">
+                                        J'accepte que mes renseignements soient utilisés par CountUp pour me recontacter, conformément à la <a href="#privacy-modal" class="legal-link open-privacy-trigger">Politique de confidentialité</a>.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <button type="submit" id="booking-submit-btn" class="btn btn-primary btn-large booking-main-submit" disabled>
+                                <i class="fa-regular fa-calendar-check"></i> <span data-i18n="booking.confirmBtn">Confirmer mon rendez-vous</span>
+                            </button>
+                        </form>
+
+                        <!-- Instant Confirmation Screen (Hidden initially) -->
+                        <div id="booking-success-view" class="booking-confirmation-view" style="display: none;">
+                            <div class="booking-success-icon">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <h3 style="font-size: 1.6rem; color: var(--midnight-navy); margin-bottom: 0.5rem;" data-i18n="booking.successTitle">Rendez-vous confirmé !</h3>
+                            <p style="color: var(--text-light); max-width: 480px; margin: 0 auto 1.5rem;" data-i18n="booking.successP1">
+                                Votre consultation avec CountUp CPA a été réservée avec succès. Une invitation calendrier a été préparée.
+                            </p>
+
+                            <div class="booking-details-summary" id="booking-summary-box">
+                                <!-- Populated dynamically by script.js -->
+                            </div>
+
+                            <div style="display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap;">
+                                <a href="#" id="booking-google-calendar-link" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                                    <i class="fa-brands fa-google"></i> <span data-i18n="booking.addToGoogle">Ajouter à Google Agenda</span>
+                                </a>
+                                <button type="button" id="booking-download-ics-btn" class="btn btn-secondary btn-sm">
+                                    <i class="fa-regular fa-calendar-plus"></i> <span data-i18n="booking.downloadIcs">Télécharger l'événement (.ics)</span>
+                                </button>
+                                <button type="button" id="booking-reset-btn" class="btn btn-link btn-sm" style="margin-top: 0.5rem; width: 100%;" data-i18n="booking.bookAnother">
+                                    Réserver un autre créneau
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: General Message Form (Initially hidden or switchable) -->
+                    <div id="message-panel" role="tabpanel" aria-labelledby="tab-btn-message" style="display: none;">
+                        <form class="contact-form" id="contact-form" novalidate>
+                            <h3 data-i18n="contact.formTitle">Envoyez-nous un message</h3>
+                            
+                            <!-- Inline Form Feedback Alert -->
+                            <div id="contact-feedback" class="form-feedback" style="display: none;"></div>
+
+                            <!-- Anti-spam Honeypot & Timestamp -->
+                            <input type="text" name="website_url" id="contact-honeypot" class="honeypot-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <input type="hidden" name="form_time" id="contact-form-time" value="">
+
+                            <div class="form-group">
+                                <label for="name" data-i18n="contact.nameLabel">Nom complet</label>
+                                <input type="text" id="name" name="name" data-i18n-attr="placeholder:contact.namePlaceholder" placeholder="Jean Dupont" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.emailLabel">Adresse courriel</label>
+                                <input type="email" id="email" name="email" data-i18n-attr="placeholder:contact.emailPlaceholder" placeholder="jean@exemple.com" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="service" data-i18n="contact.serviceLabel">Service désiré</label>
+                                <select id="service" name="service" required aria-required="true">
+                                    <option value="Personal Tax" data-i18n="contact.optPersonalTax">Impôt des particuliers</option>
+                                    <option value="Corporate Tax" data-i18n="contact.optCorporateTax">Impôt corporatif</option>
+                                    <option value="Bookkeeping" data-i18n="contact.optBookkeeping">Tenue de livres</option>
+                                    <option value="Assurance Services" data-i18n="contact.optAssurance">Certification / Assurance</option>
+                                    <option value="Other" data-i18n="contact.optOther">Autre demande</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact.msgLabel">Message</label>
+                                <textarea id="message" name="message" rows="4" data-i18n-attr="placeholder:contact.msgPlaceholder" placeholder="Comment pouvons-nous vous aider ?" required aria-required="true"></textarea>
+                            </div>
+
+                            <!-- Loi 25 Explicit Consent Checkbox -->
+                            <div class="form-checkbox-group">
+                                <input type="checkbox" id="contact-consent" name="consent" required aria-required="true">
+                                <label for="contact-consent" class="checkbox-label" data-i18n-html="contact.consentLabel">
+                                    J'accepte que mes renseignements soient utilisés par CountUp pour me recontacter, conformément à la <a href="#privacy-modal" class="legal-link open-privacy-trigger">Politique de confidentialité</a>.
+                                </label>
+                            </div>
+
+                            <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-large" style="width: 100%;" disabled>
+                                <span class="btn-text" data-i18n="contact.submitBtn">Envoyer le message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -578,18 +930,18 @@
             <button class="close-modal" id="close-portal-modal" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-header">
                 <i class="fa-solid fa-shield-halved" style="font-size: 2.5rem; color: var(--cobalt-primary); margin-bottom: 1rem;"></i>
-                <h2 id="portal-modal-title" data-i18n="portalModal.title">Secure Portal</h2>
-                <p data-i18n="portalModal.desc">Securely access your financial documents through our ShareFile portal with bank-level encryption.</p>
+                <h2 id="portal-modal-title" data-i18n="portalModal.title">Portail sécurisé</h2>
+                <p data-i18n="portalModal.desc">Accédez à vos documents financiers en toute confidentialité via notre portail sécurisé ShareFile.</p>
             </div>
             <div class="portal-actions">
                 <a href="https://countup.sharefile.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" style="width: 100%;">
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portalModal.btnText">Go to ShareFile</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="portalModal.btnText">Accéder à ShareFile</span>
                 </a>
             </div>
             <div class="modal-footer">
                 <p style="font-size: 0.85rem; color: var(--text-light);">
-                    <span data-i18n="portalModal.helpText">Need help accessing your portal?</span> 
-                    <a href="#contact" class="close-modal-link" style="color: var(--cobalt-primary); font-weight: 600;" data-i18n="portalModal.contactLink">Contact Us</a>
+                    <span data-i18n="portalModal.helpText">Besoin d'aide pour accéder à votre portail ?</span> 
+                    <a href="#contact" class="close-modal-link" style="color: var(--cobalt-primary); font-weight: 600;" data-i18n="portalModal.contactLink">Contactez-nous</a>
                 </p>
             </div>
         </div>
@@ -792,8 +1144,8 @@
                 <p><i class="fa-solid fa-envelope"></i> <a href="mailto:client@countup.ca" style="color: inherit;">client@countup.ca</a></p>
                 <p><i class="fa-brands fa-google"></i> <a href="https://www.google.com/maps/search/?api=1&query=2+Place+Laval+%23485%2C+Laval%2C+QC+H7N+5N6" target="_blank" rel="noopener noreferrer" style="color: inherit;" data-i18n="footer.googleProfile">Google Business Profile</a></p>
                 <div class="social-links">
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/share/1JnFKfavop/" target="_blank" rel="noopener noreferrer" aria-label="Page Facebook CountUp"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/countup-cpa-auditeurs/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="Page LinkedIn CountUp CPA Auditeurs"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
