@@ -1938,8 +1938,8 @@ a {
     background: #FFFFFF;
     border: 1px solid var(--border-hairline);
     border-radius: var(--radius-card);
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1.15rem;
+    margin-bottom: 1.15rem;
 }
 
 .booking-step-header {
@@ -2030,210 +2030,211 @@ a {
 }
 
 /* ==========================================================================
-   Mobile-Friendly Date Carousel & Calendar Navigation
+   Simple Calendar Widget
    ========================================================================== */
-.booking-date-nav-row {
+/* ==========================================================================
+   Simple Calendar Widget (Compact & Elegant)
+   ========================================================================== */
+.simple-calendar-widget {
+    background: #FFFFFF;
+    border: 1px solid var(--border-hairline);
+    border-radius: 12px;
+    padding: 0.75rem 0.85rem;
+    margin: 0.35rem auto 0.85rem;
+    max-width: 320px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.cal-widget-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+    gap: 0.35rem;
 }
 
-.booking-label {
+.cal-widget-header .booking-label {
     display: block;
-    font-size: 0.875rem;
+    font-size: 0.775rem;
     font-weight: 700;
     color: var(--text-heading);
     margin: 0;
+    line-height: 1.2;
 }
 
-.booking-date-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-}
-
-.booking-swipe-hint {
-    font-size: 0.75rem;
-    color: var(--text-light);
+.cal-month-nav {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
+    gap: 0.25rem;
+    background: var(--bg-light-grey);
+    border: 1px solid var(--border-hairline);
+    padding: 0.15rem 0.35rem;
+    border-radius: 6px;
 }
 
-.date-arrow-btns {
-    display: flex;
-    gap: 0.35rem;
+.cal-month-heading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--midnight-navy);
+    min-width: 95px;
+    text-align: center;
+    user-select: none;
+    text-transform: capitalize;
 }
 
-.date-arrow-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1.5px solid var(--border-hairline);
+.cal-nav-btn {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    border: 1px solid transparent;
     background: #FFFFFF;
     color: var(--text-heading);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.75rem;
     cursor: pointer;
+    font-size: 0.65rem;
     transition: var(--transition-smooth);
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
+    padding: 0;
 }
 
-.date-arrow-btn:hover {
+.cal-nav-btn:hover {
     background: var(--cobalt-primary);
     color: #FFFFFF;
-    border-color: var(--cobalt-primary);
 }
 
-.booking-date-scroller-wrapper {
-    position: relative;
-    width: 100%;
-    margin-bottom: 0.5rem;
+.cal-grid-container {
+    margin-bottom: 0.45rem;
 }
 
-.booking-date-scroller-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 8px;
-    width: 24px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.95));
-    pointer-events: none;
-    border-radius: 0 10px 10px 0;
-}
-
-.booking-date-selector {
-    display: flex;
-    gap: 0.55rem;
-    overflow-x: auto;
-    padding: 0.25rem 0.15rem 0.65rem;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    overscroll-behavior-x: contain;
-    scrollbar-width: thin;
-    scrollbar-color: #CBD5E1 transparent;
-}
-
-.booking-date-selector::-webkit-scrollbar {
-    height: 5px;
-}
-
-.booking-date-selector::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.booking-date-selector::-webkit-scrollbar-thumb {
-    background-color: #CBD5E1;
-    border-radius: 10px;
-}
-
-.booking-day-btn {
-    flex: 0 0 76px;
-    min-width: 76px;
-    min-height: 80px;
-    padding: 0.7rem 0.35rem;
-    border: 1.5px solid var(--border-hairline);
-    border-radius: 12px;
-    background: #FFFFFF;
+.cal-weekdays-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    flex-direction: column;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.25rem;
+    padding: 0;
+}
+
+.cal-days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.cal-day-cell {
+    aspect-ratio: 1;
+    min-height: 26px;
+    height: 28px;
+    max-height: 32px;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background: transparent;
+    color: var(--text-heading);
+    font-size: 0.775rem;
+    font-weight: 600;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.2rem;
-    font-family: inherit;
-    scroll-snap-align: start;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    padding: 0;
     user-select: none;
     box-sizing: border-box;
 }
 
-.booking-day-btn:hover {
-    border-color: var(--cobalt-primary);
-    transform: translateY(-2px);
+.cal-day-cell:hover:not(:disabled) {
+    background: rgba(0, 37, 210, 0.08);
+    color: var(--cobalt-primary);
+    border-color: rgba(0, 37, 210, 0.25);
 }
 
-.booking-day-btn.active {
+.cal-day-cell.active {
     background: var(--cobalt-primary) !important;
-    border-color: var(--cobalt-primary) !important;
-    box-shadow: 0 4px 14px rgba(0, 37, 210, 0.3);
-    transform: translateY(-2px);
-}
-
-.booking-day-btn.active .day-name,
-.booking-day-btn.active .day-number,
-.booking-day-btn.active .day-month {
     color: #FFFFFF !important;
-    opacity: 1 !important;
+    font-weight: 800 !important;
+    border-color: var(--cobalt-primary) !important;
+    box-shadow: 0 2px 6px rgba(0, 37, 210, 0.3);
 }
 
-.booking-day-btn .day-name {
-    font-size: 0.725rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--text-light);
-    letter-spacing: 0.04em;
-}
-
-.booking-day-btn .day-number {
-    font-size: 1.3rem;
+.cal-day-cell.today:not(.active) {
+    border-color: var(--cobalt-primary);
+    color: var(--cobalt-primary);
     font-weight: 800;
-    color: var(--text-heading);
-    line-height: 1.1;
 }
 
-.booking-day-btn .day-month {
-    font-size: 0.725rem;
-    font-weight: 600;
+.cal-day-cell:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    background: transparent;
     color: var(--text-light);
-    text-transform: capitalize;
 }
 
-/* Custom Native Date Picker Trigger */
-.custom-date-row {
+.cal-day-cell.weekend {
+    opacity: 0.28;
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.cal-day-cell.empty {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.cal-quick-picker-row {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    margin-bottom: 1.15rem;
-    position: relative;
+    justify-content: space-between;
+    padding-top: 0.45rem;
+    border-top: 1px dashed var(--border-hairline);
+    flex-wrap: wrap;
+    gap: 0.35rem;
 }
 
-.custom-date-trigger {
+.cal-date-input-wrapper {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    font-size: 0.825rem;
-    font-weight: 600;
-    color: var(--cobalt-primary);
-    cursor: pointer;
-    padding: 0.35rem 0.65rem;
-    border-radius: 6px;
-    background: rgba(0, 37, 210, 0.05);
-    transition: var(--transition-smooth);
-    border: 1px dashed rgba(0, 37, 210, 0.25);
 }
 
-.custom-date-trigger:hover {
-    background: rgba(0, 37, 210, 0.1);
-}
-
-.hidden-native-date-input {
+.cal-input-icon {
     position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-    pointer-events: auto;
+    left: 0.55rem;
+    color: var(--cobalt-primary);
+    font-size: 0.75rem;
+    pointer-events: none;
+}
+
+.cal-native-date-input {
+    padding: 0.3rem 0.5rem 0.3rem 1.8rem;
+    font-size: 0.75rem;
+    border: 1px solid var(--border-hairline);
+    border-radius: 6px;
+    color: var(--text-heading);
+    background: #FFFFFF;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.cal-native-date-input:focus {
+    outline: none;
+    border-color: var(--cobalt-primary);
+    box-shadow: 0 0 0 2px rgba(0, 37, 210, 0.12);
+}
+
+.cal-hours-note {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 /* ==========================================================================

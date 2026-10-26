@@ -95,7 +95,7 @@
     <link rel="icon" type="image/svg+xml" href="logo/favicon.svg?v=6.0">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css?v=9.0">
+    <link rel="stylesheet" href="styles.css?v=11.0">
 </head>
 <body>
     <!-- Navigation Menu -->
@@ -693,27 +693,77 @@
                 </div>
                 
                 <div class="contact-form-wrapper animate-on-scroll">
-                    <!-- Mode Switcher Tabs: Booking Agenda vs General Message -->
+                    <!-- Mode Switcher Tabs: Message (Default) vs Booking Agenda -->
                     <div class="contact-mode-tabs" role="tablist">
-                        <button type="button" class="contact-tab-btn active" id="tab-btn-booking" role="tab" aria-selected="true" aria-controls="booking-panel">
-                            <i class="fa-regular fa-calendar-check"></i> <span data-i18n="contact.tabBooking">Prendre rendez-vous (Agenda en direct)</span>
-                        </button>
-                        <button type="button" class="contact-tab-btn" id="tab-btn-message" role="tab" aria-selected="false" aria-controls="message-panel">
+                        <button type="button" class="contact-tab-btn active" id="tab-btn-message" role="tab" aria-selected="true" aria-controls="message-panel">
                             <i class="fa-regular fa-envelope"></i> <span data-i18n="contact.tabMessage">Envoyer un message</span>
+                        </button>
+                        <button type="button" class="contact-tab-btn" id="tab-btn-booking" role="tab" aria-selected="false" aria-controls="booking-panel">
+                            <i class="fa-regular fa-calendar-check"></i> <span data-i18n="contact.tabBooking">Prendre rendez-vous</span>
                         </button>
                     </div>
 
-                    <!-- TAB 1: Real-Time Online Booking Agenda -->
-                    <div id="booking-panel" role="tabpanel" aria-labelledby="tab-btn-booking">
+                    <!-- TAB 1: General Message Form (Active by default) -->
+                    <div id="message-panel" role="tabpanel" aria-labelledby="tab-btn-message" style="display: block;">
+                        <form class="contact-form" id="contact-form" novalidate>
+                            <h3 data-i18n="contact.formTitle">Envoyez-nous un message</h3>
+                            
+                            <!-- Inline Form Feedback Alert -->
+                            <div id="contact-feedback" class="form-feedback" style="display: none;"></div>
+
+                            <!-- Anti-spam Honeypot & Timestamp -->
+                            <input type="text" name="website_url" id="contact-honeypot" class="honeypot-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+                            <input type="hidden" name="form_time" id="contact-form-time" value="">
+
+                            <div class="form-group">
+                                <label for="name" data-i18n="contact.nameLabel">Nom complet</label>
+                                <input type="text" id="name" name="name" data-i18n-attr="placeholder:contact.namePlaceholder" placeholder="Jean Dupont" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.emailLabel">Adresse courriel</label>
+                                <input type="email" id="email" name="email" data-i18n-attr="placeholder:contact.emailPlaceholder" placeholder="jean@exemple.com" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="service" data-i18n="contact.serviceLabel">Service désiré</label>
+                                <select id="service" name="service" required aria-required="true">
+                                    <option value="Personal Tax" data-i18n="contact.optPersonalTax">Impôt des particuliers</option>
+                                    <option value="Corporate Tax" data-i18n="contact.optCorporateTax">Impôt corporatif</option>
+                                    <option value="Bookkeeping" data-i18n="contact.optBookkeeping">Tenue de livres</option>
+                                    <option value="Assurance Services" data-i18n="contact.optAssurance">Certification / Assurance</option>
+                                    <option value="Other" data-i18n="contact.optOther">Autre demande</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="contact.msgLabel">Message</label>
+                                <textarea id="message" name="message" rows="4" data-i18n-attr="placeholder:contact.msgPlaceholder" placeholder="Comment pouvons-nous vous aider ?" required aria-required="true"></textarea>
+                            </div>
+
+                            <!-- Loi 25 Explicit Consent Checkbox -->
+                            <div class="form-checkbox-group">
+                                <input type="checkbox" id="contact-consent" name="consent" required aria-required="true">
+                                <label for="contact-consent" class="checkbox-label" data-i18n-html="contact.consentLabel">
+                                    J'accepte que mes renseignements soient utilisés par CountUp pour me recontacter, conformément à la <a href="#privacy-modal" class="legal-link open-privacy-trigger">Politique de confidentialité</a>.
+                                </label>
+                            </div>
+
+                            <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-large" style="width: 100%;" disabled>
+                                <span class="btn-text" data-i18n="contact.submitBtn">Envoyer le message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- TAB 2: Online Booking Agenda (Switched on demand) -->
+                    <div id="booking-panel" role="tabpanel" aria-labelledby="tab-btn-booking" style="display: none;">
                         <!-- Live Availability Header -->
                         <div class="booking-header-bar">
                             <div class="booking-header-text">
                                 <h3 class="booking-title" data-i18n="booking.title">Prendre rendez-vous</h3>
-                                <p class="booking-subtitle" data-i18n="booking.desc">Choisissez facilement la date et l'horaire en temps réel qui vous conviennent avec l'une de nos associées CPA.</p>
+                                <p class="booking-subtitle" data-i18n="booking.desc">Choisissez facilement la date et l'horaire qui vous conviennent avec l'une de nos associées CPA.</p>
                             </div>
                             <span class="live-badge-indicator">
                                 <span class="live-pulse-dot"></span>
-                                <span data-i18n="booking.liveSlotsBadge">Disponibilités en temps réel</span>
+                                <span data-i18n="booking.liveSlotsBadge">Disponibilités en direct</span>
                             </span>
                         </div>
 
@@ -764,7 +814,7 @@
                                 </div>
                             </div>
 
-                            <!-- Step 2: Date & Live Time Slots -->
+                            <!-- Step 2: Simple Calendar Widget & Live Time Slots -->
                             <div class="booking-step">
                                 <div class="booking-step-header">
                                     <div class="booking-step-title">
@@ -774,42 +824,46 @@
                                     <span class="tz-badge"><i class="fa-regular fa-clock"></i> Heure de l'Est (Laval)</span>
                                 </div>
 
-                                <!-- Date Navigation & Controls -->
-                                <div class="booking-date-nav-row">
-                                    <label class="booking-label" data-i18n="booking.selectDateLabel">Jours ouvrables disponibles</label>
-                                    <div class="booking-date-controls">
-                                        <span class="booking-swipe-hint"><i class="fa-solid fa-arrows-left-right"></i> <span data-i18n="booking.swipeHint">Glissez pour voir plus</span></span>
-                                        <div class="date-arrow-btns">
-                                            <button type="button" class="date-arrow-btn" id="date-scroll-prev" aria-label="Dates précédentes" title="Précédent">
+                                <!-- Simple Calendar Widget -->
+                                <div class="simple-calendar-widget">
+                                    <div class="cal-widget-header">
+                                        <label class="booking-label" data-i18n="booking.selectDateLabel">Date de la rencontre (Lundi au Vendredi)</label>
+                                        <div class="cal-month-nav">
+                                            <button type="button" class="cal-nav-btn" id="cal-prev-month" aria-label="Mois précédent" title="Mois précédent">
                                                 <i class="fa-solid fa-chevron-left"></i>
                                             </button>
-                                            <button type="button" class="date-arrow-btn" id="date-scroll-next" aria-label="Dates suivantes" title="Suivant">
+                                            <span class="cal-month-heading" id="cal-month-heading">Octobre 2026</span>
+                                            <button type="button" class="cal-nav-btn" id="cal-next-month" aria-label="Mois suivant" title="Mois suivant">
                                                 <i class="fa-solid fa-chevron-right"></i>
                                             </button>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Mobile Touch Scroll Carousel with Fade Indicators -->
-                                <div class="booking-date-scroller-wrapper">
-                                    <div class="booking-date-selector" id="booking-date-days-container" role="radiogroup" aria-label="Sélection de date">
-                                        <!-- Populated dynamically by script.js with upcoming business days -->
+                                    <!-- Calendar Month Grid -->
+                                    <div class="cal-grid-container">
+                                        <div class="cal-weekdays-row" id="cal-weekdays-row">
+                                            <span>Lun</span><span>Mar</span><span>Mer</span><span>Jeu</span><span>Ven</span><span>Sam</span><span>Dim</span>
+                                        </div>
+                                        <div class="cal-days-grid" id="cal-days-grid">
+                                            <!-- Populated dynamically by script.js -->
+                                        </div>
                                     </div>
-                                </div>
-                                <input type="hidden" id="selected-booking-date" name="selected_date" value="">
 
-                                <!-- Optional Native Date Picker Trigger for mobile users who want another date -->
-                                <div class="custom-date-row">
-                                    <label for="booking-custom-date" class="custom-date-trigger">
-                                        <i class="fa-regular fa-calendar-days"></i>
-                                        <span data-i18n="booking.otherDate">Choisir une autre date...</span>
-                                    </label>
-                                    <input type="date" id="booking-custom-date" class="hidden-native-date-input" aria-label="Sélectionner une date précise">
+                                    <!-- Quick Native Date Input Sync -->
+                                    <div class="cal-quick-picker-row">
+                                        <div class="cal-date-input-wrapper">
+                                            <i class="fa-regular fa-calendar-days cal-input-icon"></i>
+                                            <input type="date" id="booking-custom-date" class="cal-native-date-input" aria-label="Choisir une date sur le calendrier">
+                                        </div>
+                                        <span class="cal-hours-note"><i class="fa-regular fa-clock"></i> Lun - Ven : 9h00 - 17h00</span>
+                                    </div>
+
+                                    <input type="hidden" id="selected-booking-date" name="selected_date" value="">
                                 </div>
 
                                 <!-- Time Slots Header -->
                                 <div class="booking-slots-header">
-                                    <label class="booking-label" data-i18n="booking.selectSlotLabel">Créneaux horaires en direct</label>
+                                    <label class="booking-label" data-i18n="booking.selectSlotLabel">Créneaux horaires disponibles</label>
                                     <span class="slots-duration-badge"><i class="fa-regular fa-hourglass-half"></i> 30-45 min</span>
                                 </div>
 
@@ -914,56 +968,6 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- TAB 2: General Message Form (Initially hidden or switchable) -->
-                    <div id="message-panel" role="tabpanel" aria-labelledby="tab-btn-message" style="display: none;">
-                        <form class="contact-form" id="contact-form" novalidate>
-                            <h3 data-i18n="contact.formTitle">Envoyez-nous un message</h3>
-                            
-                            <!-- Inline Form Feedback Alert -->
-                            <div id="contact-feedback" class="form-feedback" style="display: none;"></div>
-
-                            <!-- Anti-spam Honeypot & Timestamp -->
-                            <input type="text" name="website_url" id="contact-honeypot" class="honeypot-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
-                            <input type="hidden" name="form_time" id="contact-form-time" value="">
-
-                            <div class="form-group">
-                                <label for="name" data-i18n="contact.nameLabel">Nom complet</label>
-                                <input type="text" id="name" name="name" data-i18n-attr="placeholder:contact.namePlaceholder" placeholder="Jean Dupont" required aria-required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="email" data-i18n="contact.emailLabel">Adresse courriel</label>
-                                <input type="email" id="email" name="email" data-i18n-attr="placeholder:contact.emailPlaceholder" placeholder="jean@exemple.com" required aria-required="true">
-                            </div>
-                            <div class="form-group">
-                                <label for="service" data-i18n="contact.serviceLabel">Service désiré</label>
-                                <select id="service" name="service" required aria-required="true">
-                                    <option value="Personal Tax" data-i18n="contact.optPersonalTax">Impôt des particuliers</option>
-                                    <option value="Corporate Tax" data-i18n="contact.optCorporateTax">Impôt corporatif</option>
-                                    <option value="Bookkeeping" data-i18n="contact.optBookkeeping">Tenue de livres</option>
-                                    <option value="Assurance Services" data-i18n="contact.optAssurance">Certification / Assurance</option>
-                                    <option value="Other" data-i18n="contact.optOther">Autre demande</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" data-i18n="contact.msgLabel">Message</label>
-                                <textarea id="message" name="message" rows="4" data-i18n-attr="placeholder:contact.msgPlaceholder" placeholder="Comment pouvons-nous vous aider ?" required aria-required="true"></textarea>
-                            </div>
-
-                            <!-- Loi 25 Explicit Consent Checkbox -->
-                            <div class="form-checkbox-group">
-                                <input type="checkbox" id="contact-consent" name="consent" required aria-required="true">
-                                <label for="contact-consent" class="checkbox-label" data-i18n-html="contact.consentLabel">
-                                    J'accepte que mes renseignements soient utilisés par CountUp pour me recontacter, conformément à la <a href="#privacy-modal" class="legal-link open-privacy-trigger">Politique de confidentialité</a>.
-                                </label>
-                            </div>
-
-                            <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-large" style="width: 100%;" disabled>
-                                <span class="btn-text" data-i18n="contact.submitBtn">Envoyer le message</span>
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -1236,8 +1240,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="translations.js?v=9.0"></script>
-    <script src="i18n.js?v=9.0"></script>
-    <script src="script.js?v=9.0"></script>
+    <script src="translations.js?v=11.0"></script>
+    <script src="i18n.js?v=11.0"></script>
+    <script src="script.js?v=11.0"></script>
 </body>
 </html>

@@ -476,7 +476,7 @@ Thank you for choosing CountUp Accounting!
     }
 
     // ==========================================
-    // 8. Real-Time Online Appointment Scheduler
+    // 8. Contact & Online Appointment Scheduler
     // ==========================================
     const tabBtnBooking = document.getElementById('tab-btn-booking');
     const tabBtnMessage = document.getElementById('tab-btn-message');
@@ -484,18 +484,7 @@ Thank you for choosing CountUp Accounting!
     const messagePanel = document.getElementById('message-panel');
 
     function switchContactTab(tabName) {
-        if (tabName === 'message') {
-            if (tabBtnMessage) {
-                tabBtnMessage.classList.add('active');
-                tabBtnMessage.setAttribute('aria-selected', 'true');
-            }
-            if (tabBtnBooking) {
-                tabBtnBooking.classList.remove('active');
-                tabBtnBooking.setAttribute('aria-selected', 'false');
-            }
-            if (bookingPanel) bookingPanel.style.display = 'none';
-            if (messagePanel) messagePanel.style.display = 'block';
-        } else {
+        if (tabName === 'booking') {
             if (tabBtnBooking) {
                 tabBtnBooking.classList.add('active');
                 tabBtnBooking.setAttribute('aria-selected', 'true');
@@ -506,6 +495,18 @@ Thank you for choosing CountUp Accounting!
             }
             if (bookingPanel) bookingPanel.style.display = 'block';
             if (messagePanel) messagePanel.style.display = 'none';
+        } else {
+            // Default: General Message Tab
+            if (tabBtnMessage) {
+                tabBtnMessage.classList.add('active');
+                tabBtnMessage.setAttribute('aria-selected', 'true');
+            }
+            if (tabBtnBooking) {
+                tabBtnBooking.classList.remove('active');
+                tabBtnBooking.setAttribute('aria-selected', 'false');
+            }
+            if (bookingPanel) bookingPanel.style.display = 'none';
+            if (messagePanel) messagePanel.style.display = 'block';
         }
     }
 
@@ -514,9 +515,12 @@ Thank you for choosing CountUp Accounting!
         tabBtnMessage.addEventListener('click', () => switchContactTab('message'));
     }
 
-    // Booking service pre-selectors across the site
+    // Default to sending message on page load as requested
+    switchContactTab('message');
+
+    // Booking service pre-selectors & appointment CTAs across the site
     document.addEventListener('click', (e) => {
-        const target = e.target.closest('.select-booking-service-btn, .nav-booking-btn, a[href="#contact"]');
+        const target = e.target.closest('.select-booking-service-btn, .nav-booking-btn, [data-tab="booking"]');
         if (!target) return;
 
         switchContactTab('booking');
@@ -545,21 +549,35 @@ Thank you for choosing CountUp Accounting!
         });
     });
 
-    // Dynamic Business Days Generator (Mon-Fri) & Mobile Calendar Controls
-    const daysContainer = document.getElementById('booking-date-days-container');
+    // ==========================================
+    // Simple Calendar Widget
+    // ==========================================
+    const calDaysGrid = document.getElementById('cal-days-grid');
+    const calMonthHeading = document.getElementById('cal-month-heading');
+    const calPrevMonthBtn = document.getElementById('cal-prev-month');
+    const calNextMonthBtn = document.getElementById('cal-next-month');
+    const datePickerInput = document.getElementById('booking-custom-date');
     const selectedDateInput = document.getElementById('selected-booking-date');
     const selectedTimeInput = document.getElementById('selected-booking-time');
     const liveSummaryText = document.getElementById('booking-live-summary-text');
-    const btnScrollPrev = document.getElementById('date-scroll-prev');
-    const btnScrollNext = document.getElementById('date-scroll-next');
-    const customDateInput = document.getElementById('booking-custom-date');
 
-    const dayNamesFr = ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'];
-    const dayNamesEn = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    const monthNamesFr = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
-    const monthNamesEn = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const dayNamesFr = ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'];
+    const dayNamesEn = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const monthNamesFr = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
+    const monthNamesEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    let generatedAvailableDays = [];
+    // State
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    // Initial selected date: next available business day (Monday - Friday)
+    let selectedDate = new Date(today);
+    selectedDate.setDate(selectedDate.getDate() + 1);
+    while (selectedDate.getDay() === 0 || selectedDate.getDay() === 6) {
+        selectedDate.setDate(selectedDate.getDate() + 1);
+    }
+
+    let viewDate = new Date(selectedDate);
 
     function updateLiveSummary() {
         if (!liveSummaryText) return;
@@ -574,173 +592,151 @@ Thank you for choosing CountUp Accounting!
         }
     }
 
-    function generateAvailableDays() {
-        if (!daysContainer) return;
-        daysContainer.innerHTML = '';
-        generatedAvailableDays = [];
+    function formatFullDate(d) {
+        const french = isFrench();
+        const dayOfWeek = d.getDay();
+        const dayName = french ? dayNamesFr[dayOfWeek] : dayNamesEn[dayOfWeek];
+        const dayNum = d.getDate();
+        const monthName = french ? monthNamesFr[d.getMonth()] : monthNamesEn[d.getMonth()];
+        const year = d.getFullYear();
+        return `${dayName} ${dayNum} ${monthName} ${year}`;
+    }
+
+    function setSelectedDate(d) {
+        selectedDate = new Date(d);
+        const iso = selectedDate.toISOString().split('T')[0];
+        const formatted = formatFullDate(selectedDate);
+
+        if (selectedDateInput) {
+            selectedDateInput.value = formatted;
+            selectedDateInput.dataset.iso = iso;
+        }
+
+        if (datePickerInput) {
+            datePickerInput.value = iso;
+        }
+
+        updateLiveSummary();
+    }
+
+    function renderSimpleCalendar() {
+        if (!calDaysGrid || !calMonthHeading) return;
 
         const french = isFrench();
-        const now = new Date();
-        let current = new Date(now);
-        // Start from tomorrow
-        current.setDate(current.getDate() + 1);
+        const year = viewDate.getFullYear();
+        const month = viewDate.getMonth();
 
-        let count = 0;
-        // Generate 12 available business days (covers > 2 full business weeks)
-        while (count < 12) {
-            const dayOfWeek = current.getDay();
-            // Skip weekends (0: Sunday, 6: Saturday)
-            if (dayOfWeek !== 0 && dayOfWeek !== 6) {
-                const dateIso = current.toISOString().split('T')[0];
-                const dayName = french ? dayNamesFr[dayOfWeek] : dayNamesEn[dayOfWeek];
-                const dayNum = current.getDate();
-                const monthName = french ? monthNamesFr[current.getMonth()] : monthNamesEn[current.getMonth()];
-                const fullFormatted = `${dayName} ${dayNum} ${monthName} ${current.getFullYear()}`;
+        // Month Heading
+        calMonthHeading.textContent = `${french ? monthNamesFr[month] : monthNamesEn[month]} ${year}`;
 
-                generatedAvailableDays.push({
-                    iso: dateIso,
-                    formatted: fullFormatted,
-                    dayName,
-                    dayNum,
-                    monthName
-                });
-                count++;
-            }
-            current.setDate(current.getDate() + 1);
+        calDaysGrid.innerHTML = '';
+
+        // Day 1 of month
+        const firstDay = new Date(year, month, 1);
+        // Week starts on Monday: Mon=0, Tue=1, ..., Sun=6
+        const startDayIndex = (firstDay.getDay() === 0) ? 6 : firstDay.getDay() - 1;
+
+        // Empty cells before 1st of month
+        for (let i = 0; i < startDayIndex; i++) {
+            const emptyCell = document.createElement('div');
+            emptyCell.className = 'cal-day-cell empty';
+            emptyCell.setAttribute('aria-hidden', 'true');
+            calDaysGrid.appendChild(emptyCell);
         }
 
-        // Render day buttons with accessibility attributes
-        generatedAvailableDays.forEach((day, index) => {
+        // Days in month
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const selectedIso = selectedDate ? selectedDate.toISOString().split('T')[0] : '';
+        const todayIso = today.toISOString().split('T')[0];
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const currentCellDate = new Date(year, month, day);
+            currentCellDate.setHours(0, 0, 0, 0);
+
+            const cellIso = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+            const dayOfWeek = currentCellDate.getDay();
+            const isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+            const isPast = (currentCellDate < today);
+            const isSelected = (cellIso === selectedIso);
+            const isToday = (cellIso === todayIso);
+
             const btn = document.createElement('button');
             btn.type = 'button';
-            btn.className = `booking-day-btn ${index === 0 ? 'active' : ''}`;
-            btn.setAttribute('role', 'radio');
-            btn.setAttribute('aria-checked', index === 0 ? 'true' : 'false');
-            btn.setAttribute('aria-label', `${day.dayName} ${day.dayNum} ${day.monthName}`);
-            btn.dataset.dateIso = day.iso;
-            btn.dataset.dateFormatted = day.formatted;
-            btn.innerHTML = `
-                <span class="day-name">${day.dayName}</span>
-                <span class="day-number">${day.dayNum}</span>
-                <span class="day-month">${day.monthName}</span>
-            `;
+            btn.className = `cal-day-cell${isSelected ? ' active' : ''}${isToday ? ' today' : ''}${isWeekend ? ' weekend' : ''}`;
+            btn.textContent = day;
+            btn.setAttribute('aria-label', `${day} ${french ? monthNamesFr[month] : monthNamesEn[month]} ${year}`);
 
-            btn.addEventListener('click', () => {
-                daysContainer.querySelectorAll('.booking-day-btn').forEach(b => {
-                    b.classList.remove('active');
-                    b.setAttribute('aria-checked', 'false');
-                });
-                btn.classList.add('active');
-                btn.setAttribute('aria-checked', 'true');
-                if (selectedDateInput) selectedDateInput.value = day.formatted;
-                btn.dataset.dateIso && (selectedDateInput.dataset.iso = day.iso);
-                updateLiveSummary();
-            });
-
-            daysContainer.appendChild(btn);
-        });
-
-        if (selectedDateInput && generatedAvailableDays.length > 0) {
-            selectedDateInput.value = generatedAvailableDays[0].formatted;
-            selectedDateInput.dataset.iso = generatedAvailableDays[0].iso;
-        }
-
-        updateLiveSummary();
-    }
-
-    generateAvailableDays();
-
-    // Mobile Calendar Horizontal Scroll Arrow Buttons
-    if (btnScrollPrev && daysContainer) {
-        btnScrollPrev.addEventListener('click', () => {
-            daysContainer.scrollBy({ left: -160, behavior: 'smooth' });
-        });
-    }
-
-    if (btnScrollNext && daysContainer) {
-        btnScrollNext.addEventListener('click', () => {
-            daysContainer.scrollBy({ left: 160, behavior: 'smooth' });
-        });
-    }
-
-    // Optional Native Date Picker Integration for Mobile Users
-    if (customDateInput) {
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        customDateInput.min = tomorrow.toISOString().split('T')[0];
-
-        customDateInput.addEventListener('change', () => {
-            if (!customDateInput.value) return;
-            const parts = customDateInput.value.split('-');
-            if (parts.length === 3) {
-                const year = parseInt(parts[0], 10);
-                const month = parseInt(parts[1], 10) - 1;
-                const dayOfMonth = parseInt(parts[2], 10);
-                const picked = new Date(year, month, dayOfMonth);
-                const french = isFrench();
-                const dayOfWeek = picked.getDay();
-                const dayName = french ? dayNamesFr[dayOfWeek] : dayNamesEn[dayOfWeek];
-                const dayNum = picked.getDate();
-                const monthName = french ? monthNamesFr[picked.getMonth()] : monthNamesEn[picked.getMonth()];
-                const fullFormatted = `${dayName} ${dayNum} ${monthName} ${year}`;
-
-                // Deselect other buttons
-                daysContainer.querySelectorAll('.booking-day-btn').forEach(b => {
-                    b.classList.remove('active');
-                    b.setAttribute('aria-checked', 'false');
-                });
-
-                // Check if already in list
-                const existingBtn = daysContainer.querySelector(`[data-date-iso="${customDateInput.value}"]`);
-                if (existingBtn) {
-                    existingBtn.classList.add('active');
-                    existingBtn.setAttribute('aria-checked', 'true');
-                    existingBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            if (isPast || isWeekend) {
+                btn.disabled = true;
+                if (isWeekend) {
+                    btn.title = french ? 'Fermé le week-end' : 'Closed on weekends';
                 } else {
-                    const customBtn = document.createElement('button');
-                    customBtn.type = 'button';
-                    customBtn.className = 'booking-day-btn active';
-                    customBtn.setAttribute('role', 'radio');
-                    customBtn.setAttribute('aria-checked', 'true');
-                    customBtn.dataset.dateIso = customDateInput.value;
-                    customBtn.dataset.dateFormatted = fullFormatted;
-                    customBtn.innerHTML = `
-                        <span class="day-name">${dayName}</span>
-                        <span class="day-number">${dayNum}</span>
-                        <span class="day-month">${monthName}</span>
-                    `;
-                    customBtn.addEventListener('click', () => {
-                        daysContainer.querySelectorAll('.booking-day-btn').forEach(b => {
-                            b.classList.remove('active');
-                            b.setAttribute('aria-checked', 'false');
-                        });
-                        customBtn.classList.add('active');
-                        customBtn.setAttribute('aria-checked', 'true');
-                        if (selectedDateInput) selectedDateInput.value = fullFormatted;
-                        selectedDateInput.dataset.iso = customDateInput.value;
-                        updateLiveSummary();
-                    });
-                    daysContainer.prepend(customBtn);
-                    daysContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                    btn.title = french ? 'Date passée' : 'Past date';
                 }
+            } else {
+                btn.addEventListener('click', () => {
+                    setSelectedDate(currentCellDate);
+                    renderSimpleCalendar();
+                });
+            }
 
-                if (selectedDateInput) {
-                    selectedDateInput.value = fullFormatted;
-                    selectedDateInput.dataset.iso = customDateInput.value;
-                }
-                updateLiveSummary();
+            calDaysGrid.appendChild(btn);
+        }
+    }
+
+    // Month Navigation Controls
+    if (calPrevMonthBtn) {
+        calPrevMonthBtn.addEventListener('click', () => {
+            viewDate.setMonth(viewDate.getMonth() - 1);
+            renderSimpleCalendar();
+        });
+    }
+
+    if (calNextMonthBtn) {
+        calNextMonthBtn.addEventListener('click', () => {
+            viewDate.setMonth(viewDate.getMonth() + 1);
+            renderSimpleCalendar();
+        });
+    }
+
+    // Native Date Input Integration
+    if (datePickerInput) {
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        datePickerInput.min = tomorrow.toISOString().split('T')[0];
+
+        datePickerInput.addEventListener('change', () => {
+            if (!datePickerInput.value) return;
+            const parts = datePickerInput.value.split('-');
+            if (parts.length === 3) {
+                const y = parseInt(parts[0], 10);
+                const m = parseInt(parts[1], 10) - 1;
+                const d = parseInt(parts[2], 10);
+                const picked = new Date(y, m, d);
+                
+                // If weekend picked, adjust to Monday
+                if (picked.getDay() === 0) picked.setDate(picked.getDate() + 1);
+                if (picked.getDay() === 6) picked.setDate(picked.getDate() + 2);
+
+                viewDate = new Date(picked);
+                setSelectedDate(picked);
+                renderSimpleCalendar();
             }
         });
     }
 
-    // Listen for language switch to re-render calendar days in correct locale
+    // Initialize Simple Calendar Widget with default business day
+    setSelectedDate(selectedDate);
+    renderSimpleCalendar();
+
+    // Re-render when language toggles (FR <-> EN)
     window.addEventListener('countup:languageChanged', () => {
-        generateAvailableDays();
-        updateLiveSummary();
+        setSelectedDate(selectedDate);
+        renderSimpleCalendar();
     });
     window.addEventListener('languageChanged', () => {
-        generateAvailableDays();
-        updateLiveSummary();
+        setSelectedDate(selectedDate);
+        renderSimpleCalendar();
     });
 
     // Time Slot Selection (supports all slot buttons in morning & afternoon grids)
@@ -996,7 +992,8 @@ Thank you for choosing CountUp Accounting!
             }
             if (bookingConsent) bookingConsent.checked = false;
             if (bookingSubmitBtn) bookingSubmitBtn.disabled = true;
-            generateAvailableDays();
+            setSelectedDate(selectedDate);
+            renderSimpleCalendar();
         });
     }
 
