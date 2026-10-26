@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" width="100%" height="100%" style="background:#F8FAFC; border-radius: 16px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="50%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+
+    <linearGradient id="cobaltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1D4ED8"/>
+      <stop offset="100%" stop-color="#0025D2"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+
+    <linearGradient id="navyCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+
+    <!-- Filters for crisp depth -->
+    <filter id="softShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0B132B" flood-opacity="0.08"/>
+    </filter>
+
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="800" height="620" rx="16" fill="url(#bgGrad)"/>
+  <rect width="800" height="620" rx="16" fill="none" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Subtle ambient decorative circles -->
+  <circle cx="720" cy="90" r="140" fill="#3B82F6" opacity="0.08" filter="url(#glowBlue)"/>
+  <circle cx="90" cy="530" r="120" fill="#10B981" opacity="0.06" filter="url(#glowBlue)"/>
+
+  <!-- ==================== 1. TOP HEADER & OFFICIAL CPA SEAL ==================== -->
+  <g transform="translate(40, 36)">
+    <!-- CPA Official Badge Pill -->
+    <rect x="0" y="0" width="220" height="30" rx="15" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
+    <circle cx="16" cy="15" r="5" fill="#0025D2"/>
+    <text x="30" y="19.5" fill="#0025D2" font-size="12" font-weight="800" letter-spacing="0.06em">CABINET CPA AUDITEURS</text>
+
+    <!-- Main Title -->
+    <text x="0" y="66" fill="#0F172A" font-size="25" font-weight="900" letter-spacing="-0.5px">Deux Associées CPA Auditeurs</text>
+    <text x="0" y="92" fill="#475569" font-size="14.5" font-weight="500">Excellence en certification, comptabilité d'entreprise &amp; fiscalité stratégique</text>
+
+    <!-- Gold & Cobalt Seal Stamp (Right) -->
+    <g transform="translate(610, -8)" filter="url(#softShadow)">
+      <!-- Outer Seal Ring -->
+      <circle cx="50" cy="50" r="46" fill="#FFFFFF" stroke="url(#goldGrad)" stroke-width="3"/>
+      <circle cx="50" cy="50" r="41" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.5" stroke-dasharray="3 3"/>
+      
+      <!-- Inner Blue Core -->
+      <circle cx="50" cy="50" r="32" fill="url(#cobaltGrad)"/>
+      <text x="50" y="46" fill="#FFFFFF" font-size="15" font-weight="900" text-anchor="middle" letter-spacing="0.05em">CPA</text>
+      <text x="50" y="60" fill="#FDE68A" font-size="9" font-weight="800" text-anchor="middle" letter-spacing="0.08em">AUDITEUR</text>
+      
+      <!-- 5 Stars Below -->
+      <g transform="translate(26, 88)" fill="#D97706">
+        <path d="M 5 2 L 6.5 6 L 10 6.5 L 7.5 9 L 8.2 13 L 5 11 L 1.8 13 L 2.5 9 L 0 6.5 L 3.5 6 Z"/>
+        <path d="M 17 2 L 18.5 6 L 22 6.5 L 19.5 9 L 20.2 13 L 17 11 L 13.8 13 L 14.5 9 L 12 6.5 L 15.5 6 Z"/>
+        <path d="M 29 2 L 30.5 6 L 34 6.5 L 31.5 9 L 32.2 13 L 29 11 L 25.8 13 L 26.5 9 L 24 6.5 L 27.5 6 Z"/>
+        <path d="M 41 2 L 42.5 6 L 46 6.5 L 43.5 9 L 44.2 13 L 41 11 L 37.8 13 L 38.5 9 L 36 6.5 L 39.5 6 Z"/>
+        <path d="M 53 2 L 54.5 6 L 58 6.5 L 55.5 9 L 56.2 13 L 53 11 L 49.8 13 L 50.5 9 L 48 6.5 L 51.5 6 Z"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== 2. TWO PILLARS: BIG FOUR & ENTERPRISE ==================== -->
+  <g transform="translate(40, 150)">
+    <!-- Column 1: Big Four Experience -->
+    <g transform="translate(0, 0)" filter="url(#softShadow)">
+      <rect width="345" height="195" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <rect width="345" height="6" rx="3" fill="url(#cobaltGrad)"/>
+      
+      <!-- Icon Box -->
+      <rect x="22" y="24" width="46" height="46" rx="10" fill="#EFF6FF" stroke="#DBEAFE" stroke-width="1"/>
+      <path d="M 37 47 L 45 35 L 53 47 Z" fill="#0025D2"/>
+      <path d="M 41 47 L 45 40 L 49 47 Z" fill="#FFFFFF"/>
+      <circle cx="45" cy="33" r="3" fill="#D97706"/>
+
+      <!-- Metric Number & Title -->
+      <text x="80" y="44" fill="#0025D2" font-size="28" font-weight="900">6 ans</text>
+      <text x="80" y="62" fill="#0F172A" font-size="15" font-weight="800">Cabinets Big Four</text>
+
+      <line x1="22" y1="84" x2="323" y2="84" stroke="#F1F5F9" stroke-width="1.5"/>
+
+      <!-- Bullet Points -->
+      <g transform="translate(22, 102)">
+        <circle cx="6" cy="7" r="5" fill="#10B981"/>
+        <path d="M 4 7 L 6 9 L 9 5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <text x="20" y="11" fill="#1E293B" font-size="13" font-weight="700">Missions d'audit &amp; certification</text>
+        <text x="20" y="26" fill="#64748B" font-size="11.5">Conformité rigoureuse NCECF / IFRS</text>
+
+        <circle cx="6" cy="47" r="5" fill="#10B981"/>
+        <path d="M 4 47 L 6 49 L 9 45" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <text x="20" y="51" fill="#1E293B" font-size="13" font-weight="700">Contrôle interne &amp; gouvernance</text>
+        <text x="20" y="66" fill="#64748B" font-size="11.5">Méthodologie d'audit des grands cabinets</text>
+      </g>
+    </g>
+
+    <!-- Column 2: 15+ Years Enterprise Experience -->
+    <g transform="translate(375, 0)" filter="url(#softShadow)">
+      <rect width="345" height="195" rx="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <rect width="345" height="6" rx="3" fill="url(#emeraldGrad)"/>
+
+      <!-- Icon Box -->
+      <rect x="22" y="24" width="46" height="46" rx="10" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1"/>
+      <path d="M 35 50 L 35 36 L 45 30 L 55 36 L 55 50 Z" fill="#059669"/>
+      <rect x="42" y="42" width="6" height="8" fill="#FFFFFF"/>
+
+      <!-- Metric Number & Title -->
+      <text x="80" y="44" fill="#047857" font-size="28" font-weight="900">15+ ans</text>
+      <text x="80" y="62" fill="#0F172A" font-size="15" font-weight="800">Direction en Entreprise</text>
+
+      <line x1="22" y1="84" x2="323" y2="84" stroke="#F1F5F9" stroke-width="1.5"/>
+
+      <!-- Bullet Points -->
+      <g transform="translate(22, 102)">
+        <circle cx="6" cy="7" r="5" fill="#10B981"/>
+        <path d="M 4 7 L 6 9 L 9 5" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <text x="20" y="11" fill="#1E293B" font-size="13" font-weight="700">Gestion financière de PME</text>
+        <text x="20" y="26" fill="#64748B" font-size="11.5">Vision concrète des réalités d'affaires</text>
+
+        <circle cx="6" cy="47" r="5" fill="#10B981"/>
+        <path d="M 4 47 L 6 49 L 9 45" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <text x="20" y="51" fill="#1E293B" font-size="13" font-weight="700">Optimisation fiscale &amp; corporative</text>
+        <text x="20" y="66" fill="#64748B" font-size="11.5">Maximisation des déductions et crédits</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ==================== 3. THREE LEVELS OF ASSURANCE (CERTIFICATION) ==================== -->
+  <g transform="translate(40, 365)" filter="url(#softShadow)">
+    <rect width="720" height="215" rx="14" fill="url(#navyCardGrad)" stroke="#334155" stroke-width="1.5"/>
+    
+    <!-- Header inside dark card -->
+    <g transform="translate(26, 22)">
+      <rect x="0" y="0" width="160" height="22" rx="4" fill="rgba(255,255,255,0.1)"/>
+      <text x="10" y="15" fill="#93C5FD" font-size="11" font-weight="800" letter-spacing="0.08em">SERVICES PROFESSIONNELS</text>
+      
+      <text x="175" y="16" fill="#FFFFFF" font-size="14" font-weight="700">3 Niveaux de Mandats Adaptés à Vos Besoins</text>
+      <text x="540" y="16" fill="#34D399" font-size="12" font-weight="700">✓ Normes CPA Québec</text>
+    </g>
+
+    <line x1="26" y1="52" x2="694" y2="52" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+    <!-- 3 Tier Cards -->
+    <g transform="translate(26, 66)">
+      <!-- Tier 1: Compilation -->
+      <g transform="translate(0, 0)">
+        <rect width="212" height="125" rx="10" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.14)" stroke-width="1"/>
+        <text x="16" y="24" fill="#93C5FD" font-size="11" font-weight="800" letter-spacing="0.04em">NIVEAU 1</text>
+        <text x="16" y="44" fill="#FFFFFF" font-size="14.5" font-weight="800">Compilation</text>
+        <text x="16" y="62" fill="#E2E8F0" font-size="11.5" font-weight="500">Avis au lecteur</text>
+        <line x1="16" y1="72" x2="196" y2="72" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        <text x="16" y="88" fill="#CBD5E1" font-size="11">États financiers pour fins fiscales</text>
+        <text x="16" y="104" fill="#94A3B8" font-size="10.5">Idéal PME et travailleurs autonomes</text>
+      </g>
+
+      <!-- Tier 2: Examen -->
+      <g transform="translate(228, 0)">
+        <rect width="212" height="125" rx="10" fill="rgba(0, 37, 210, 0.22)" stroke="#3B82F6" stroke-width="1.5"/>
+        <text x="16" y="24" fill="#60A5FA" font-size="11" font-weight="800" letter-spacing="0.04em">NIVEAU 2 • POPULAIRE</text>
+        <text x="16" y="44" fill="#FFFFFF" font-size="14.5" font-weight="800">Mission d'examen</text>
+        <text x="16" y="62" fill="#93C5FD" font-size="11.5" font-weight="600">Assurance modérée</text>
+        <line x1="16" y1="72" x2="196" y2="72" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="16" y="88" fill="#E2E8F0" font-size="11">Exigé par banques et prêteurs</text>
+        <text x="16" y="104" fill="#94A3B8" font-size="10.5">Analyses plausibles &amp; entretiens</text>
+      </g>
+
+      <!-- Tier 3: Audit -->
+      <g transform="translate(456, 0)">
+        <rect width="212" height="125" rx="10" fill="rgba(16, 185, 129, 0.15)" stroke="#10B981" stroke-width="1.5"/>
+        <text x="16" y="24" fill="#34D399" font-size="11" font-weight="800" letter-spacing="0.04em">NIVEAU 3 • MAXIMUM</text>
+        <text x="16" y="44" fill="#FFFFFF" font-size="14.5" font-weight="800">Mission d'audit</text>
+        <text x="16" y="62" fill="#A7F3D0" font-size="11.5" font-weight="600">Assurance élevée</text>
+        <line x1="16" y1="72" x2="196" y2="72" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+        <text x="16" y="88" fill="#E2E8F0" font-size="11">Examen approfondi &amp; opinion CPA</text>
+        <text x="16" y="104" fill="#94A3B8" font-size="10.5">Actionnaires, OBNL &amp; investisseurs</text>
+      </g>
+    </g>
+  </g>
+</svg>

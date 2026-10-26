@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,8 +77,8 @@
       },
       "sameAs": [
         "https://www.google.com/maps/search/?api=1&query=2+Place+Laval+%23485%2C+Laval%2C+QC+H7N+5N6",
-        "https://linkedin.com",
-        "https://twitter.com"
+        "https://www.facebook.com/share/1JnFKfavop/",
+        "https://www.linkedin.com/company/countup-cpa-auditeurs/"
       ]
     }
     </script>
@@ -95,33 +95,62 @@
     <link rel="icon" type="image/svg+xml" href="logo/favicon.svg?v=6.0">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css?v=8.0">
+    <link rel="stylesheet" href="styles.css?v=9.0">
 </head>
 <body>
     <!-- Navigation Menu -->
     <header class="navbar" id="navbar">
         <div class="container nav-container">
-            <a href="#home" class="logo">
-                <img src="logo/countup-logo-transparent.svg?v=6.0" alt="CountUp" class="logo-img">
-            </a>
-            <nav class="nav-links" id="nav-links">
-                <a href="#home" class="nav-link" data-i18n="nav.home">Home</a>
+            <!-- Left: Brand Logo & CPA Auditor Credential Badge -->
+            <div class="nav-brand-group">
+                <a href="#home" class="logo" aria-label="CountUp CPA - Accueil">
+                    <img src="logo/countup-logo-transparent.svg?v=6.0" alt="CountUp - Vos chiffres. Notre rigueur." class="logo-img">
+                </a>
+                <span class="nav-brand-badge" data-i18n="nav.cpaAuditors">CPA Auditeurs</span>
+            </div>
+
+            <!-- Center: Clean Primary Navigation Links -->
+            <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+                <a href="#home" class="nav-link" data-i18n="nav.home">Accueil</a>
                 <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
-                <a href="#process" class="nav-link" data-i18n="nav.process">How It Works</a>
-                <a href="#about" class="nav-link" data-i18n="nav.about">About Us</a>
-                <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Reviews</a>
-                <a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a>
+                <a href="#tax-season" class="nav-link" data-i18n="nav.taxSeason">Saison des impôts</a>
+                <a href="#about" class="nav-link" data-i18n="nav.about">À propos</a>
                 <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
-                <a href="#contact" class="btn btn-secondary btn-sm nav-booking-btn" data-i18n="nav.bookAppointment"><i class="fa-regular fa-calendar-check"></i> <span>Prendre rendez-vous</span></a>
-                <a href="#portal" class="btn btn-primary portal-btn" id="header-portal-btn"><i class="fa-solid fa-lock"></i> <span data-i18n="nav.portal">Client Portal</span></a>
+                
+                <!-- Secondary links visible only in mobile drawer -->
+                <a href="#process" class="nav-link mobile-only-link" data-i18n="nav.process">Notre processus</a>
+                <a href="#testimonials" class="nav-link mobile-only-link" data-i18n="nav.testimonials">Avis clients</a>
+                <a href="#faq" class="nav-link mobile-only-link" data-i18n="nav.faq">FAQ</a>
+
+                <!-- Mobile Action CTAs inside Drawer -->
+                <div class="mobile-drawer-ctas">
+                    <a href="#contact" class="btn btn-primary nav-booking-btn" data-service="impot-particulier">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span data-i18n="nav.bookAppointment">Prendre rendez-vous</span>
+                    </a>
+                    <a href="#portal" class="btn btn-portal-outline portal-btn">
+                        <i class="fa-solid fa-lock"></i>
+                        <span data-i18n="nav.portal">Portail client</span>
+                    </a>
+                </div>
             </nav>
+
+            <!-- Right: Action CTAs & Language Toggle -->
             <div class="nav-header-actions">
-                <button type="button" class="btn btn-secondary btn-sm lang-switcher-btn" id="lang-switcher-btn" onclick="window.toggleCountUpLanguage &amp;&amp; window.toggleCountUpLanguage()" aria-label="Passer en français">
+                <a href="#portal" class="btn btn-portal-outline portal-btn nav-desktop-btn" id="header-portal-btn" title="Dépôt sécurisé de documents">
+                    <i class="fa-solid fa-lock"></i>
+                    <span data-i18n="nav.portal">Portail client</span>
+                </a>
+                <a href="#contact" class="btn btn-primary nav-booking-btn nav-desktop-btn" data-service="impot-particulier" title="Prendre rendez-vous avec un CPA">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span data-i18n="nav.bookAppointment">Prendre rendez-vous</span>
+                </a>
+                <button type="button" class="btn lang-switcher-btn" id="lang-switcher-btn" onclick="window.toggleCountUpLanguage &amp;&amp; window.toggleCountUpLanguage()" aria-label="Passer en français" title="Passer en français">
                     <i class="fa-solid fa-globe"></i> <span>FR</span>
                 </button>
-                <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
                     <i class="fa-solid fa-bars"></i>
-                </div>
+                </button>
             </div>
         </div>
     </header>
@@ -131,16 +160,16 @@
         <section id="home" class="hero section">
             <div class="container hero-container">
                 <div class="hero-content">
-                    <h1 class="hero-title" data-i18n="hero.title">Your Numbers. Our Precision.</h1>
-                    <p class="hero-subtitle" data-i18n="hero.subtitle">Comprehensive and stress-free accounting services for individuals and businesses. Optimize your finances with the experts at CountUp.</p>
+                    <h1 class="hero-title" data-i18n="hero.title">Vos chiffres. Notre rigueur.</h1>
+                    <p class="hero-subtitle" data-i18n="hero.subtitle">Des services de certification, comptabilité et fiscalité adaptés aux besoins des entreprises et des particuliers. Bénéficiez d’un accompagnement professionnel offert par des CPA auditeurs.</p>
                     <div class="hero-buttons">
                         <a href="#contact" class="btn btn-primary btn-large" data-i18n="hero.btnAppointment"><i class="fa-regular fa-calendar-check"></i> <span data-i18n="hero.btnAppointment">Prendre rendez-vous</span></a>
-                        <a href="#services" class="btn btn-secondary btn-large" data-i18n="hero.btnServices">Explore Services</a>
+                        <a href="#services" class="btn btn-secondary btn-large" data-i18n="hero.btnServices">Explorer les services</a>
                     </div>
                     <div class="hero-badges">
-                        <span class="hero-badge-item"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="hero.badgeSharefile">ShareFile Protected</span></span>
-                        <span class="hero-badge-item"><i class="fa-solid fa-award"></i> <span data-i18n="hero.badgeCpa">Associées CPA auditeurs</span></span>
-                        <span class="hero-badge-item"><i class="fa-solid fa-user-check"></i> <span data-i18n="hero.badgeClients">500+ Clients Satisfied</span></span>
+                        <span class="hero-badge-item"><i class="fa-solid fa-award"></i> <span data-i18n="hero.badgeCpa">Membre CPA Auditeurs</span></span>
+                        <span class="hero-badge-item"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="hero.badgeSharefile">Dépôt sécurisé de documents</span></span>
+                        <span class="hero-badge-item"><i class="fa-solid fa-user-check"></i> <span data-i18n="hero.badgeClients">500+ Clients satisfaits</span></span>
                     </div>
                 </div>
             </div>
@@ -162,31 +191,31 @@
                 </div>
                 <div class="services-grid">
                     <!-- Service Card 1: Personal Tax -->
-                    <div class="service-card highlight animate-on-scroll">
+                    <div class="service-card highlight animate-on-scroll" onclick="location.href='#tax-season'" style="cursor: pointer;">
                         <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
-                        <h3 data-i18n="services.personalTax.title">Personal Tax</h3>
-                        <p data-i18n="services.personalTax.desc">Personal and self-employed tax return preparation, with careful attention to the deductions and credits that apply to your situation.</p>
-                        <a href="#service-impot" class="btn-link"><span data-i18n="services.viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right"></i></a>
+                        <h3 data-i18n="services.personalTax.title">Impôt des particuliers</h3>
+                        <p data-i18n="services.personalTax.desc">Préparation de déclarations de revenus pour particuliers et travailleurs autonomes, avec une attention particulière aux déductions et crédits applicables à votre situation.</p>
+                        <a href="#tax-season" class="btn-link"><span data-i18n="services.viewTaxSeason">Saison des impôts : Ce que vous devez savoir</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <!-- Service Card 2: Corporate Tax -->
                     <div class="service-card animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-building"></i></div>
-                        <h3 data-i18n="services.corporateTax.title">Corporate Tax</h3>
-                        <p data-i18n="services.corporateTax.desc">Corporate tax returns, tax planning, and compliance for businesses of all sizes.</p>
+                        <h3 data-i18n="services.corporateTax.title">Impôt corporatif</h3>
+                        <p data-i18n="services.corporateTax.desc">Déclarations de revenus des sociétés, planification fiscale et conformité pour les entreprises de toutes tailles.</p>
                         <a href="#service-impot" class="btn-link"><span data-i18n="services.viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <!-- Service Card 3: Bookkeeping -->
                     <div class="service-card animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-book-bookmark"></i></div>
-                        <h3 data-i18n="services.bookkeeping.title">Bookkeeping</h3>
+                        <h3 data-i18n="services.bookkeeping.title">Tenue de livres</h3>
                         <p data-i18n="services.bookkeeping.desc">Tenue de livres, conciliation des comptes et préparation de l’information financière pour assurer un suivi régulier de vos activités.</p>
                         <a href="#service-tenue-de-livres" class="btn-link"><span data-i18n="services.viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <!-- Service Card 4: Assurance Services -->
                     <div class="service-card animate-on-scroll">
                         <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3 data-i18n="services.assurance.title">Assurance Services</h3>
-                        <p data-i18n="services.assurance.desc">Compilation, review, and audit engagements performed to professional standards, tailored to your business and its stakeholders.</p>
+                        <h3 data-i18n="services.assurance.title">Certification</h3>
+                        <p data-i18n="services.assurance.desc">Missions de compilation, d’examen et d’audit réalisées selon les normes professionnelles, adaptées aux besoins de votre entreprise et de ses parties prenantes.</p>
                         <a href="#service-certification" class="btn-link"><span data-i18n="services.viewDetails">Voir les détails</span> <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -265,10 +294,11 @@
                                 <span data-i18n="services.details.assuranceTitle">Certification &amp; Missions d'assurance</span>
                                 <span class="detailed-service-tag">Audit • Examen • Compilation</span>
                             </h3>
-                            <p class="lead-desc" data-i18n="services.details.assuranceDesc">Des missions d'audit et d'examen exécutées avec rigueur selon les normes canadiennes pour rassurer vos partenaires d'affaires, institutions financières et actionnaires.</p>
+                            <p class="lead-desc" data-i18n="services.details.assuranceDesc">Missions de compilation, d’examen et d’audit réalisées selon les normes professionnelles, adaptées aux besoins de votre entreprise et de ses parties prenantes.</p>
                             <ul class="detailed-service-features">
-                                <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="services.details.assuranceP1">Missions d'audit : niveau d'assurance élevé sur les états financiers pour conseils d'administration et institutions financières.</span></li>
-                                <li><i class="fa-solid fa-circle-check"></i> <span data-i18n="services.details.assuranceP2">Missions d'examen et avis au lecteur (compilation) : conformité rigoureuse aux exigences bancaires et contractuelles.</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Mission de compilation</strong> : préparation rigoureuse d'états financiers selon les normes professionnelles.</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Mission d’examen</strong> : niveau d'assurance et de plausibilité adapté aux exigences de vos partenaires d'affaires.</span></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Mission d’audit</strong> : niveau d'assurance le plus élevé sur vos états financiers pour actionnaires et institutions.</span></li>
                             </ul>
                         </div>
                         <div class="detailed-service-actions">
@@ -299,18 +329,18 @@
                     </div>
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">2</div>
-                        <h3 data-i18n="process.step2.title">Send Documents Securely</h3>
-                        <p data-i18n="process.step2.desc">Upload your financial documents through our secure ShareFile portal, fully confidential.</p>
+                        <h3 data-i18n="process.step2.title">Envoi sécurisé des documents</h3>
+                        <p data-i18n="process.step2.desc">Téléversez vos documents financiers en toute sécurité via notre portail sécurisé sans connexion requise.</p>
                     </div>
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">3</div>
-                        <h3 data-i18n="process.step3.title">Preparation</h3>
-                        <p data-i18n="process.step3.desc">Our expert team prepares your tax return or financial statements with meticulous care.</p>
+                        <h3 data-i18n="process.step3.title">Préparation &amp; rigueur</h3>
+                        <p data-i18n="process.step3.desc">Notre équipe de CPA auditeurs prépare votre dossier ou vos états financiers avec minutie.</p>
                     </div>
                     <div class="step-card animate-on-scroll">
                         <div class="step-number">4</div>
-                        <h3 data-i18n="process.step4.title">Review & Delivery</h3>
-                        <p data-i18n="process.step4.desc">We walk through everything with you before final submission and filing.</p>
+                        <h3 data-i18n="process.step4.title">Révision &amp; livraison</h3>
+                        <p data-i18n="process.step4.desc">On révise le tout avec vous avant la transmission officielle aux autorités fiscales.</p>
                     </div>
                 </div>
             </div>
@@ -320,38 +350,43 @@
         <section id="tax-season" class="section bg-light">
             <div class="container tax-season-container">
                 <div class="tax-season-header text-center animate-on-scroll">
-                    <span class="badge" data-i18n="taxSeason.badge">Important Information</span>
-                    <h2 class="section-title" data-i18n="taxSeason.title">Tax Season: What You Need to Know</h2>
-                    <p class="section-subtitle" data-i18n="taxSeason.subtitle">Ensure a smooth filing process by staying informed on key deadlines and required documents.</p>
+                    <span class="badge" data-i18n="taxSeason.badge">Information importante</span>
+                    <h2 class="section-title" data-i18n="taxSeason.title">Saison des impôts : Ce que vous devez savoir</h2>
+                    <p class="section-subtitle" data-i18n="taxSeason.subtitle">Assurez-vous d'un processus de déclaration fluide en restant informé des dates limites clés et des documents requis.</p>
                 </div>
                 
                 <div class="tax-info-grid">
                     <!-- Deadlines -->
                     <div class="tax-card highlight-border animate-on-scroll">
                         <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                        <h3 data-i18n="taxSeason.deadlinesTitle">Key Deadlines</h3>
+                        <h3 data-i18n="taxSeason.deadlinesTitle">Dates limites importantes</h3>
                         <ul class="tax-list">
                             <li>
-                                <strong data-i18n="taxSeason.deadline1Date">April 30:</strong>
-                                <span data-i18n="taxSeason.deadline1Text">Filing deadline for most individuals.</span>
+                                <strong data-i18n="taxSeason.deadline1Date">30 avril :</strong>
+                                <span data-i18n="taxSeason.deadline1Text">Date limite pour la majorité des particuliers.</span>
                             </li>
                             <li>
-                                <strong data-i18n="taxSeason.deadline2Date">June 15:</strong>
-                                <span data-i18n="taxSeason.deadline2Text">Filing deadline for self-employed individuals and business income (any balance owing is still due April 30).</span>
+                                <strong data-i18n="taxSeason.deadline2Date">15 juin :</strong>
+                                <span data-i18n="taxSeason.deadline2Text">Date limite pour les travailleurs autonomes et les revenus d'entreprise (le solde dû reste exigible le 30 avril).</span>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Drop-off Info -->
+                    <!-- Drop-off Info & Appointment Booking -->
                     <div class="tax-card animate-on-scroll">
                         <div class="card-icon"><i class="fa-solid fa-folder-open"></i></div>
-                        <h3 data-i18n="taxSeason.dropoffTitle">No Appointment Needed</h3>
-                        <p data-i18n="taxSeason.dropoffP1">Current clients can drop off physical documents during business hours without an appointment.</p>
+                        <h3 data-i18n="taxSeason.dropoffTitle">Sans rendez-vous</h3>
+                        <p data-i18n="taxSeason.dropoffP1">Ceci s'adresse à nos clients actuels. Vous n’avez pas besoin de rendez-vous pour venir porter vos documents en main propre pendant nos heures d’ouverture.</p>
                         <p>
-                            <span data-i18n="taxSeason.dropoffP2Prefix">Alternatively, securely upload your documents 24/7 via our </span>
-                            <a href="#portal" class="portal-btn" style="text-decoration: underline; font-weight: 600;" data-i18n="taxSeason.dropoffPortalLink">Secure Portal</a>
+                            <span data-i18n="taxSeason.dropoffP2Prefix">Vous pouvez également déposer vos documents en toute sécurité via notre </span>
+                            <a href="#portal" class="portal-btn" style="text-decoration: underline; font-weight: 600;" data-i18n="taxSeason.dropoffPortalLink">Portail Sécurisé</a>
                             <span data-i18n="taxSeason.dropoffP2Suffix">.</span>
                         </p>
+                        <div class="tax-card-actions" style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-hairline);">
+                            <a href="#contact" class="btn btn-primary btn-sm nav-booking-btn" style="width: 100%; justify-content: center; font-weight: 600;">
+                                <i class="fa-regular fa-calendar-check"></i> <span data-i18n="taxSeason.bookAppointmentBtn">Prendre rendez-vous</span>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- Required Forms & Download CTA -->
@@ -395,27 +430,39 @@
             <div class="container about-container">
                 <div class="about-content animate-on-scroll">
                     <h2 class="section-title" data-i18n="about.title">Pourquoi choisir CountUp ?</h2>
-                    <p class="section-subtitle" style="margin-left:0; text-align:left;" data-i18n="about.subtitle">Nous apportons de la clarté à vos finances avec une touche personnalisée et une expertise reconnue à Laval.</p>
+                    <p class="section-subtitle" style="margin-left:0; text-align:left;" data-i18n="about.subtitle">Une approche rigoureuse, personnalisée et accessible pour vos besoins en certification, comptabilité et fiscalité.</p>
                     <ul class="feature-list">
                         <li>
                             <div class="feature-icon-wrapper"><i class="fa-solid fa-award"></i></div>
-                            <div class="feature-text">
-                                <strong data-i18n="about.feat1Title">Rigueur professionnelle :</strong>
-                                <span data-i18n="about.feat1Desc">Une approche rigoureuse et une attention particulière portée à chaque mandat.</span>
+                            <div class="feature-content-cols">
+                                <div class="feature-col-label">
+                                    <strong data-i18n="about.feat1Title">Rigueur professionnelle :</strong>
+                                </div>
+                                <div class="feature-col-desc">
+                                    <span data-i18n="about.feat1Desc">Une approche rigoureuse et une attention particulière portée à chaque mandat.</span>
+                                </div>
                             </div>
                         </li>
                         <li>
                             <div class="feature-icon-wrapper"><i class="fa-regular fa-clock"></i></div>
-                            <div class="feature-text">
-                                <strong data-i18n="about.feat2Title">Suivi des échéances :</strong>
-                                <span data-i18n="about.feat2Desc">Un accompagnement structuré pour assurer un suivi efficace de vos obligations et échéances.</span>
+                            <div class="feature-content-cols">
+                                <div class="feature-col-label">
+                                    <strong data-i18n="about.feat2Title">Suivi des échéances :</strong>
+                                </div>
+                                <div class="feature-col-desc">
+                                    <span data-i18n="about.feat2Desc">Un accompagnement structuré pour assurer un suivi efficace de vos obligations et échéances.</span>
+                                </div>
                             </div>
                         </li>
                         <li>
                             <div class="feature-icon-wrapper"><i class="fa-solid fa-user-shield"></i></div>
-                            <div class="feature-text">
-                                <strong data-i18n="about.feat3Title">Portail sécurisé :</strong>
-                                <span data-i18n="about.feat3Desc">Vos documents financiers sont protégés et transmis en toute confidentialité via notre plateforme ShareFile.</span>
+                            <div class="feature-content-cols">
+                                <div class="feature-col-label">
+                                    <strong data-i18n="about.feat3Title">Portail sécurisé :</strong>
+                                </div>
+                                <div class="feature-col-desc">
+                                    <span data-i18n="about.feat3Desc">Vos documents financiers sont protégés et transmis en toute confidentialité via notre espace numérique sécurisé sans création de compte requise.</span>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -430,7 +477,7 @@
                 </div>
                 <div class="about-image animate-on-scroll">
                     <div class="about-illustration-wrapper">
-                        <img src="cpa-audit-accounting.svg" alt="Comptabilité et certification CPA auditeurs CountUp" class="about-cpa-img" loading="lazy" referrerpolicy="no-referrer">
+                        <img src="cpa-audit-accounting.svg?v=2.0" alt="CountUp CPA Auditeurs — Deux associées CPA cumulant 15+ ans en entreprise et 6 ans en cabinets Big Four" class="about-cpa-img" loading="lazy" referrerpolicy="no-referrer">
                     </div>
                 </div>
             </div>
@@ -489,7 +536,7 @@
                         <div class="card-stars">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
-                        <p class="testimonial-quote" data-i18n="testimonials.t2Quote">CountUp handles our corporate tax and monthly bookkeeping seamlessly. The secure ShareFile portal makes sharing documents fast and worry-free. Truly responsive, professional CPA expertise.</p>
+                        <p class="testimonial-quote" data-i18n="testimonials.t2Quote">CountUp handles our corporate tax and monthly bookkeeping seamlessly. The secure document drop portal makes sharing documents fast and worry-free. Truly responsive, professional CPA expertise.</p>
                         <div class="testimonial-author">
                             <div class="author-avatar"><i class="fa-solid fa-building"></i></div>
                             <div class="author-info">
@@ -539,7 +586,7 @@
                             <i class="fa-solid fa-chevron-down"></i>
                         </button>
                         <div class="faq-answer">
-                            <p data-i18n="faq.a2">Our secure ShareFile portal lets you send us your documents confidentially, from anywhere at your convenience.</p>
+                            <p data-i18n="faq.a2">Our secure drop portal lets you send us your documents confidentially, from anywhere at your convenience, without creating an account or password.</p>
                         </div>
                     </div>
                     <div class="faq-item">
@@ -621,7 +668,7 @@
                             <a href="https://www.facebook.com/share/1JnFKfavop/" target="_blank" rel="noopener noreferrer" class="social-badge-link facebook-link">
                                 <i class="fa-brands fa-facebook-f"></i> <span>Page Facebook</span>
                             </a>
-                            <a href="https://www.linkedin.com/company/countup-cpa-auditeurs/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="social-badge-link linkedin-link">
+                            <a href="https://www.linkedin.com/company/countup-cpa-auditeurs/" target="_blank" rel="noopener noreferrer" class="social-badge-link linkedin-link">
                                 <i class="fa-brands fa-linkedin-in"></i> <span>Page LinkedIn</span>
                             </a>
                         </div>
@@ -1174,7 +1221,7 @@
                 <p><i class="fa-brands fa-google"></i> <a href="https://www.google.com/maps/search/?api=1&query=2+Place+Laval+%23485%2C+Laval%2C+QC+H7N+5N6" target="_blank" rel="noopener noreferrer" style="color: inherit;" data-i18n="footer.googleProfile">Google Business Profile</a></p>
                 <div class="social-links">
                     <a href="https://www.facebook.com/share/1JnFKfavop/" target="_blank" rel="noopener noreferrer" aria-label="Page Facebook CountUp"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.linkedin.com/company/countup-cpa-auditeurs/about/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="Page LinkedIn CountUp CPA Auditeurs"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://www.linkedin.com/company/countup-cpa-auditeurs/" target="_blank" rel="noopener noreferrer" aria-label="Page LinkedIn CountUp CPA Auditeurs"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
@@ -1189,8 +1236,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="translations.js?v=8.0"></script>
-    <script src="i18n.js?v=8.0"></script>
-    <script src="script.js?v=8.0"></script>
+    <script src="translations.js?v=9.0"></script>
+    <script src="i18n.js?v=9.0"></script>
+    <script src="script.js?v=9.0"></script>
 </body>
 </html>

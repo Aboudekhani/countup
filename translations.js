@@ -11,24 +11,27 @@ var CountUpTranslations = {
         nav: {
             home: "Home",
             services: "Services",
-            process: "How It Works",
+            taxSeason: "Tax Season",
+            whyUs: "Why CountUp",
             about: "About Us",
+            process: "How It Works",
             testimonials: "Reviews",
             faq: "FAQ",
             contact: "Contact",
             bookAppointment: "Book an Appointment",
             switchLang: "FR",
             switchLangAria: "Basculer vers le français",
-            portal: "Client Portal"
+            portal: "Client Portal",
+            cpaAuditors: "CPA Auditors"
         },
         hero: {
             title: "Your Numbers. Our Precision.",
-            subtitle: "Comprehensive and stress-free accounting and tax services for individuals and businesses in Laval. Optimize your finances with the CPA experts at CountUp.",
+            subtitle: "Assurance, accounting, and taxation services tailored to the needs of businesses and individuals. Benefit from professional guidance provided by CPA auditors.",
             btnAppointment: "Book an Appointment",
             btnConsultation: "Schedule a Consultation",
             btnServices: "Explore Services",
-            badgeSharefile: "TLS 1.3 Encrypted & Protected",
-            badgeCpa: "CPA Auditor Partners",
+            badgeSharefile: "Secure Encrypted Document Drop",
+            badgeCpa: "CPA Auditor Member",
             badgeClients: "500+ Clients Satisfied"
         },
         banner: {
@@ -40,6 +43,7 @@ var CountUpTranslations = {
             subtitle: "Comprehensive accounting, tax, and assurance solutions tailored to your unique financial needs.",
             learnMore: "Learn More",
             viewDetails: "View Service Details",
+            viewTaxSeason: "View Tax Season Details",
             bookService: "Book This Service",
             personalTax: {
                 title: "Personal Tax",
@@ -54,8 +58,8 @@ var CountUpTranslations = {
                 desc: "Bookkeeping, account reconciliation, and preparation of financial information to ensure regular tracking of your business activities."
             },
             assurance: {
-                title: "Assurance & Audit",
-                desc: "Compilation, review, and audit engagements performed to professional CPA standards, tailored to your business and its stakeholders."
+                title: "Assurance Services",
+                desc: "Compilation, review, and audit engagements performed according to professional standards, tailored to your business and its stakeholders."
             },
             details: {
                 badge: "In-Depth Expertise",
@@ -66,13 +70,13 @@ var CountUpTranslations = {
                 taxP1: "Complete T1/TP-1 declarations for individuals, families, real estate investors, and self-employed professionals.",
                 taxP2: "Corporate T2/CO-17 declarations, corporate tax restructuring, dividend vs salary planning, and CRA/Revenu Québec representation.",
                 bookkeepingTitle: "Bookkeeping & Financial Tracking",
-                bookkeepingDesc: "Bookkeeping, account reconciliation, and preparation of financial information to ensure regular tracking of your business activities.",
+                bookkeepingDesc: "Tenue de livres, conciliation des comptes et préparation de l’information financière pour assurer un suivi régulier de vos activités.",
                 bookkeepingP1: "Monthly bank and credit card reconciliations, accounts payable and receivable tracking, and sales tax remittances (GST/QST).",
                 bookkeepingP2: "Interim financial statements and performance dashboards to give you real-time visibility over your cash flow and operations.",
                 assuranceTitle: "Assurance, Review & Audit",
-                assuranceDesc: "Independent and rigorous assurance services delivered in compliance with CPA standards for financial institutions, shareholders, and regulatory authorities.",
-                assuranceP1: "Audit engagements providing reasonable assurance on financial statements for boards, lenders, and investors.",
-                assuranceP2: "Review and compilation engagements (Notice to Reader) designed to satisfy banking covenants and tax requirements."
+                assuranceDesc: "Compilation, review, and audit engagements performed according to professional standards, tailored to your business and its stakeholders.",
+                assuranceP1: "Compilation and review engagements adapted to the needs of your business partners and lenders.",
+                assuranceP2: "Audit engagements providing the highest level of assurance on financial statements in accordance with CPA standards."
             }
         },
         process: {
@@ -109,6 +113,7 @@ var CountUpTranslations = {
             dropoffP2Prefix: "Alternatively, securely upload your documents 24/7 via our ",
             dropoffPortalLink: "Secure Portal",
             dropoffP2Suffix: ".",
+            bookAppointmentBtn: "Book an Appointment",
             docsTitle: "Documents to Prepare",
             tagSelfEmployed: "Self-Employed Income",
             tagRental: "Rental Income",
@@ -119,14 +124,14 @@ var CountUpTranslations = {
         },
         about: {
             title: "Why Choose CountUp?",
-            subtitle: "We bring clarity to your finances with a personalized touch and CPA-backed expertise in Laval.",
+            subtitle: "A rigorous, personalized, and accessible approach for your assurance, accounting, and taxation needs.",
             feat1Title: "Professional Rigor:",
             feat1Desc: "A rigorous approach and meticulous attention given to every engagement.",
-            feat2Title: "Deadline Management:",
+            feat2Title: "Deadline Tracking:",
             feat2Desc: "Structured guidance to ensure efficient tracking of all your obligations and deadlines.",
             feat3Title: "Secure Portal:",
-            feat3Desc: "Your financial documents are protected and transmitted in full confidentiality via our TLS 1.3 encrypted platform with Canadian data residency.",
-            bio: "CountUp is led by two CPA auditor partners combining extensive experience in assurance, accounting, and taxation. Together, they bring over 15 years of industry experience and 6 years within Big Four accounting firms. This diversified expertise enables CountUp to provide rigorous, personalized, and tailored guidance for both businesses and individuals.",
+            feat3Desc: "Your financial documents are protected and transmitted in full confidentiality via our secure digital drop platform.",
+            bio: "CountUp est dirigé par deux associées CPA auditeurs cumulant une solide expérience en certification, comptabilité et fiscalité. Ensemble, ils comptent plus de 15 ans d’expérience en entreprise et 6 ans au sein de cabinets Big Four. Cette expérience diversifiée permet à CountUp d’offrir un accompagnement rigoureux, personnalisé et adapté aux besoins des entreprises et des particuliers.",
             cpaBadge: "Two CPA Auditor Partners | Big Four & Industry",
             cardTitle: "Expert Financial Guidance",
             cardSubtitle: "Personalized & Rigorous Service"
@@ -265,24 +270,27 @@ var CountUpTranslations = {
         nav: {
             home: "Accueil",
             services: "Services",
-            process: "Notre processus",
+            taxSeason: "Saison des impôts",
+            whyUs: "Pourquoi CountUp",
             about: "À propos",
+            process: "Notre processus",
             testimonials: "Avis clients",
             faq: "FAQ",
             contact: "Contact",
             bookAppointment: "Prendre rendez-vous",
             switchLang: "EN",
             switchLangAria: "Switch to English",
-            portal: "Portail client"
+            portal: "Portail client",
+            cpaAuditors: "CPA Auditeurs"
         },
         hero: {
             title: "Vos chiffres. Notre rigueur.",
-            subtitle: "Des services comptables et fiscaux complets et sans tracas pour les particuliers et les entreprises à Laval. Optimisez vos finances avec les associées CPA de CountUp.",
+            subtitle: "Des services de certification, comptabilité et fiscalité adaptés aux besoins des entreprises et des particuliers. Bénéficiez d’un accompagnement professionnel offert par des CPA auditeurs.",
             btnAppointment: "Prendre rendez-vous",
             btnConsultation: "Planifier une consultation",
             btnServices: "Explorer les services",
-            badgeSharefile: "Dépôt sécurisé chiffré TLS 1.3",
-            badgeCpa: "Associées CPA auditeurs",
+            badgeSharefile: "Dépôt sécurisé de documents",
+            badgeCpa: "Membre CPA Auditeurs",
             badgeClients: "500+ Clients satisfaits"
         },
         banner: {
@@ -294,6 +302,7 @@ var CountUpTranslations = {
             subtitle: "Des solutions comptables, fiscales et de certification adaptées à vos besoins spécifiques.",
             learnMore: "En savoir plus",
             viewDetails: "Voir les détails du service",
+            viewTaxSeason: "Saison des impôts : Ce que vous devez savoir",
             bookService: "Prendre rendez-vous pour ce service",
             personalTax: {
                 title: "Impôt des particuliers",
@@ -309,7 +318,7 @@ var CountUpTranslations = {
             },
             assurance: {
                 title: "Certification",
-                desc: "Missions de compilation, d'examen et d'audit réalisées selon les normes professionnelles, adaptées aux besoins de votre entreprise et de ses parties prenantes."
+                desc: "Missions de compilation, d’examen et d’audit réalisées selon les normes professionnelles, adaptées aux besoins de votre entreprise et de ses parties prenantes."
             },
             details: {
                 badge: "Expertise détaillée",
@@ -324,9 +333,9 @@ var CountUpTranslations = {
                 bookkeepingP1: "Conciliations bancaires et de cartes de crédit, gestion des comptes fournisseurs et clients, et déclarations de taxes (TPS / TVQ).",
                 bookkeepingP2: "États financiers périodiques et tableaux de bord pour une visibilité constante sur la rentabilité et la trésorerie de votre entreprise.",
                 assuranceTitle: "Certification & Missions d'assurance",
-                assuranceDesc: "Des missions d'audit et d'examen exécutées avec rigueur selon les normes canadiennes pour rassurer vos partenaires d'affaires, institutions financières et actionnaires.",
-                assuranceP1: "Missions d'audit : niveau d'assurance élevé sur les états financiers pour conseils d'administration et institutions financières.",
-                assuranceP2: "Missions d'examen et avis au lecteur (compilation) : conformité rigoureuse aux exigences bancaires et contractuelles."
+                assuranceDesc: "Missions de compilation, d’examen et d’audit réalisées selon les normes professionnelles, adaptées aux besoins de votre entreprise et de ses parties prenantes.",
+                assuranceP1: "Missions de compilation et missions d'examen conformes aux normes professionnelles et aux exigences bancaires.",
+                assuranceP2: "Missions d'audit indépendant offrant un niveau d'assurance élevé sur vos états financiers pour investisseurs et conseils d'administration."
             }
         },
         process: {
@@ -363,6 +372,7 @@ var CountUpTranslations = {
             dropoffP2Prefix: "Vous pouvez également déposer vos documents en toute sécurité via notre ",
             dropoffPortalLink: "Portail Sécurisé",
             dropoffP2Suffix: ".",
+            bookAppointmentBtn: "Prendre rendez-vous",
             docsTitle: "Documents à préparer",
             tagSelfEmployed: "Travailleurs autonomes",
             tagRental: "Revenus locatifs",
@@ -373,13 +383,13 @@ var CountUpTranslations = {
         },
         about: {
             title: "Pourquoi choisir CountUp ?",
-            subtitle: "Nous apportons de la clarté à vos finances avec une touche personnalisée et une expertise reconnue à Laval.",
+            subtitle: "Une approche rigoureuse, personnalisée et accessible pour vos besoins en certification, comptabilité et fiscalité.",
             feat1Title: "Rigueur professionnelle :",
             feat1Desc: "Une approche rigoureuse et une attention particulière portée à chaque mandat.",
             feat2Title: "Suivi des échéances :",
             feat2Desc: "Un accompagnement structuré pour assurer un suivi efficace de vos obligations et échéances.",
             feat3Title: "Portail sécurisé :",
-            feat3Desc: "Vos documents financiers sont protégés et transmis en toute confidentialité avec chiffrement TLS 1.3 et hébergement au Canada conforme aux normes de l'Ordre des CPA.",
+            feat3Desc: "Vos documents financiers sont protégés et transmis en toute confidentialité via notre espace numérique sécurisé sans création de compte requise.",
             bio: "CountUp est dirigé par deux associées CPA auditeurs cumulant une solide expérience en certification, comptabilité et fiscalité. Ensemble, ils comptent plus de 15 ans d’expérience en entreprise et 6 ans au sein de cabinets Big Four. Cette expérience diversifiée permet à CountUp d’offrir un accompagnement rigoureux, personnalisé et adapté aux besoins des entreprises et des particuliers.",
             cpaBadge: "Deux associées CPA auditeurs | Big Four & Entreprise",
             cardTitle: "Stratégie financière experte",

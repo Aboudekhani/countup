@@ -60,13 +60,13 @@
 
         // 4. Safe check browser language
         try {
-            if (navigator.language && navigator.language.toLowerCase().startsWith('fr')) {
-                return 'fr';
+            if (navigator.language && navigator.language.toLowerCase().startsWith('en')) {
+                return 'en';
             }
         } catch (e) {}
 
-        // Default to English
-        return 'en';
+        // Default to French for Laval / Quebec CPA auditor firm
+        return 'fr';
     }
 
     function applyLanguage(lang) {

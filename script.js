@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close mobile menu when clicking nav links
-        const links = navLinks.querySelectorAll('.nav-link');
+        // Close mobile menu when clicking nav links or action buttons
+        const links = navLinks.querySelectorAll('.nav-link, .btn');
         links.forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -294,7 +294,7 @@ Préparé pour : ${email}
    [ ] Intérêts hypothécaires payés durant l'année
 
 5. COMMENT NOUS TRANSMETTRE VOS PIÈCES
-   - Téléversez vos fichiers 24/7 sur notre portail sécurisé : https://countup.sharefile.com
+   - Téléversez vos fichiers 24/7 sur notre portail sécurisé (sans connexion requise) : https://countup.ca/#portal
    - Ou déposez-les en main propre à notre bureau de Laval sans rendez-vous.
 
 Merci de faire confiance à CountUp !
@@ -337,7 +337,7 @@ Prepared for: ${email}
    [ ] Mortgage Interest Statements for Rental Properties
 
 5. HOW TO SUBMIT DOCUMENTS
-   - Upload 24/7 through our secure ShareFile portal: https://countup.sharefile.com
+   - Upload 24/7 through our secure drop portal (zero login required): https://countup.ca/#portal
    - Or drop them off at our Laval office during business hours without an appointment.
 
 Thank you for choosing CountUp Accounting!
