@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/css/*",
+      "/js/*",
+      "/logo/*",
+      "/*.{css,js,png,jpg,jpeg,svg,ico,json,pdf,txt,lock}"
+    ]
+  },
+  "routes": [
+    {
+      "route": "/confidentialite",
+      "rewrite": "/confidentialite.html"
+    },
+    {
+      "route": "/politique-de-confidentialite",
+      "rewrite": "/confidentialite.html"
+    },
+    {
+      "route": "/privacy",
+      "rewrite": "/confidentialite.html"
+    },
+    {
+      "route": "/cookies",
+      "rewrite": "/cookies.html"
+    },
+    {
+      "route": "/politique-de-cookies",
+      "rewrite": "/cookies.html"
+    },
+    {
+      "route": "/fr",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/fr/*",
+      "rewrite": "/index.html"
+    }
+  ],
+  "responseOverrides": {
+    "404": {
+      "rewrite": "/index.html",
+      "statusCode": 200
+    }
+  },
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'self'; object-src 'none';",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()"
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".svg": "image/svg+xml"
+  }
+}

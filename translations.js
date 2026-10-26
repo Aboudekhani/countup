@@ -27,7 +27,7 @@ var CountUpTranslations = {
             btnAppointment: "Book an Appointment",
             btnConsultation: "Schedule a Consultation",
             btnServices: "Explore Services",
-            badgeSharefile: "ShareFile Protected",
+            badgeSharefile: "TLS 1.3 Encrypted & Protected",
             badgeCpa: "CPA Auditor Partners",
             badgeClients: "500+ Clients Satisfied"
         },
@@ -84,7 +84,7 @@ var CountUpTranslations = {
             },
             step2: {
                 title: "Send Documents Securely",
-                desc: "Upload your financial documents through our secure ShareFile portal, in full confidentiality."
+                desc: "Upload your financial documents through our encrypted drop portal in full confidentiality (zero login required, Canada data residency)."
             },
             step3: {
                 title: "Preparation & Rigor",
@@ -125,7 +125,7 @@ var CountUpTranslations = {
             feat2Title: "Deadline Management:",
             feat2Desc: "Structured guidance to ensure efficient tracking of all your obligations and deadlines.",
             feat3Title: "Secure Portal:",
-            feat3Desc: "Your financial documents are protected and transmitted in full confidentiality via our ShareFile platform.",
+            feat3Desc: "Your financial documents are protected and transmitted in full confidentiality via our TLS 1.3 encrypted platform with Canadian data residency.",
             bio: "CountUp is led by two CPA auditor partners combining extensive experience in assurance, accounting, and taxation. Together, they bring over 15 years of industry experience and 6 years within Big Four accounting firms. This diversified expertise enables CountUp to provide rigorous, personalized, and tailored guidance for both businesses and individuals.",
             cpaBadge: "Two CPA Auditor Partners | Big Four & Industry",
             cardTitle: "Expert Financial Guidance",
@@ -142,7 +142,7 @@ var CountUpTranslations = {
             t1Quote: "Exceptional tax service! It was my first year filing as a self-employed consultant in Laval, and CountUp took the time to walk me through every eligible deduction. Fast, meticulous, and maximized refund.",
             t1Author: "Marc-André D.",
             t1Role: "Self-Employed Consultant, Laval",
-            t2Quote: "CountUp handles our corporate tax and monthly bookkeeping seamlessly. The secure ShareFile portal makes sharing documents fast and worry-free. Truly responsive, professional CPA expertise.",
+            t2Quote: "CountUp handles our corporate tax and monthly bookkeeping seamlessly. The secure document drop portal makes sharing documents fast and worry-free. Truly responsive, professional CPA expertise.",
             t2Author: "Sophie L.",
             t2Role: "SMB Owner, North Shore",
             t3Quote: "Superb accuracy and quick turnaround. My family tax returns were filed in less than 48 hours with all credits optimized. Highly recommend CountUp to anyone looking for a reliable accountant in Laval.",
@@ -154,8 +154,8 @@ var CountUpTranslations = {
             subtitle: "Got questions? We're here to help clarify your tax and accounting inquiries.",
             q1: "What documents do I need for my tax return?",
             a1: "The full list is in the “Tax Season” section of our site. Generally: tax slips (T4, Relevé 1), donation receipts, medical expenses, and other documents relevant to your situation.",
-            q2: "How does the client portal work?",
-            a2: "Our secure ShareFile portal lets you send us your documents confidentially, from anywhere at your convenience.",
+            q2: "How does the secure document drop work?",
+            a2: "Our encrypted portal lets you submit your tax slips and financial documents confidentially without creating an account. Files are protected by TLS 1.3 encryption and stored in Canadian data centers. You can also drop off physical documents at our Laval office without an appointment.",
             q3: "Do you work with businesses and self-employed individuals?",
             a3: "Yes. Beyond personal tax returns, we support businesses with corporate tax, bookkeeping, and assurance engagements.",
             q4: "What's the difference between a compilation, review, and audit engagement?",
@@ -225,11 +225,14 @@ var CountUpTranslations = {
             bookAnother: "Book Another Time"
         },
         portalModal: {
-            title: "Secure Portal",
-            desc: "Securely access your financial documents in full confidentiality through our ShareFile portal.",
-            btnText: "Go to ShareFile",
-            helpText: "Need help accessing your portal?",
-            contactLink: "Contact Us"
+            title: "Secure Document Drop & Client Portal",
+            desc: "Safely transmit your tax slips and financial documents in full confidentiality. Zero account registration required.",
+            securityNote: "Bank-Grade TLS 1.3 Encryption · Canadian Data Residency (Loi 25) · Strict CPA Professional Secrecy",
+            btnText: "Open Secure Document Drop",
+            inPersonTitle: "In-Person Drop-Off (No Appointment Needed)",
+            inPersonText: "Current clients can also drop off paper documents directly at our office: 2 Place Laval, Suite 485, Laval (QC) H7N 5N6 during business hours (Mon-Fri 9am-5pm).",
+            helpText: "Questions regarding your document submission?",
+            contactLink: "Contact our team"
         },
         checklistModal: {
             title: "Download Tax Checklist",
@@ -278,7 +281,7 @@ var CountUpTranslations = {
             btnAppointment: "Prendre rendez-vous",
             btnConsultation: "Planifier une consultation",
             btnServices: "Explorer les services",
-            badgeSharefile: "Portail ShareFile sécurisé",
+            badgeSharefile: "Dépôt sécurisé chiffré TLS 1.3",
             badgeCpa: "Associées CPA auditeurs",
             badgeClients: "500+ Clients satisfaits"
         },
@@ -335,7 +338,7 @@ var CountUpTranslations = {
             },
             step2: {
                 title: "Envoi sécurisé des documents",
-                desc: "Vous téléversez vos documents via notre portail ShareFile, en toute confidentialité."
+                desc: "Vous téléversez vos documents via notre portail chiffré en toute confidentialité (sans compte requis, données hébergées au Canada)."
             },
             step3: {
                 title: "Préparation & rigueur",
@@ -376,7 +379,7 @@ var CountUpTranslations = {
             feat2Title: "Suivi des échéances :",
             feat2Desc: "Un accompagnement structuré pour assurer un suivi efficace de vos obligations et échéances.",
             feat3Title: "Portail sécurisé :",
-            feat3Desc: "Vos documents financiers sont protégés et transmis en toute confidentialité via notre plateforme ShareFile.",
+            feat3Desc: "Vos documents financiers sont protégés et transmis en toute confidentialité avec chiffrement TLS 1.3 et hébergement au Canada conforme aux normes de l'Ordre des CPA.",
             bio: "CountUp est dirigé par deux associées CPA auditeurs cumulant une solide expérience en certification, comptabilité et fiscalité. Ensemble, ils comptent plus de 15 ans d’expérience en entreprise et 6 ans au sein de cabinets Big Four. Cette expérience diversifiée permet à CountUp d’offrir un accompagnement rigoureux, personnalisé et adapté aux besoins des entreprises et des particuliers.",
             cpaBadge: "Deux associées CPA auditeurs | Big Four & Entreprise",
             cardTitle: "Stratégie financière experte",
@@ -393,7 +396,7 @@ var CountUpTranslations = {
             t1Quote: "Un service d'impôt exceptionnel ! C'était ma première année comme travailleur autonome à Laval, et CountUp a pris le temps de m'expliquer chaque dépense admissible. Remboursement maximisé et livraison rapide.",
             t1Author: "Marc-André D.",
             t1Role: "Consultant autonome, Laval",
-            t2Quote: "CountUp gère nos déclarations de société et notre tenue de livres mensuelle de façon impeccable. Le portail sécurisé ShareFile est rapide et très rassurant. Une vraie rigueur CPA à l'écoute de nos besoins.",
+            t2Quote: "CountUp gère nos déclarations de société et notre tenue de livres mensuelle de façon impeccable. Le portail de dépôt sécurisé est rapide et très rassurant. Une vraie rigueur CPA à l'écoute de nos besoins.",
             t2Author: "Sophie L.",
             t2Role: "Propriétaire d'entreprise, Rive-Nord",
             t3Quote: "Dossier familial traité avec minutie et rapidité remarquable : déclarations complétées en moins de 48 heures avec tous les crédits optimisés. Je recommande chaudement ce cabinet comptable à Laval.",
@@ -405,8 +408,8 @@ var CountUpTranslations = {
             subtitle: "Des questions ? Nous sommes là pour vous éclairer sur vos démarches comptables et fiscales.",
             q1: "Quels documents dois-je fournir pour ma déclaration de revenus ?",
             a1: "La liste complète est disponible dans la section « Saison des impôts » de notre site. En général : feuillets fiscaux (T4, Relevé 1), reçus de dons, frais médicaux et autres pièces pertinentes à votre situation.",
-            q2: "Comment fonctionne le portail client ?",
-            a2: "Notre portail sécurisé ShareFile vous permet de nous transmettre vos documents en toute confidentialité, où que vous soyez.",
+            q2: "Comment fonctionne le dépôt sécurisé de documents ?",
+            a2: "Notre portail sécurisé vous permet de déposer vos feuillets fiscaux et pièces comptables en toute confidentialité, 24/7, sans créer de compte. Vos données sont chiffrées de bout en bout (TLS 1.3) et hébergées au Canada. Vous pouvez aussi déposer vos documents physiques sans rendez-vous à notre bureau de Laval.",
             q3: "Offrez-vous des services aux entreprises et aux travailleurs autonomes ?",
             a3: "Oui. En plus des déclarations pour particuliers, nous accompagnons les entreprises en fiscalité corporative, tenue de livres et missions de certification.",
             q4: "Quelle est la différence entre une mission de compilation, d'examen et d'audit ?",
@@ -476,11 +479,14 @@ var CountUpTranslations = {
             bookAnother: "Réserver un autre créneau"
         },
         portalModal: {
-            title: "Portail sécurisé",
-            desc: "Accédez à vos documents financiers en toute confidentialité via notre portail sécurisé ShareFile.",
-            btnText: "Accéder à ShareFile",
-            helpText: "Besoin d'aide pour accéder à votre portail ?",
-            contactLink: "Contactez-nous"
+            title: "Dépôt sécurisé de documents & Portail client",
+            desc: "Transmettez vos feuillets d'impôt et états financiers en toute confidentialité. Aucune création de compte requise.",
+            securityNote: "Chiffrement TLS 1.3 · Données hébergées au Canada (Conforme Loi 25) · Secret professionnel CPA",
+            btnText: "Accéder au dépôt sécurisé de documents",
+            inPersonTitle: "Dépôt en main propre sans rendez-vous",
+            inPersonText: "Vous pouvez également déposer vos documents physiques directement à nos bureaux : 2 Place Laval, bureau 485, Laval (QC) H7N 5N6 durant nos heures d'ouverture (Lun-Ven 9h-17h).",
+            helpText: "Besoin d'aide pour transmettre vos documents ?",
+            contactLink: "Contactez notre équipe"
         },
         checklistModal: {
             title: "Télécharger la liste de vérification",
