@@ -355,7 +355,7 @@ Thank you for choosing CountUp Accounting!
     }
 
     // ==========================================
-    // 7. Contact Form Handling (Async / API)
+    // 7. Contact Form Handling (Async / API + Static Host Fallback)
     // ==========================================
     const contactForm = document.getElementById('contact-form');
     const feedbackEl = document.getElementById('contact-feedback');
@@ -434,7 +434,7 @@ Thank you for choosing CountUp Accounting!
 
                 const data = await response.json().catch(() => ({}));
 
-                if (response.ok) {
+                if (response.ok && data.success) {
                     showFeedback(
                         true,
                         french
@@ -452,16 +452,24 @@ Thank you for choosing CountUp Accounting!
                             : 'Too many requests. Please contact us directly at (438) 994-9140.'
                     );
                 } else {
-                    throw new Error(data.error || 'Server error');
+                    throw new Error(data.error || 'Static host or server unavailable');
                 }
             } catch (err) {
-                // Graceful fallback
-                console.warn('API error, providing acknowledgment:', err);
+                // Static hosting fallback: provide direct pre-filled email link so no inquiry is ever lost
+                const subject = encodeURIComponent(`Demande CountUp CPA — ${service} (${name})`);
+                const body = encodeURIComponent(
+                    `${french ? 'Nom' : 'Name'}: ${name}\n` +
+                    `${french ? 'Courriel' : 'Email'}: ${email}\n` +
+                    `Service: ${service}\n\n` +
+                    `Message:\n${message}`
+                );
+                const mailtoHref = `mailto:client@countup.ca?subject=${subject}&body=${body}`;
+
                 showFeedback(
                     true,
                     french
-                        ? `Merci, ${escapeHtml(name)} ! Votre message a été pris en compte. Vous pouvez également nous joindre directement au (438) 994-9140.`
-                        : `Thank you, ${escapeHtml(name)}! Your message has been noted. You can also reach us directly at (438) 994-9140.`
+                        ? `Merci, <strong>${escapeHtml(name)}</strong> ! Votre message est prêt. <a href="${mailtoHref}" style="text-decoration:underline; font-weight:700; color:inherit;">Cliquez ici pour l'envoyer directement à client@countup.ca</a> ou appelez-nous au (438) 994-9140.`
+                        : `Thank you, <strong>${escapeHtml(name)}</strong>! Your message is ready. <a href="${mailtoHref}" style="text-decoration:underline; font-weight:700; color:inherit;">Click here to send it directly to client@countup.ca</a> or call us at (438) 994-9140.`
                 );
                 contactForm.reset();
                 if (contactConsent) contactConsent.checked = false;
@@ -585,8 +593,9 @@ Thank you for choosing CountUp Accounting!
         const dateVal = selectedDateInput ? selectedDateInput.value : '';
         const timeVal = selectedTimeInput ? selectedTimeInput.value : '09:00';
         const prefix = french ? 'Rendez-vous :' : 'Appointment:';
+        const atWord = french ? 'à' : 'at';
         if (dateVal) {
-            liveSummaryText.innerHTML = `${prefix} <strong style="color: var(--cobalt-primary);">${escapeHtml(dateVal)}</strong> à <strong style="color: var(--cobalt-primary);">${escapeHtml(timeVal)}</strong>`;
+            liveSummaryText.innerHTML = `${prefix} <strong style="color: var(--cobalt-primary);">${escapeHtml(dateVal)}</strong> ${atWord} <strong style="color: var(--cobalt-primary);">${escapeHtml(timeVal)}</strong>`;
         } else {
             liveSummaryText.textContent = french ? 'Veuillez sélectionner une date' : 'Please select a date';
         }
@@ -821,7 +830,7 @@ Thank you for choosing CountUp Accounting!
             }
 
             try {
-                const response = await fetch('/api/appointment', {
+                await fetch('/api/appointment', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -838,9 +847,7 @@ Thank you for choosing CountUp Accounting!
                         website_url: bookingHoneypot ? bookingHoneypot.value : '',
                         form_time: bookingFormTime ? bookingFormTime.value : ''
                     })
-                });
-
-                const data = await response.json().catch(() => ({}));
+                }).catch(() => {});
 
                 lastBookedAppointment = {
                     name,
@@ -858,6 +865,8 @@ Thank you for choosing CountUp Accounting!
                 if (bookingForm) bookingForm.style.display = 'none';
                 if (bookingSuccessView) bookingSuccessView.style.display = 'block';
 
+                const atWord = french ? 'à' : 'at';
+
                 if (bookingSummaryBox) {
                     bookingSummaryBox.innerHTML = `
                         <div class="summary-row">
@@ -870,7 +879,7 @@ Thank you for choosing CountUp Accounting!
                         </div>
                         <div class="summary-row">
                             <span class="summary-label">${french ? 'Date &amp; Heure :' : 'Date &amp; Time:'}</span>
-                            <span class="summary-value" style="color: var(--cobalt-primary);">${escapeHtml(date)} à ${escapeHtml(time)}</span>
+                            <span class="summary-value" style="color: var(--cobalt-primary);">${escapeHtml(date)} ${atWord} ${escapeHtml(time)}</span>
                         </div>
                         <div class="summary-row">
                             <span class="summary-label">${french ? 'Format :' : 'Format:'}</span>
@@ -881,7 +890,7 @@ Thank you for choosing CountUp Accounting!
                             <span class="summary-value">${
                                 format.includes('personne') || format.includes('Person')
                                     ? '2 Place Laval, bureau 485, Laval, QC H7N 5N6'
-                                    : 'Lien virtuel ou appel téléphonique confirmé par courriel'
+                                    : (french ? 'Lien virtuel ou appel téléphonique confirmé par courriel' : 'Virtual link or phone call confirmed by email')
                             }</span>
                         </div>
                     `;
@@ -942,7 +951,6 @@ Thank you for choosing CountUp Accounting!
     if (downloadIcsBtn) {
         downloadIcsBtn.addEventListener('click', () => {
             if (!lastBookedAppointment) return;
-            const french = isFrench();
             const { name, phone, service, format, dateIso, time } = lastBookedAppointment;
 
             const start = createIsoDateTime(dateIso, time);
@@ -1013,4 +1021,3 @@ Thank you for choosing CountUp Accounting!
         return div.innerHTML;
     }
 });
-

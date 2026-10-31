@@ -7,12 +7,45 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const HOST = '0.0.0.0';
 
-// In-memory leads storage
-const inquiries = [];
-const checklistDownloads = [];
+app.set('trust proxy', 1);
+
+// Persistent storage helper (saved to data/submissions.json)
+const DATA_DIR = path.join(__dirname, 'data');
+const DATA_FILE = path.join(DATA_DIR, 'submissions.json');
+
+function loadStoredData() {
+  try {
+    if (fs.existsSync(DATA_FILE)) {
+      const raw = fs.readFileSync(DATA_FILE, 'utf-8');
+      const parsed = JSON.parse(raw);
+      return {
+        inquiries: Array.isArray(parsed.inquiries) ? parsed.inquiries : [],
+        checklistDownloads: Array.isArray(parsed.checklistDownloads) ? parsed.checklistDownloads : [],
+        appointments: Array.isArray(parsed.appointments) ? parsed.appointments : []
+      };
+    }
+  } catch (err) {
+    console.warn('[Storage] Could not read submissions.json, starting fresh:', err.message);
+  }
+  return { inquiries: [], checklistDownloads: [], appointments: [] };
+}
+
+function saveStoredData(store) {
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    fs.writeFileSync(DATA_FILE, JSON.stringify(store, null, 2), 'utf-8');
+  } catch (err) {
+    console.warn('[Storage] Could not persist submissions.json:', err.message);
+  }
+}
+
+const store = loadStoredData();
+const { inquiries, checklistDownloads, appointments } = store;
 
 // In-memory rate limiting map: ip -> [timestamps]
 const ipRequests = new Map();
@@ -36,7 +69,7 @@ app.use(express.json());
 
 // Serve static assets with no-cache for scripts and styles to prevent stale cache
 app.use(express.static(__dirname, {
-  extensions: ['html', 'htm', 'js', 'css', 'svg', 'png', 'jpg'],
+  extensions: ['html', 'htm', 'js', 'css', 'svg', 'png', 'jpg', 'pdf', 'xlsx'],
   setHeaders: (res, filePath) => {
     if (filePath.endsWith('.js') || filePath.endsWith('.html') || filePath.endsWith('.css')) {
       res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
@@ -58,7 +91,7 @@ app.get(['/cookies', '/cookies.html', '/politique-de-cookies'], (req, res) => {
 
 // Lead capture API endpoint with anti-spam & Loi 25 consent validation
 app.post('/api/contact', (req, res) => {
-  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
+  const clientIp = req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
   
   // 1. Rate limiting
   if (!checkRateLimit(clientIp)) {
@@ -123,6 +156,7 @@ app.post('/api/contact', (req, res) => {
   };
 
   inquiries.unshift(lead);
+  saveStoredData(store);
   console.log(`[Lead Captured] ${lead.timestamp} | ${lead.name} (${lead.email}) | ${lead.service}`);
 
   return res.status(200).json({
@@ -136,7 +170,7 @@ app.post('/api/contact', (req, res) => {
 
 // Checklist download tracking API endpoint
 app.post('/api/checklist', (req, res) => {
-  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
+  const clientIp = req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
 
   if (!checkRateLimit(clientIp)) {
     return res.status(429).json({ success: false, error: 'Too many requests' });
@@ -161,16 +195,14 @@ app.post('/api/checklist', (req, res) => {
     timestamp: new Date().toISOString(),
     lang: lang === 'fr' ? 'fr' : 'en'
   });
+  saveStoredData(store);
 
   return res.status(200).json({ success: true });
 });
 
-// In-memory appointments storage
-const appointments = [];
-
 // Appointment booking API endpoint
 app.post('/api/appointment', (req, res) => {
-  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
+  const clientIp = req.ip || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
 
   if (!checkRateLimit(clientIp)) {
     return res.status(429).json({
@@ -219,6 +251,7 @@ app.post('/api/appointment', (req, res) => {
   };
 
   appointments.unshift(appointment);
+  saveStoredData(store);
   console.log(`[Appointment Booked] ${appointment.date} @ ${appointment.time} | ${appointment.name} (${appointment.email}) | ${appointment.service} (${appointment.format})`);
 
   return res.status(200).json({
